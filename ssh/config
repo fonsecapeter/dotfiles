@@ -1,0 +1,12 @@
+# Default GitHub (ttam)
+Host github.com
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/id_rsa
+
+# Personal Github (fonsecpater)
+Host github-personal
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/id_rsa_personal
+  # git remote add origin git@github-personal:fonsecapeter/repo
