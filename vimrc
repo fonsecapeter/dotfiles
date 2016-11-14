@@ -15,6 +15,9 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'hhsnopek/vim-firewatch'
 " Plugin 'valloric/youcompleteme'
 Plugin 'scrooloose/nerdtree'
+Plugin 'raimondi/delimitmate'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'ctrlpvim/ctrlp.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -50,6 +53,12 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 
+
+" multicursor
+let g:multi_cursor_next_key='<C-d>'
+let g:multi_cursor_prev_key='<S-d>'
+let g:multi_cursor_skip_key='<C-x>'
+let g:multi_cursor_quit_key='<Esc>'
 
 " air-line
 " let g:airline_powerline_fonts=1
