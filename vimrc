@@ -18,6 +18,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'raimondi/delimitmate'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'ctrlpvim/ctrlp.vim'
+" Plugin 'klen/python-mode'
 
 call vundle#end()
 filetype plugin indent on
@@ -42,6 +43,7 @@ let g:indent_guide_start_level=2
 let g:indent_guides_guide_size=1
 
 " Nerd Tree
+let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree"
 " toggle nerd tree
 map <C-\> :NERDTreeToggle<ESC>
 
@@ -72,12 +74,13 @@ let g:airline_symbols.space = "\u2002"
 
 " unicode symbols
 let g:airline_left_sep = ''
-"let g:airline_left_sep = '▶'
-" let g:airline_right_sep = ''
-let g:airline_right_sep = '◀'
+" let g:airline_left_sep = '▶'
+let g:airline_right_sep = ''
+" let g:airline_right_sep = '◀'
 let g:airline_symbols.linenr = '␊'
 let g:airline_symbols.linenr = '␤'
-let g:airline_symbols.linenr = '¶'
+" let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.linenr = ''
 let g:airline_symbols.branch = '⎇'
 let g:airline_symbols.paste = 'ρ'
 let g:airline_symbols.paste = 'Þ'
