@@ -19,6 +19,7 @@ Plugin 'raimondi/delimitmate'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'ctrlpvim/ctrlp.vim'
 " Plugin 'klen/python-mode'
+Plugin 'noahfrederick/vim-noctu'
 
 call vundle#end()
 filetype plugin indent on
@@ -29,7 +30,8 @@ set relativenumber
 au BufReadPost *.dtml set syntax=html
 au BufReadPost *.json set syntax=javascript
 
-colorscheme firewatch
+" colorscheme firewatch
+colorscheme noctu
 
 " show status bar
 set laststatus=2
