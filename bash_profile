@@ -21,8 +21,8 @@ alias ls='ls -G'
 export RBENV_ROOT=/usr/local/var/rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
-# for colorized tree (brew install tree)
-alias tree='tree -C'
+# for colorized tree (brew install tree) that ignores node_modules and *.pyc
+alias tree="tree -C -I 'node_modules|*.pyc|venv'"
 
 # for 23andMe endpoints, curl with pretty print and auth
 alias v3=~/ttam/api_curlbuddy/v3_curlbuddy.sh
@@ -40,3 +40,6 @@ alias stampunwatch='export PS1=${PS1#"\D{%I:%M %p}\n"}'
 # for work (need to put in vm)
 alias test='tput setaf 2 && date +"%r" && tput sgr0 && ./manage.py test --verbosity=2'
 
+# docker
+# alias dockclean="docker rm -v $(docker ps -a -q -f status=exited)"
+alias dockjango="docker-compose -f dev.yml run django python manage.py"

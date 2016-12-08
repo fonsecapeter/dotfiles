@@ -20,6 +20,7 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'ctrlpvim/ctrlp.vim'
 " Plugin 'klen/python-mode'
 Plugin 'noahfrederick/vim-noctu'
+Plugin 'avakhov/vim-yaml'
 
 call vundle#end()
 filetype plugin indent on
@@ -27,8 +28,10 @@ filetype plugin indent on
 syntax on
 set number
 set relativenumber
-au BufReadPost *.dtml set syntax=html
-au BufReadPost *.json set syntax=javascript
+autocmd BufNewFile,BufReadPost *.dtml set syntax=html
+autocmd BufNewFile,BufReadPost *.json set syntax=javascript
+" autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+autocmd BufNewFile,BufReadPost *.md set filetype=yaml
 
 " colorscheme firewatch
 colorscheme noctu
@@ -66,7 +69,8 @@ let g:multi_cursor_quit_key='<Esc>'
 
 " air-line
 " let g:airline_powerline_fonts=1
-let g:airline_theme='solarized'
+" let g:airline_theme='solarized'
+let g:airline_theme='base16_ashes'
 
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
