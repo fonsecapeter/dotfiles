@@ -30,8 +30,8 @@ set number
 set relativenumber
 autocmd BufNewFile,BufReadPost *.dtml set syntax=html
 autocmd BufNewFile,BufReadPost *.json set syntax=javascript
-" autocmd BufNewFile,BufReadPost *.md set filetype=markdown
-autocmd BufNewFile,BufReadPost *.md set filetype=yaml
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+autocmd BufNewFile,BufReadPost *.txt set filetype=yaml
 
 " colorscheme firewatch
 colorscheme noctu
