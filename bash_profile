@@ -43,3 +43,32 @@ alias test='tput setaf 2 && date +"%r" && tput sgr0 && ./manage.py test --verbos
 # docker
 # alias dockclean="docker rm -v $(docker ps -a -q -f status=exited)"
 alias dockjango="docker-compose -f dev.yml run django python manage.py"
+
+# added for jarvs-classic
+alias jarvs-classic="cd /Users/pfonseca/Personal/jarvs-classic; make start"
+
+notes_dir="${HOME}/Google Drive/Notes"
+start_notes() {
+  cur_dir="${PWD}"
+  cd "${notes_dir}"
+  vim
+  cd "${cur_dir}"
+}
+alias notes=start_notes
+search_notes() {
+  grep -ilr "${1}" "${notes_dir}" | grep -v "${notes_dir}/help/help.txt"
+}
+alias notesearch="search_notes"
+alias notels="tree '${notes_dir}' -I help"
+open_note() {
+  cur_dir="${PWD}"
+  cd "${notes_dir}"
+  vim "${1}"
+  cd "${cur_dir}"
+}
+alias noteopen="open_note"
+note_search_open() {
+  result=$(search_notes ${1} | head -n 1)
+  open_note "${result}"
+}
+alias notesearchopen="note_search_open"
