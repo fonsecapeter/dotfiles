@@ -49,6 +49,7 @@ alias jarvs-classic="cd /Users/pfonseca/Personal/jarvs-classic; make start"
 
 notes_dir="${HOME}/Google Drive/Notes"
 start_notes() {
+  echo -n -e "\033]0;Notes\007"
   cur_dir="${PWD}"
   cd "${notes_dir}"
   vim
@@ -61,6 +62,7 @@ search_notes() {
 alias notesearch="search_notes"
 alias notels="tree '${notes_dir}' -I help"
 open_note() {
+  echo -n -e "\033]0;Notes\007"
   cur_dir="${PWD}"
   cd "${notes_dir}"
   vim "${1}"
