@@ -54,6 +54,7 @@ start_notes() {
   cd "${notes_dir}"
   vim
   cd "${cur_dir}"
+  echo -n -e "\033]0;Terminal\007"
 }
 alias notes=start_notes
 search_notes() {
@@ -67,6 +68,7 @@ open_note() {
   cd "${notes_dir}"
   vim "${1}"
   cd "${cur_dir}"
+  echo -n -e "\033]0;Terminal\007"
 }
 alias noteopen="open_note"
 note_search_open() {
