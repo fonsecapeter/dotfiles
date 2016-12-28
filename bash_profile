@@ -38,8 +38,23 @@ alias stamp='date +"%r"'
 alias stampwatch='export PS1="\D{%I:%M %p}\n${PS1}"'
 alias stampunwatch='export PS1=${PS1#"\D{%I:%M %p}\n"}'
 # for work (need to put in vm)
-alias test='tput setaf 2 && date +"%r" && tput sgr0 && ./manage.py test --verbosity=2'
-
+# alias test='tput setaf 2 && date +"%r" && tput sgr0 && ./manage.py test --verbosity=2'
+colorized_django_test() {
+  ./manage.py test --verbosity=2 $@ 2>&1 \
+    | sed "s/.*[oO][kK]$/$green&$reset/" \
+    | sed "s/.*ERROR$/$yellow&$reset/" \
+    | sed "s/.*FAIL$/$red&$reset/" \
+    | sed "s/^FAILED.*/$red&$reset/" \
+    | sed "s/.*skipped.*/$blue&$reset/" \
+    | sed "s/^ERROR:/$yellow&/" \
+    | sed "s/^FAIL.*/$red&/" \
+    | sed "s/^Ran.*tests in.*/$reset&/" \
+    | sed "s/^=*$/$reset&/"
+  tput cuu 2   # clear extra ' OK on second to last line'
+  echo '   '
+  echo
+}
+alias test=colorized_django_test
 # docker
 # alias dockclean="docker rm -v $(docker ps -a -q -f status=exited)"
 alias dockjango="docker-compose -f dev.yml run django python manage.py"
