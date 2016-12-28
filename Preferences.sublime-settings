@@ -1,0 +1,41 @@
+{
+	"caret_style": "smooth",
+	"color_scheme": "Packages/User/SublimeLinter/firewatch (Peter).tmTheme",
+	"ensure_newline_at_eof_on_save": true,
+	"font_face": "Neha Mono",
+	"font_size": 9,
+	"highlight_line": true,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"line_padding_bottom": 1,
+	"line_padding_top": 1,
+	"material_theme_accent_red": true,
+	"material_theme_compact_sidebar": true,
+	"material_theme_small_statusbar": true,
+	"material_theme_small_tab": true,
+	"material_theme_tabs_autowidth": true,
+	"origami_auto_close_empty_panes": true,
+	"pep8": true,
+	"rulers":
+	[
+		80
+	],
+	"tab_size": 4,
+	"theme": "Boxy Tomorrow.sublime-theme",
+	"theme_accent_pink": true,
+	"theme_icons_atomized": true,
+	"theme_scrollbar_rounded": true,
+	"theme_sidebar_font_xs": true,
+	"theme_sidebar_indent_top_level_disabled": true,
+	"theme_sidebar_size_xxs": true,
+	"theme_size_xs": true,
+	"theme_statusbar_font_xs": true,
+	"theme_tab_arrows_hidden": true,
+	"theme_tab_font_xs": true,
+	"theme_unified": true,
+	"translate_tabs_to_spaces": true,
+	"trim_trailing_white_space_on_save": true,
+	"word_wrap": true,
+}

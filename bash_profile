@@ -76,3 +76,7 @@ note_search_open() {
   open_note "${result}"
 }
 alias notesearchopen="note_search_open"
+
+
+# added for jarbs
+alias jarbs="cd /Users/pfonseca/Personal/jarbs; make start"
