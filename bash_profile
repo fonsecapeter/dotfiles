@@ -1,3 +1,14 @@
+red=$(tput setaf 1)
+alias red="tput setaf 1"
+green=$(tput setaf 2)
+alias green="tput setaf 2"
+blue=$(tput setaf 4)
+alias blue="tput setaf 4"
+orange=$(tput setaf 3)
+alias orange="tput setaf 3"
+reset=$(tput sgr0)
+alias reset="tput sgr0"
+
 # Git prompt
 parse_git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ <\1>/'
@@ -29,12 +40,15 @@ alias v3=~/ttam/api_curlbuddy/v3_curlbuddy.sh
 alias v2=~/ttam/api_curlbuddy/v2_curlbuddy.sh
 alias v1=~/ttam/api_curlbuddy/v1_curlbuddy.sh
 
+# for work only
+alias codebase='cd ~/Documents/throwbacks/new_hire_stuff/code_base/'
+
 # for django test printing
 alias pbprint="echo \"import sys
 sys.stderr.write('\n\n' + repr(object_to_print) + '\n\n')\" | pbcopy"
 
 # dumn aliases
-alias stamp='date +"%r"'
+alias stamp='orange && date +"%r" && reset && $@'
 alias stampwatch='export PS1="\D{%I:%M %p}\n${PS1}"'
 alias stampunwatch='export PS1=${PS1#"\D{%I:%M %p}\n"}'
 # for work (need to put in vm)
@@ -42,11 +56,11 @@ alias stampunwatch='export PS1=${PS1#"\D{%I:%M %p}\n"}'
 colorized_django_test() {
   ./manage.py test --verbosity=2 $@ 2>&1 \
     | sed "s/.*[oO][kK]$/$green&$reset/" \
-    | sed "s/.*ERROR$/$yellow&$reset/" \
+    | sed "s/.*ERROR$/$orange&$reset/" \
     | sed "s/.*FAIL$/$red&$reset/" \
     | sed "s/^FAILED.*/$red&$reset/" \
     | sed "s/.*skipped.*/$blue&$reset/" \
-    | sed "s/^ERROR:/$yellow&/" \
+    | sed "s/^ERROR:/$orange&/" \
     | sed "s/^FAIL.*/$red&/" \
     | sed "s/^Ran.*tests in.*/$reset&/" \
     | sed "s/^=*$/$reset&/"
@@ -55,6 +69,24 @@ colorized_django_test() {
   echo
 }
 alias test=colorized_django_test
+colorized_git_last() {
+  git last \
+      | sed "s/^[[:space:]].*/$blue&$reset/" \
+      | sed "s/^M[[:space:]].*/$orange&$reset/" \
+      | sed "s/^A[[:space:]].*/$green&$reset/" \
+      | sed "s/^D[[:space:]].*/$red&$reset/"
+}
+alias gl=colorized_git_last
+
+# vagrant aliases for work
+API_PATH='/kit23/workspace/vagrant/websites/api'
+
+alias stamp='orange && date +"%r" && reset && $@'
+alias mapi='cd $API_PATH && make && cd ../.. && make restart && stamp'
+function tapi_fun() { echo $1 && cd $API_PATH && ./manage.py test $1 && cd ../.. && stamp; }
+alias tapi=tapi_fun
+
+
 # docker
 # alias dockclean="docker rm -v $(docker ps -a -q -f status=exited)"
 alias dockjango="docker-compose -f dev.yml run django python manage.py"

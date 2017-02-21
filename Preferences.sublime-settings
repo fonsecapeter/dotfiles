@@ -2,9 +2,10 @@
 	"caret_style": "smooth",
 	"color_scheme": "Packages/User/SublimeLinter/firewatch (Peter).tmTheme",
 	"ensure_newline_at_eof_on_save": true,
-	"font_face": "Neha Mono",
-	"font_size": 9,
+	"font_face": "Peter Mono",
+	"font_size": 10,
 	"highlight_line": true,
+	"hot_exit": false,
 	"ignored_packages":
 	[
 		"Vintage"
@@ -18,9 +19,10 @@
 	"material_theme_tabs_autowidth": true,
 	"origami_auto_close_empty_panes": true,
 	"pep8": true,
+	"remember_open_files": false,
 	"rulers":
 	[
-		80
+		120
 	],
 	"tab_size": 4,
 	"theme": "Boxy Tomorrow.sublime-theme",
@@ -37,5 +39,5 @@
 	"theme_unified": true,
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true,
-	"word_wrap": true,
+	"word_wrap": true
 }

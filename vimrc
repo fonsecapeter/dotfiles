@@ -8,17 +8,13 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'nathanaelkane/vim-indent-guides'
-" Plugin 'godlygeek/csapprox'
 Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'altercation/vim-colors-solarized'
 Plugin 'hhsnopek/vim-firewatch'
-" Plugin 'valloric/youcompleteme'
 Plugin 'scrooloose/nerdtree'
 Plugin 'raimondi/delimitmate'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'ctrlpvim/ctrlp.vim'
-" Plugin 'klen/python-mode'
 Plugin 'noahfrederick/vim-noctu'
 Plugin 'avakhov/vim-yaml'
 
@@ -68,14 +64,11 @@ let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
 
 " air-line
-" let g:airline_powerline_fonts=1
-" let g:airline_theme='solarized'
 let g:airline_theme='base16_ashes'
 
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
-" let g:airline_symbols.space = "\ua0"
 let g:airline_symbols.space = "\u2002"
 
 " unicode symbols
@@ -98,3 +91,20 @@ let g:airline_symbols.whitespace = 'Ξ'
 map <Enter> o<ESC>
 map <S-Enter> O<ESC>
 
+
+" for split windows like sublime origami
+" navigating
+nnoremap <C-K><Down> <C-W><C-J>
+nnoremap <C-K><Up> <C-W><C-K>
+nnoremap <C-K><Right> <C-W><C-L>
+nnoremap <C-K><Left> <C-W><C-H>
+
+" moving the window
+nnoremap <C-K><S-Down> <C-W><S-J>
+nnoremap <C-K><S-Up> <C-W><S-K>
+nnoremap <C-K><S-Right> <C-W><S-L>
+nnoremap <C-K><S-Left> <C-W><S-H>
+
+" supposed to rotation but not working
+nnoremap <C-K><C-Right> <C-W><R>
+nnoremap <C-K><C-Left> <C-W><S-R>
