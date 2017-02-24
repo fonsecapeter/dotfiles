@@ -17,6 +17,7 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'noahfrederick/vim-noctu'
 Plugin 'avakhov/vim-yaml'
+Plugin 'kh3phr3n/python-syntax'
 
 call vundle#end()
 filetype plugin indent on
@@ -24,6 +25,7 @@ filetype plugin indent on
 syntax on
 set number
 set relativenumber
+let g:python_highlight_all = 1
 autocmd BufNewFile,BufReadPost *.dtml set syntax=html
 autocmd BufNewFile,BufReadPost *.json set syntax=javascript
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
