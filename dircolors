@@ -184,6 +184,14 @@ EXEC 01;34  # Unix
 .pod 01;33
 .tex 01;33
 
+#Data
+.npy 01;32
+.pickle 01;32
+.sql 01;32
+.json 01;32
+.tsv 01;32
+.csv 01;32
+
 ### Multimedia formats
 
 # Image

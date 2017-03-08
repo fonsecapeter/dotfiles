@@ -58,23 +58,7 @@ function trash() { mv "${@}" ~/.Trash; }
 alias stamp='orange && date +"%r" && reset && $@'
 alias stampwatch='export PS1="\D{%I:%M %p}\n${PS1}"'
 alias stampunwatch='export PS1=${PS1#"\D{%I:%M %p}\n"}'
-# for work (need to put in vm)
-# colorized_django_test() {
-#   ./manage.py test --verbosity=2 $@ 2>&1 \
-#     | sed "s/.*[oO][kK]$/$green&$reset/" \
-#     | sed "s/.*ERROR$/$orange&$reset/" \
-#     | sed "s/.*FAIL$/$red&$reset/" \
-#     | sed "s/^FAILED.*/$red&$reset/" \
-#     | sed "s/.*skipped.*/$blue&$reset/" \
-#     | sed "s/^ERROR:/$orange&/" \
-#     | sed "s/^FAIL.*/$red&/" \
-#     | sed "s/^Ran.*tests in.*/$reset&/" \
-#     | sed "s/^=*$/$reset&/"
-#   tput cuu 2   # clear extra ' OK on second to last line'
-#   echo '   '
-#   echo
-# }
-# alias test=colorized_django_test
+# for work 
 colorized_git_last() {
   git last \
       | sed "s/^[[:space:]].*/$blue&$reset/" \
@@ -88,9 +72,24 @@ alias gl=colorized_git_last
 # API_PATH='/kit23/workspace/vagrant/websites/api'
 
 # alias mapi='cd $API_PATH && make && cd ../.. && make restart && stamp'
-# function tapi_fun() { echo $1 && cd $API_PATH && ./manage.py test $1 && cd ../.. && stamp; }
-# alias tapi=tapi_fun
-
+# ctapi_fun() {
+#   $API_PATH/manage.py test $@ 2>&1 \
+#       | sed "s/.*[oO][kK]$/$green&$reset/" \
+#       | sed "s/.*ERROR$/$orange&$reset/" \
+#       | sed "s/.*FAIL$/$red&$reset/" \
+#       | sed "s/^FAILED.*/$red&$reset/" \
+#       | sed "s/.*skipped.*/$blue&$reset/" \
+#       | sed "s/^ERROR:/$orange&/" \
+#       | sed "s/^FAIL.*/$red&/" \
+#       | sed "s/^Ran.*tests in.*/$reset&/" \
+#       | sed "s/^=*$/$reset&/"
+#   tput cuu 2   # clear extra ' OK on second to last line'
+#   echo '   '
+#   echo
+# }
+# alias test=colorized_django_test
+# function tapi_fun() { $API_PATH/manage.py test $1 && stamp; }
+# alias tapi=ctapi_fun
 
 # docker
 # alias dockclean="docker rm -v $(docker ps -a -q -f status=exited)"
