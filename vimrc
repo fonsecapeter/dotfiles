@@ -18,6 +18,9 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'noahfrederick/vim-noctu'
 Plugin 'avakhov/vim-yaml'
 Plugin 'kh3phr3n/python-syntax'
+Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'scrooloose/syntastic'
+Plugin 'nvie/vim-flake8'
 
 call vundle#end()
 filetype plugin indent on
@@ -110,3 +113,18 @@ nnoremap <C-K><S-Left> <C-W><S-H>
 " supposed to rotation but not working
 nnoremap <C-K><C-Right> <C-W><R>
 nnoremap <C-K><C-Left> <C-W><S-R>
+
+" PEP8
+au BufNewFile,BufRead *.py
+    \ set tabstop=4
+    \ set softtabstop=4
+    \ set shiftwidth=4
+    \ set textwidth=79
+    \ set expandtab
+    \ set autoindent
+    \ set fileformat=unix
+
+set encoding=utf-8
+
+let python_highlight_all=1
+
