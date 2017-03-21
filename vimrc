@@ -7,7 +7,7 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'Yggdroot/indentLine'
 Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'hhsnopek/vim-firewatch'
@@ -23,7 +23,6 @@ Plugin 'scrooloose/syntastic'
 Plugin 'nvie/vim-flake8'
 
 call vundle#end()
-filetype plugin indent on
 
 syntax on
 set number
@@ -44,9 +43,9 @@ set laststatus=2
 set et
 set ts=4
 set sw=4
-let g:indent_guides_enable_on_vim_startup=1
-let g:indent_guide_start_level=2
-let g:indent_guides_guide_size=1
+let g:indentLine_char = '|'
+let g:indentLine_setColors = 0
+highlight Conceal ctermbg=None ctermfg=0
 
 " Nerd Tree
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree"
@@ -91,6 +90,9 @@ let g:airline_symbols.paste = 'Þ'
 let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
 
+" delete while in insert mode
+set backspace=indent,eol,start
+
 " mappings (aliases)
 " for line insertion in normal mode
 map <Enter> o<ESC>
@@ -116,13 +118,14 @@ nnoremap <C-K><C-Left> <C-W><S-R>
 
 " PEP8
 au BufNewFile,BufRead *.py
-    \ set tabstop=4
-    \ set softtabstop=4
-    \ set shiftwidth=4
-    \ set textwidth=79
-    \ set expandtab
-    \ set autoindent
-    \ set fileformat=unix
+  \ set tabstop=4
+" \ set softtabstop=4
+  \ set shiftwidth=4
+  \ set textwidth=79
+  \ set expandtab
+  \ set autoindent
+  \ set fileformat=unix
+
 
 set encoding=utf-8
 
