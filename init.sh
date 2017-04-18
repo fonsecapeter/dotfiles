@@ -19,10 +19,10 @@ sudo add-apt-repository -y ppa:snwh/pulp
 sudo add-apt-repository -y universe
 sudo apt update
 sudo apt install -y git make tree vim fontforge inkscape
-if [ ! -f /usr/local/bin/fontforge ]; then
+if [ ! -d /usr/local/bin/fontforge ]; then
     ln -s /usr/bin/fontforge /usr/local/bin/fontforge
 fi
-if [ ! -f /usr/local/bin/git ]; then
+if [ ! -d /usr/local/bin/git ]; then
     ln -s /usr/bin/git /usr/local/bin/git
 fi
 echo $blue
@@ -45,6 +45,15 @@ fi
 if [! -d ~/.gitconfig ]; then
     ln -s dotfiles/gitconfig ~/.gitconfig
 fi
+if [ ! -d ~/.local/share/konsole ]; then
+    mkdir ~/.local/share/konsole
+fi
+if [ ! -d ~/.local/share/konsole/PeterFall.colorscheme ]; then
+    ln -s ~/dotfiles/PeterFall.colorscheme ~/.local/share/konsole/PeterFall.colorscheme
+fi
+if [ ! -d ~/.local/share/konsole/PeterFall.profile ]; then
+    ln -s ~/dotfiles/PeterFall.profile ~/.local/share/konsole/PeterFall.profile
+fi
 echo $blue
 echo
 echo '---> Setting up vim'
@@ -58,7 +67,7 @@ echo
 echo '---> Setting up ui'
 echo
 echo $reset
-sudo apt install -y arc-kde papirus-icon-theme paper-icon-theme
+sudo apt install -y arc-kde kvantum papirus-icon-theme paper-icon-theme
 if [ ! -d ~/Projects]; then
     mkdir ~/Projects
 fi
