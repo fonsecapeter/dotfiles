@@ -68,6 +68,7 @@ let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
 
 " air-line
+set noshowmode
 let g:airline_theme='base16_ashes'
 
 if !exists('g:airline_symbols')
@@ -76,19 +77,34 @@ endif
 let g:airline_symbols.space = "\u2002"
 
 " unicode symbols
-let g:airline_left_sep = ''
 " let g:airline_left_sep = '▶'
-let g:airline_right_sep = ''
+let g:airline_left_sep = ''
 " let g:airline_right_sep = '◀'
-let g:airline_symbols.linenr = '␊'
-let g:airline_symbols.linenr = '␤'
+let g:airline_right_sep = ''
+" let g:airline_symbols.linenr = '␊'
+" let g:airline_symbols.linenr = '␤'
 " let g:airline_symbols.linenr = '¶'
 let g:airline_symbols.linenr = ''
-let g:airline_symbols.branch = '⎇'
-let g:airline_symbols.paste = 'ρ'
-let g:airline_symbols.paste = 'Þ'
-let g:airline_symbols.paste = '∥'
+" let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.branch = ''
+" let g:airline_symbols.paste = 'ρ'
+" let g:airline_symbols.paste = 'Þ'
+" let g:airline_symbols.paste = '∥'
+let g:airline_symbols.paste = ''
 let g:airline_symbols.whitespace = 'Ξ'
+let g:airline_symbols.readonly = 'RO'
+
+" https://github.com/vim-airline/blob/master/doc/airline.txt
+" ignore git hunks & branch
+let g:airline_section_b = ''
+" ignore tagbar, filetype, virtualenv
+let g:airline_section_x = ''
+" ignore fileemcoding, fileformat
+let g:airline_section_y = ''
+" simplify line no/col
+" let g:airline_section_z = '%l/%L:%c %3p%%'
+let g:airline_section_z = '%l/%L:%c'
+" ------------------------------------------
 
 " delete while in insert mode
 set backspace=indent,eol,start
