@@ -67,6 +67,12 @@ echo
 echo '---> Setting up ui'
 echo
 echo $reset
+# or forget about ppa and install with
+# wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/arc-kde/master/install-arc-kde-home.sh | sh
+# or
+# wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/arc-kde/master/install-arc-kde-root.sh | sh
+# and remove with
+# wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/arc-kde/master/remove-arc-kde.sh | sh
 sudo apt install -y arc-kde kvantum papirus-icon-theme paper-icon-theme
 if [ ! -d ~/Projects]; then
     mkdir ~/Projects
