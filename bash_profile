@@ -62,6 +62,7 @@ alias stampunwatch='export PS1=${PS1#"\D{%I:%M %p}\n"}'
 # for work 
 colorized_git_last() {
   git last \
+      | sed "s/^commit[[:space:]].*/$orange&$reset/" \
       | sed "s/^[[:space:]].*/$blue&$reset/" \
       | sed "s/^M[[:space:]].*/$orange&$reset/" \
       | sed "s/^A[[:space:]].*/$green&$reset/" \
