@@ -28,7 +28,7 @@ syntax on
 set number
 set relativenumber
 let g:python_highlight_all = 1
-autocmd BufNewFile,BufReadPost *.dtml set syntax=html
+autocmd BufNewFile,BufReadPost *.dtml, *.lxml set syntax=html
 autocmd BufNewFile,BufReadPost *.json set syntax=javascript
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 autocmd BufNewFile,BufReadPost *.txt set filetype=yaml
