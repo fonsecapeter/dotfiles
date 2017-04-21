@@ -100,7 +100,7 @@ alias gl=colorized_git_last
 # added for jarvs-classic
 alias jarvs-classic="cd /Users/pfonseca/Personal/jarvs-classic; make start"
 
-notes_dir="${HOME}/Google Drive/Notes"
+notes_dir="${HOME}/GoogleDrive/Notes"
 start_notes() {
   echo -n -e "\033]0;Notes\007"
   cur_dir="${PWD}"
