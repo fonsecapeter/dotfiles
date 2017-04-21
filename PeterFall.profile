@@ -11,6 +11,8 @@ UseCustomCursorColor=true
 [General]
 Name=PeterFall
 Parent=FALLBACK/
+TerminalColumns=112
+TerminalRows=28
 
 [Interaction Options]
 TrimTrailingSpacesInSelectedText=true

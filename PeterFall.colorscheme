@@ -2,7 +2,7 @@
 Color=54,60,72
 
 [BackgroundFaint]
-Color=0,0,0
+Color=65,57,69
 
 [BackgroundIntense]
 Color=65,57,69
@@ -11,7 +11,7 @@ Color=65,57,69
 Color=71,78,91
 
 [Color0Faint]
-Color=24,24,24
+Color=97,97,104
 
 [Color0Intense]
 Color=97,97,104
@@ -20,7 +20,7 @@ Color=97,97,104
 Color=207,116,116
 
 [Color1Faint]
-Color=101,0,0
+Color=212,94,94
 
 [Color1Intense]
 Color=212,94,94
@@ -29,7 +29,7 @@ Color=212,94,94
 Color=52,160,124
 
 [Color2Faint]
-Color=0,101,0
+Color=78,140,78
 
 [Color2Intense]
 Color=78,140,78
@@ -38,7 +38,7 @@ Color=78,140,78
 Color=241,156,107
 
 [Color3Faint]
-Color=101,94,0
+Color=194,98,45
 
 [Color3Intense]
 Color=194,98,45
@@ -47,7 +47,7 @@ Color=194,98,45
 Color=154,187,228
 
 [Color4Faint]
-Color=0,0,101
+Color=112,145,196
 
 [Color4Intense]
 Color=112,145,196
@@ -56,7 +56,7 @@ Color=112,145,196
 Color=164,122,44
 
 [Color5Faint]
-Color=101,0,101
+Color=135,120,91
 
 [Color5Intense]
 Color=135,120,91
@@ -65,7 +65,7 @@ Color=135,120,91
 Color=143,196,199
 
 [Color6Faint]
-Color=0,101,101
+Color=139,218,189
 
 [Color6Intense]
 Color=139,218,189
@@ -74,7 +74,7 @@ Color=139,218,189
 Color=170,170,170
 
 [Color7Faint]
-Color=101,101,101
+Color=206,207,195
 
 [Color7Intense]
 Color=206,207,195
@@ -83,10 +83,10 @@ Color=206,207,195
 Color=210,200,167
 
 [ForegroundFaint]
-Color=101,101,101
+Color=210,200,167
 
 [ForegroundIntense]
-Color=255,255,255
+Color=210,200,167
 
 [General]
 Description=PeterFall
