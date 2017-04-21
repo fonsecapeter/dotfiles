@@ -11,7 +11,7 @@ alias reset="tput sgr0"
 
 PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
-# test -e ~/.dircolors && \ 
+# test -e ~/.dircolors && \
 eval `dircolors -b ~/.dircolors`
 
 # Git prompt
@@ -59,14 +59,17 @@ function trash() { mv "${@}" ~/.Trash; }
 alias stamp='orange && date +"%r" && reset && $@'
 alias stampwatch='export PS1="\D{%I:%M %p}\n${PS1}"'
 alias stampunwatch='export PS1=${PS1#"\D{%I:%M %p}\n"}'
-# for work 
+# for work
 colorized_git_last() {
   git last \
       | sed "s/^commit[[:space:]].*/$orange&$reset/" \
-      | sed "s/^[[:space:]].*/$blue&$reset/" \
+      | sed "5s/^[[:space:]].*/$green&$reset/" \
       | sed "s/^M[[:space:]].*/$orange&$reset/" \
       | sed "s/^A[[:space:]].*/$green&$reset/" \
       | sed "s/^D[[:space:]].*/$red&$reset/"
+
+      # | cat | tr '\n' '\f' | sed -e "s/a^Author:\f\f[[:space:]].*/$(tput setaf 2)&$(tput sgr0)/" | tr '\f' '\n'
+      # | cat | tr '\n' '\f' | sed -e "s/a^Author:\f\f[[:space:]].*/$green&$reset/"  \
 }
 alias gl=colorized_git_last
 
