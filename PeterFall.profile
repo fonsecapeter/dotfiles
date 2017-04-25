@@ -1,4 +1,5 @@
 [Appearance]
+BoldIntense=true
 ColorScheme=PeterVintage
 Font=Peter Mono Cozy,14,-1,0,50,0,0,0,0,0
 LineSpacing=5
@@ -18,6 +19,7 @@ TerminalRows=28
 TrimTrailingSpacesInSelectedText=true
 
 [Scrolling]
+HistoryMode=2
 HistorySize=400
 ScrollBarPosition=2
 

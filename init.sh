@@ -62,6 +62,8 @@ echo $reset
 if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
     sudo git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 fi
+sudo vim -c 'PluginInstall' -c 'qa!'
+sudo cp ~/dotfiles/peter_fall_airline_theme.vim ~/.vim/bundle/vim-airline/autoload/airline/themes/peter_fall.vim
 echo $blue
 echo
 echo '---> Setting up ui'
@@ -94,7 +96,6 @@ echo '==================================================='
 echo $blue
 echo 'Be sure to also:'
 echo '  - Open dotfiles/bashrc and follow directions'
-echo '  - Open .vimrc and :PluginInstall'
 echo '  - Go to https://www.thefanclub.co.za/overgrive'
 echo '    and install overGrive'
 echo '  - Change your themes'

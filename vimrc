@@ -9,7 +9,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'Yggdroot/indentLine'
 Plugin 'bling/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+" Plugin 'vim-airline/vim-airline-themes'
 Plugin 'hhsnopek/vim-firewatch'
 Plugin 'scrooloose/nerdtree'
 Plugin 'raimondi/delimitmate'
@@ -69,7 +69,8 @@ let g:multi_cursor_quit_key='<Esc>'
 
 " air-line
 set noshowmode
-let g:airline_theme='base16_ashes'
+" let g:airline_theme='base16_ashes'
+let g:airline_theme='peter_fall'
 
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
@@ -77,24 +78,15 @@ endif
 let g:airline_symbols.space = "\u2002"
 
 " unicode symbols
-" let g:airline_left_sep = '▶'
 let g:airline_left_sep = ''
-" let g:airline_right_sep = '◀'
 let g:airline_right_sep = ''
-" let g:airline_symbols.linenr = '␊'
-" let g:airline_symbols.linenr = '␤'
-" let g:airline_symbols.linenr = '¶'
 let g:airline_symbols.linenr = ''
-" let g:airline_symbols.branch = '⎇'
 let g:airline_symbols.branch = ''
-" let g:airline_symbols.paste = 'ρ'
-" let g:airline_symbols.paste = 'Þ'
-" let g:airline_symbols.paste = '∥'
 let g:airline_symbols.paste = ''
 let g:airline_symbols.whitespace = 'Ξ'
 let g:airline_symbols.readonly = 'RO'
 
-" https://github.com/vim-airline/blob/master/doc/airline.txt
+" :help airline > CUSTOMIZATION / ADVANCED CUSTOMIZATION
 " ignore git hunks & branch
 let g:airline_section_b = ''
 " ignore tagbar, filetype, virtualenv
