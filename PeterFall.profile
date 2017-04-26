@@ -19,7 +19,7 @@ TerminalRows=28
 TrimTrailingSpacesInSelectedText=true
 
 [Scrolling]
-HistoryMode=2
+HistoryMode=1
 HistorySize=400
 ScrollBarPosition=2
 
