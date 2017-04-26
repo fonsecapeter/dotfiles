@@ -26,14 +26,14 @@ let s:bright_blue = 12
 let s:orange = 3
 let s:green = 2
 
-let s:N1   = [ s:gui01, s:gui0B, s:dark_gray, s:bright_cyan ]
+let s:N1   = [ s:gui01, s:gui0B, s:dark_gray, s:green ]
 let s:COLORLESS   = [ s:gui05, s:gui01, s:mid_gray, s:dark_gray ]
 let g:airline#themes#peter_fall#palette.normal = airline#themes#generate_color_map(s:N1, s:COLORLESS, s:COLORLESS)
 
 let s:I1   = [ s:gui01, s:gui0D, s:dark_gray, s:orange ]
 let g:airline#themes#peter_fall#palette.insert = airline#themes#generate_color_map(s:I1, s:COLORLESS, s:COLORLESS)
 
-let s:R1   = [ s:gui01, s:gui08, s:dark_gray, s:green ]
+let s:R1   = [ s:gui01, s:gui08, s:dark_gray, s:bright_cyan ]
 let g:airline#themes#peter_fall#palette.replace = airline#themes#generate_color_map(s:R1, s:COLORLESS, s:COLORLESS)
 
 let s:V1   = [ s:gui01, s:gui0E, s:dark_gray, s:bright_blue ]
