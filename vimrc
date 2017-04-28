@@ -9,7 +9,6 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'Yggdroot/indentLine'
 Plugin 'bling/vim-airline'
-Plugin 'hhsnopek/vim-firewatch'
 Plugin 'scrooloose/nerdtree'
 Plugin 'raimondi/delimitmate'
 Plugin 'terryma/vim-multiple-cursors'
@@ -32,13 +31,15 @@ autocmd BufNewFile,BufReadPost *.json set syntax=javascript
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 autocmd BufNewFile,BufReadPost *.txt set filetype=yaml
 
-" colorscheme firewatch
+autocmd BufWritePre * :FixWhitespace
+
 colorscheme noctu
 
 " show status bar
 set laststatus=2
 
-" indenting
+" indent and indentLine
+" -----------------------------------------
 set et
 set ts=4
 set sw=4
@@ -46,7 +47,8 @@ let g:indentLine_char = '|'
 let g:indentLine_setColors = 0
 highlight Conceal ctermbg=None ctermfg=0
 
-" Nerd Tree
+" nerdtree
+" -----------------------------------------
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree"
 " toggle nerd tree
 map <C-\> :NERDTreeToggle<ESC>
@@ -59,14 +61,24 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 
+" ctrlp
+" -----------------------------------------
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 'rca'
 
-" multicursor
+" vim-multiple-cursors
+" -----------------------------------------
 let g:multi_cursor_next_key='<C-d>'
 let g:multi_cursor_prev_key='<S-d>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
 
-" air-line
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_aggregate_errors = 1
+
+" vim-airline
 " -----------------------------------------
 set noshowmode
 " let g:airline_theme='base16_ashes'
