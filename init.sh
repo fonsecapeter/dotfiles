@@ -18,7 +18,8 @@ sudo add-apt-repository -y ppa:papirus/papirus
 sudo add-apt-repository -y ppa:snwh/pulp
 sudo add-apt-repository -y universe
 sudo apt update
-sudo apt install -y git make tree vim fontforge inkscape
+sudo apt install -y git make tree vim fontforge inkscape python3-pip
+pip3 install hangups
 if [ ! -d /usr/local/bin/fontforge ]; then
     ln -s /usr/bin/fontforge /usr/local/bin/fontforge
 fi
