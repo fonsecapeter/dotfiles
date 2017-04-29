@@ -52,6 +52,9 @@ fi
 if [ ! -d ~/.local/share/konsole/PeterFall.colorscheme ]; then
     ln -s ~/dotfiles/PeterFall.colorscheme ~/.local/share/konsole/PeterFall.colorscheme
 fi
+if [ ! -d ~/.local/share/konsole/PeterClassic.colorscheme ]; then
+    ln -s ~/dotfiles/PeterClassic.colorscheme ~/.local/share/konsole/PeterClassic.colorscheme
+fi
 if [ ! -d ~/.local/share/konsole/PeterFall.profile ]; then
     ln -s ~/dotfiles/PeterFall.profile ~/.local/share/konsole/PeterFall.profile
 fi

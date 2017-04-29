@@ -1,6 +1,6 @@
 [Appearance]
 BoldIntense=true
-ColorScheme=PeterVintage
+ColorScheme=PeterClassic
 Font=Peter Mono Cozy,14,-1,0,50,0,0,0,0,0
 LineSpacing=5
 UseFontLineChararacters=false
