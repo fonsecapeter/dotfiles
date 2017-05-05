@@ -12,19 +12,23 @@ echo
 echo '---> Installing tools'
 echo
 echo $reset
+sudo add-apt-repository -y ppa:jonathonf/python-3.6
 sudo add-apt-repository -y ppa:jonathonf/vim
 sudo add-apt-repository -y ppa:papirus/arc-kde
 sudo add-apt-repository -y ppa:papirus/papirus
 sudo add-apt-repository -y ppa:snwh/pulp
 sudo add-apt-repository -y universe
 sudo apt update
-sudo apt install -y git make tree vim fontforge inkscape python3-pip virtualenv
+sudo apt install -y git make tree vim fontforge inkscape python3-pip python3.6 virtualenv
 pip3 install hangups
 if [ ! -d /usr/local/bin/fontforge ]; then
     ln -s /usr/bin/fontforge /usr/local/bin/fontforge
 fi
 if [ ! -d /usr/local/bin/git ]; then
     ln -s /usr/bin/git /usr/local/bin/git
+fi
+if [ ! -d /usr/local/bin/python3.6 ]; then
+    sudo ln -s /usr/bin/python3.6 /usr/local/bin/python3.6
 fi
 echo $blue
 echo
