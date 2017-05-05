@@ -137,5 +137,13 @@ alias notesearchopen="note_search_open"
 # black,     dark red,  dark green,  dark blue,  dark magenta,  dark cyan,  brown,  light gray
 alias chat="hangups --col-msg-self-fg 'light magenta' --col-msg-sender-fg 'dark gray' --col-msg-text-fg 'light cyan' --col-msg-date-fg 'yellow' --col-active-tab-fg 'dark gray'"
 
+
 # added for jarbs
-alias jarbs="cd /Users/pfonseca/Personal/jarbs; make start"
+start_jarbs() {
+  cur_dir="${PWD}"
+  cd /home/peter/Projects/jarbs
+  make start
+  cd "${cur_dir}"
+}
+alias jarbs=start_jarbs
+
