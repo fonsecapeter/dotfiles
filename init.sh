@@ -50,7 +50,7 @@ fi
 if [ ! -d ~/.inputrc ]; then
     ln -s ~/dotfiles/inputrc ~/.inputrc
 fi
-if [! -d ~/.gitconfig ]; then
+if [ ! -d ~/.gitconfig ]; then
     ln -s dotfiles/gitconfig ~/.gitconfig
 fi
 if [ ! -d ~/.local/share/konsole ]; then
@@ -84,7 +84,7 @@ echo $reset
 # and remove with
 # wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/arc-kde/master/remove-arc-kde.sh | sh
 sudo apt install -y arc-kde kvantum papirus-icon-theme paper-icon-theme
-if [ ! -d ~/Projects]; then
+if [ ! -d ~/Projects ]; then
     mkdir ~/Projects
 fi
 if [ ! -d ~/Projects/peter_mono ]; then
