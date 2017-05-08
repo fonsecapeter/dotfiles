@@ -137,6 +137,9 @@ alias notesearchopen="note_search_open"
 # black,     dark red,  dark green,  dark blue,  dark magenta,  dark cyan,  brown,  light gray
 alias chat="hangups --col-msg-self-fg 'light magenta' --col-msg-sender-fg 'dark gray' --col-msg-text-fg 'light cyan' --col-msg-date-fg 'yellow' --col-active-tab-fg 'dark gray'"
 
+# disk space usage
+alias disk_unsorted="sudo du -x -d1 -h $1"
+alias disk=disk_unsorted | sort -hr
 
 # added for jarbs
 start_jarbs() {

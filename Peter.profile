@@ -1,7 +1,7 @@
 [Appearance]
 BoldIntense=true
-ColorScheme=PeterClassic
-Font=Peter Mono Cozy,14,-1,0,50,0,0,0,0,0
+ColorScheme=Peter
+Font=Peter Mono Cozy,11,-1,0,50,0,0,0,0,0
 LineSpacing=5
 UseFontLineChararacters=false
 
@@ -10,7 +10,7 @@ CustomCursorColor=20,109,87
 UseCustomCursorColor=true
 
 [General]
-Name=PeterFall
+Name=Peter
 Parent=FALLBACK/
 TerminalColumns=112
 TerminalRows=28

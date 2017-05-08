@@ -1,94 +1,94 @@
 [Background]
-Color=61,69,87
+Color=81,92,110
 
 [BackgroundFaint]
-Color=61,69,87
+Color=81,92,110
 
 [BackgroundIntense]
-Color=61,69,87
+Color=81,92,110
 
 [Color0]
-Color=71,81,103
+Color=92,104,126
 
 [Color0Faint]
-Color=98,110,132
+Color=92,104,126
 
 [Color0Intense]
-Color=98,110,132
+Color=123,139,169
 
 [Color1]
-Color=181,96,86
+Color=219,106,125
 
 [Color1Faint]
-Color=236,120,126
+Color=167,82,81
 
 [Color1Intense]
-Color=236,120,126
+Color=255,132,132
 
 [Color2]
-Color=55,147,139
+Color=112,210,179
 
 [Color2Faint]
-Color=56,130,70
+Color=96,180,156
 
 [Color2Intense]
-Color=56,130,70
+Color=84,209,147
 
 [Color3]
-Color=253,148,66
+Color=255,168,118
 
 [Color3Faint]
-Color=205,105,70
+Color=242,161,112
 
 [Color3Intense]
-Color=205,105,70
+Color=244,121,99
 
 [Color4]
-Color=104,220,220
+Color=142,193,211
 
 [Color4Faint]
-Color=99,163,235
+Color=127,186,191
 
 [Color4Intense]
-Color=99,163,235
+Color=121,177,232
 
 [Color5]
-Color=194,131,170
+Color=238,187,238
 
 [Color5Faint]
-Color=204,104,184
+Color=188,147,188
 
 [Color5Intense]
-Color=204,104,184
+Color=201,144,204
 
 [Color6]
-Color=83,164,179
+Color=105,161,143
 
 [Color6Faint]
-Color=152,220,168
+Color=92,141,125
 
 [Color6Intense]
-Color=152,220,168
+Color=151,210,190
 
 [Color7]
-Color=170,166,153
+Color=175,193,201
 
 [Color7Faint]
-Color=206,207,195
+Color=130,144,151
 
 [Color7Intense]
-Color=200,196,181
+Color=201,214,218
 
 [Foreground]
-Color=210,200,167
+Color=255,241,203
 
 [ForegroundFaint]
-Color=210,200,167
+Color=244,230,194
 
 [ForegroundIntense]
-Color=210,200,167
+Color=244,230,194
 
 [General]
-Description=PeterAlt
+Description=Peter
 Opacity=1
 Wallpaper=
