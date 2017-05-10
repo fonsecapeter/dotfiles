@@ -75,7 +75,8 @@ let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
 
 let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 1
 let g:syntastic_aggregate_errors = 1
 
 " vim-airline
