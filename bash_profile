@@ -30,7 +30,7 @@ export LSCOLORS="cxBxhxDxgxhxhxhxhxfxfx"
 alias gs="git status"
 
 # ensure brew git
-alias git=/usr/local/bin/git
+# alias git=/usr/local/bin/git
 
 # for colorized ls on mac
 alias ls='gls --color=always --ignore=*.pyc --ignore=__pycache__'
