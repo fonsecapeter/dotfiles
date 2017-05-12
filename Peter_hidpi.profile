@@ -6,7 +6,7 @@ LineSpacing=5
 UseFontLineChararacters=false
 
 [Cursor Options]
-CustomCursorColor=20,109,87
+CustomCursorColor=77,144,123
 UseCustomCursorColor=true
 
 [General]
