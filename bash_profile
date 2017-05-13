@@ -144,7 +144,7 @@ alias disk=disk_unsorted | sort -hr
 # added for jarbs
 start_jarbs() {
   cur_dir="${PWD}"
-  cd ~/jarbs
+  cd ~/Projects/jarbs
   make start
   cd "${cur_dir}"
 }
