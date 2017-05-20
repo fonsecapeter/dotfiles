@@ -2,30 +2,43 @@ set nocompatible
 filetype off
 
 " Vundle
+" -----------------------------------------
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'Yggdroot/indentLine'
-Plugin 'bling/vim-airline'
-Plugin 'scrooloose/nerdtree'
-Plugin 'raimondi/delimitmate'
-Plugin 'terryma/vim-multiple-cursors'
+
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'noahfrederick/vim-noctu'
-Plugin 'avakhov/vim-yaml'
+Plugin 'raimondi/delimitmate'
+Plugin 'junegunn/goyo.vim'
+Plugin 'Yggdroot/indentLine'
+Plugin 'junegunn/limelight.vim'
+Plugin 'scrooloose/nerdtree'
 Plugin 'kh3phr3n/python-syntax'
-Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'scrooloose/syntastic'
+Plugin 'bling/vim-airline'
 Plugin 'nvie/vim-flake8'
+Plugin 'rhysd/vim-gfm-syntax'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'shime/vim-livedown'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'noahfrederick/vim-noctu'
+Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'avakhov/vim-yaml'
 
 call vundle#end()
+" -----------------------------------------
 
+" base config
+" -----------------------------------------
 syntax on
 set number
 set relativenumber
-let g:python_highlight_all = 1
+" show status bar
+set laststatus=2
+set encoding=utf-8
+colorscheme noctu
+
 autocmd BufNewFile,BufReadPost *.dtml, *.lxml set syntax=html
 autocmd BufNewFile,BufReadPost *.json set syntax=javascript
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
@@ -33,22 +46,41 @@ autocmd BufNewFile,BufReadPost *.txt set filetype=yaml
 
 autocmd BufWritePre * :FixWhitespace
 
-colorscheme noctu
+" delete while in insert mode
+set backspace=indent,eol,start
+" -----------------------------------------
 
-" show status bar
-set laststatus=2
+" ctrlp
+" -----------------------------------------
+" fuzzy file finder
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 'rca'
+" -----------------------------------------
+
+" goyo.vim + limelight.vim
+" -----------------------------------------
+" immersive periferal hiding (with auto limelight)
+" :Goyo
+let g:limelight_conceal_ctermfg = 8
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
+" -----------------------------------------
 
 " indent and indentLine
 " -----------------------------------------
+" default intent settings and indentline guides
 set et
 set ts=4
 set sw=4
 let g:indentLine_char = '|'
 let g:indentLine_setColors = 0
 highlight Conceal ctermbg=None ctermfg=0
+" -----------------------------------------
 
 " nerdtree
 " -----------------------------------------
+" file tree
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree"
 " toggle nerd tree
 map <C-\> :NERDTreeToggle<ESC>
@@ -60,29 +92,26 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " auto open if dir
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
-
-" ctrlp
 " -----------------------------------------
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_working_path_mode = 'rca'
 
-" vim-multiple-cursors
+" python-syntax
 " -----------------------------------------
-let g:multi_cursor_next_key='<C-d>'
-let g:multi_cursor_prev_key='<S-d>'
-let g:multi_cursor_skip_key='<C-x>'
-let g:multi_cursor_quit_key='<Esc>'
+let python_highlight_all=1
+" -----------------------------------------
 
+" syntastic
+" -----------------------------------------
+" check linters/syntax
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 1
 let g:syntastic_aggregate_errors = 1
+" -----------------------------------------
 
 " vim-airline
 " -----------------------------------------
+" bar at bottom (with my highly lightened customiation)
 set noshowmode
-" let g:airline_theme='base16_ashes'
 let g:airline_theme='peter_fall'
 let g:airline_symbols_ascii = 1
 
@@ -132,10 +161,37 @@ endfunction
 let g:airline_section_a = '%{MyMode()}'
 " ------------------------------------------
 
-" delete while in insert mode
-set backspace=indent,eol,start
+" vim-flake8
+" -----------------------------------------
+" pep8 settings
+au BufNewFile,BufRead *.py
+  \ set tabstop=4
+" \ set softtabstop=4
+  \ set shiftwidth=4
+  \ set textwidth=79
+  \ set expandtab
+  \ set autoindent
+  \ set fileformat=unix
+" -----------------------------------------
+
+" vim-livedown
+" -----------------------------------------
+" live markdown preview
+" requires `npm install -g livedown`
+" :LivedownToggle
+" -----------------------------------------
+
+" vim-multiple-cursors
+" -----------------------------------------
+" bart simpson mode
+let g:multi_cursor_next_key='<C-d>'
+let g:multi_cursor_prev_key='<S-d>'
+let g:multi_cursor_skip_key='<C-x>'
+let g:multi_cursor_quit_key='<Esc>'
+" -----------------------------------------
 
 " mappings (aliases)
+" -----------------------------------------
 " for line insertion in normal mode
 map <Enter> o<ESC>
 map <S-Enter> O<ESC>
@@ -157,19 +213,5 @@ nnoremap <C-K><S-Left> <C-W><S-H>
 " supposed to rotation but not working
 nnoremap <C-K><C-Right> <C-W><R>
 nnoremap <C-K><C-Left> <C-W><S-R>
-
-" PEP8
-au BufNewFile,BufRead *.py
-  \ set tabstop=4
-" \ set softtabstop=4
-  \ set shiftwidth=4
-  \ set textwidth=79
-  \ set expandtab
-  \ set autoindent
-  \ set fileformat=unix
-
-
-set encoding=utf-8
-
-let python_highlight_all=1
+" -----------------------------------------
 
