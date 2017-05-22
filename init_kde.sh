@@ -97,8 +97,8 @@ if [ ! -d ~/Projects/peter_mono ]; then
     sudo git clone https://github.com/fonsecapeter/peter_mono ~/Projects/peter_mono
     sudo chown -R peter ~/Projects/peter_mono
     cd ~/Projects/peter_mono
-    sudo git checkout ubuntu
-    sudo git pull origin ubuntu
+    sudo git checkout extras
+    sudo git pull origin extras
     make init
     make build
     make install

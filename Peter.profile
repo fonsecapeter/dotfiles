@@ -2,8 +2,8 @@
 BoldIntense=true
 ColorScheme=Peter
 Font=Peter Mono Cozy,11,-1,0,50,0,0,0,0,0
-LineSpacing=5
-UseFontLineChararacters=false
+LineSpacing=2
+UseFontLineChararacters=true
 
 [Cursor Options]
 CustomCursorColor=77,144,123
