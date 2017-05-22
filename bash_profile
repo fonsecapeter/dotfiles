@@ -139,7 +139,13 @@ alias chat="hangups --col-msg-self-fg 'light magenta' --col-msg-sender-fg 'dark 
 
 # disk space usage
 alias disk_unsorted="sudo du -x -d1 -h $1"
-alias disk=disk_unsorted | sort -hr
+alias disk="disk_unsorted | sort -hr"
+
+chmine () {
+  sudo chown $USER "${@}"
+  sudo chgrp $(id -g -n $USER) "${@}"
+  sudo chmod 664 "${@}"
+}
 
 # added for jarbs
 start_jarbs() {
