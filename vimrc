@@ -179,6 +179,7 @@ au BufNewFile,BufRead *.py
 " live markdown preview
 " requires `npm install -g livedown`
 " :LivedownToggle
+let g:livedown_browser = "firefox"
 " -----------------------------------------
 
 " vim-multiple-cursors
