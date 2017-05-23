@@ -1,43 +1,43 @@
 blue=$(tput setaf 4)
-green=$(tput setaf 2)
+purple=$(tput setaf 5)
+orange=$(tput setaf 3)
 reset=$(tput sgr0)
 cur_dir=$PWD
 
-echo $green
+echo $orange
 echo
 echo '  ------------- Fresh Install Automated -------------'
 echo
 echo $blue
 echo
-echo '---> Installing tools'
+echo "  --->${purple} Installing tools"
 echo
 echo $reset
-sudo add-apt-repository -y ppa:jonathonf/python-3.6
-sudo add-apt-repository -y ppa:jonathonf/vim
-sudo add-apt-repository -y ppa:papirus/arc-kde
-sudo add-apt-repository -y ppa:papirus/papirus
-sudo add-apt-repository -y ppa:snwh/pulp
-sudo add-apt-repository -y universe
+sudo add-apt-repository ppa:jonathonf/python-3.6
+sudo add-apt-repository ppa:jonathonf/vim
+sudo add-apt-repository ppa:papirus/arc-kde
+sudo add-apt-repository ppa:papirus/papirus
+sudo add-apt-repository ppa:snwh/pulp
+sudo add-apt-repository universe
 sudo apt update
-sudo apt install -y git make tree vim fontforge inkscape python3-pip python3.6 virtualenv xclip
+sudo apt install -y git make tree vim fontforge inkscape gimp python3-pip python3.6 virtualenv xclip sqlite3 screenfetch wget curl fortune cowsay boxes
 pip3 install hangups
-# if [ ! -d /usr/local/bin/fontforge ]; then
-#     ln -s /usr/bin/fontforge /usr/local/bin/fontforge
-# fi
-# if [ ! -d /usr/local/bin/git ]; then
-#     ln -s /usr/bin/git /usr/local/bin/git
-# fi
-# if [ ! -d /usr/local/bin/python3.6 ]; then
-#     sudo ln -s /usr/bin/python3.6 /usr/local/bin/python3.6
-# fi
 
 echo $blue
 echo
-echo '---> Setting up dotfiles'
+echo "  --->${purple} Setting up dotfiles"
 echo
 echo $reset
 if [ ! -d ~/dotfiles ]; then
     sudo git clone https://www.github.com/fonsecapeter/dotfiles ~/dotfiles
+    sudo chown -R $USER ~/dotfiles
+    sudo chgrp -R $(id -g -n $USER) ~/dotfiles
+else
+    echo $orange
+    echo
+    echo "       Dotfiles already installed!"
+    echo
+    echo $reset
 fi
 if [ ! -d ~/.bash_profile ]; then
     ln -s dotfiles/bash_profile ~/.bash_profile
@@ -69,7 +69,7 @@ fi
 
 echo $blue
 echo
-echo '---> Setting up vim'
+echo "  --->${purple} Setting up vim"
 echo
 echo $reset
 if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
@@ -80,7 +80,7 @@ sudo cp ~/dotfiles/peter_fall_airline_theme.vim ~/.vim/bundle/vim-airline/autolo
 
 echo $blue
 echo
-echo '---> Setting up ui'
+echo "  --->${purple} Installing ui extensions"
 echo
 echo $reset
 # or forget about ppa and install with
@@ -95,7 +95,8 @@ if [ ! -d ~/Projects ]; then
 fi
 if [ ! -d ~/Projects/peter_mono ]; then
     sudo git clone https://github.com/fonsecapeter/peter_mono ~/Projects/peter_mono
-    sudo chown -R peter ~/Projects/peter_mono
+    sudo chown -R $USER ~/Projects/peter_mono
+    sudo chgrp -R $(id -g -n $USER) ~/Projects/peter_mono
     cd ~/Projects/peter_mono
     sudo git checkout extras
     sudo git pull origin extras
@@ -103,9 +104,36 @@ if [ ! -d ~/Projects/peter_mono ]; then
     make build
     make install
     cd $cur_dir
+else
+    echo $orange
+    echo
+    echo "       Peter Mono already installed!"
+    echo
+    echo $reset
 fi
 
-echo $green
+echo $blue
+echo
+echo "  --->${purple} Installing jarbs"
+echo
+echo $reset
+if [ ! -d ~/Projects/jarbs ]; then
+    sudo git clone https://github.com/fonsecapeter/jarbs ~/Projects/jarbs
+    sudo chown -R $USER ~/Projects/jarbs
+    sudo chgrp -R $(id -g -n $USER) ~/Projects/jarbs
+    cd ~/Projects/jarbs
+    make
+    cd $cur_dir
+else
+    echo $orange
+    echo
+    echo "       Jarbs already installed!"
+    echo
+    echo $reset
+
+fi
+
+echo $orange
 echo
 echo '  -------------------- Finished ---------------------'
 echo
@@ -117,4 +145,4 @@ echo '        and install overGrive'
 echo '      - Change your themes'
 echo
 echo $reset
-
+screenfetch
