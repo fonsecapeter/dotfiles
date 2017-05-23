@@ -1,3 +1,8 @@
+if type archey >/dev/null 2>&1; then
+    archey
+else
+    screenfetch
+fi
 red=$(tput setaf 1)
 alias red="tput setaf 1"
 green=$(tput setaf 2)
