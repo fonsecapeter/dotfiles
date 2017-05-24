@@ -8,6 +8,7 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 
+Plugin 'mechatroner/rainbow_csv'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'raimondi/delimitmate'
 Plugin 'junegunn/goyo.vim'
