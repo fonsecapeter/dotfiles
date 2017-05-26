@@ -40,15 +40,29 @@ set laststatus=2
 set encoding=utf-8
 colorscheme noctu
 
-autocmd BufNewFile,BufReadPost *.dtml, *.lxml set syntax=html
+" autocmd BufNewFile,BufReadPost *.dtml, *.lxml set syntax=html
+autocmd BufNewFile,BufReadPost *.html, *.dtml, *.lxml set filetype=htmldjango
+autocmd BufNewFile,BufReadPost *.html, *.dtml, *.lxml set syntax=htmldjango
 autocmd BufNewFile,BufReadPost *.json set syntax=javascript
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 autocmd BufNewFile,BufReadPost *.txt set filetype=yaml
+" autocmd BufNewFile,BufReadPost *.txt set filetype=markdown
 
 autocmd BufWritePre * :FixWhitespace
 
 " delete while in insert mode
 set backspace=indent,eol,start
+" -----------------------------------------
+
+" rainbow_csv
+" -----------------------------------------
+let g:rcsv_colorpairs = [
+    \ ['yellow',   'darkyellow'],
+    \ ['magenta',     'darkmagenta'],
+    \ ['blue',    'darkblue'],
+    \ ['green', 'darkgreen'],
+    \ ['NONE',        'NONE'],
+    \ ]
 " -----------------------------------------
 
 " ctrlp
