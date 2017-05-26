@@ -153,11 +153,5 @@ chmine () {
 }
 
 # added for jarbs
-start_jarbs() {
-  cur_dir="${PWD}"
-  cd ~/Projects/jarbs
-  make start
-  cd "${cur_dir}"
-}
-alias jarbs=start_jarbs
+alias jarbs='~/Projects/jarbs/scripts/start.sh'
 
