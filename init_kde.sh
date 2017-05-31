@@ -19,8 +19,12 @@ sudo add-apt-repository ppa:papirus/arc-kde
 sudo add-apt-repository ppa:papirus/papirus
 sudo add-apt-repository ppa:snwh/pulp
 sudo add-apt-repository universe
+# neofetch
+echo "deb http://dl.bintray.com/dawidd6/neofetch jessie main" | sudo tee -a /etc/apt/sources.list
+curl -L "https://bintray.com/user/downloadSubjectPublicKey?username=bintray" -o Release-neofetch.key && sudo apt-key add Release-neofetch.key && rm Release-neofetch.key
+
 sudo apt update
-sudo apt install -y git make tree vim fontforge inkscape gimp python3-pip python3.6 virtualenv xclip sqlite3 screenfetch wget curl fortune cowsay boxes
+sudo apt install -y git make tree vim fontforge inkscape gimp python3-pip python3.6 virtualenv xclip sqlite3 screenfetch wget curl fortune cowsay boxes neofetch
 pip3 install hangups
 
 echo $blue

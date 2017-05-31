@@ -26,6 +26,7 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'noahfrederick/vim-noctu'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'avakhov/vim-yaml'
+Plugin 'uguu-org/vim-matrix-screensaver'
 
 call vundle#end()
 " -----------------------------------------

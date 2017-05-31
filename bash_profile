@@ -1,6 +1,10 @@
 if type archey >/dev/null 2>&1; then
     archey
+elif type neofetch >/dev/null 2>&1; then
+    echo
+    neofetch
 else
+    echo
     screenfetch
 fi
 red=$(tput setaf 1)
