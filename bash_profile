@@ -1,8 +1,6 @@
-if type archey >/dev/null 2>&1; then
-    archey
-elif type neofetch >/dev/null 2>&1; then
+if type neofetch >/dev/null 2>&1; then
     echo
-    neofetch
+    neofetch --ascii "$HOME/dotfiles/tux.txt"
 else
     echo
     screenfetch

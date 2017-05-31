@@ -70,6 +70,9 @@ fi
 if [ ! -d ~/.local/share/konsole/Peter_hidpi.profile ]; then
     ln -s ~/dotfiles/Peter_hidpi.profile ~/.local/share/konsole/Peter_hidpi.profile
 fi
+if [ ! -d ~/.config/neofetch/config ]; then
+    ln -s ~/dotfiles/neofetch_config ~/.config/neofetch/config
+fi
 
 echo $blue
 echo
