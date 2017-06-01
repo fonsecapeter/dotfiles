@@ -24,7 +24,7 @@ echo "deb http://dl.bintray.com/dawidd6/neofetch jessie main" | sudo tee -a /etc
 curl -L "https://bintray.com/user/downloadSubjectPublicKey?username=bintray" -o Release-neofetch.key && sudo apt-key add Release-neofetch.key && rm Release-neofetch.key
 
 sudo apt update
-sudo apt install -y git make tree vim fontforge inkscape gimp python3-pip python3.6 virtualenv xclip sqlite3 screenfetch wget curl fortune cowsay boxes neofetch
+sudo apt install -y git make tree vim fontforge inkscape gimp python3-pip python3.6 virtualenv xclip sqlite3 screenfetch wget curl fortune cowsay boxes neofetch cmatrix
 pip3 install hangups
 
 echo $blue

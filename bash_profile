@@ -157,6 +157,8 @@ chmine () {
   sudo chmod 664 "${@}"
 }
 
+alias matrix="cmatrix -b"
+
 # added for jarbs
 alias jarbs='~/Projects/jarbs/scripts/start.sh'
 

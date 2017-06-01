@@ -1,1 +1,1 @@
-brew install neofetch
+brew install neofetch cmatrix
