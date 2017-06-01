@@ -568,7 +568,7 @@ background_color=
 # Default: 'distro'
 # Values:  'distro', '/path/to/ascii_file'
 # Flag:    --ascii
-ascii=$HOME/dotfiles/tux.txt
+ascii="distro"
 
 # Ascii distro
 # Which distro's ascii art to display.

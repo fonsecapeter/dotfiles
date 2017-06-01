@@ -1,10 +1,13 @@
-if type neofetch >/dev/null 2>&1; then
-    echo
-    neofetch --ascii "$HOME/dotfiles/tux.txt"
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    ascii_colors="2 3 1 5 4"
+    ascii_file="${HOME}/dotfiles/apple.txt"
 else
-    echo
-    screenfetch
+    ascii_colors="15 8 9"
+    ascii_file="${HOME}/dotfiles/tux.txt"
 fi
+echo
+neofetch --ascii "${ascii_file}" --ascii_colors "${ascii_colors}"
+
 red=$(tput setaf 1)
 alias red="tput setaf 1"
 green=$(tput setaf 2)
