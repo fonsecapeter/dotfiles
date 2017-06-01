@@ -152,9 +152,19 @@ alias disk_unsorted="sudo du -x -d1 -h $1"
 alias disk="disk_unsorted | sort -hr"
 
 chmine () {
-  sudo chown $USER "${@}"
-  sudo chgrp $(id -g -n $USER) "${@}"
-  sudo chmod 664 "${@}"
+    sudo chown $USER "${@}"
+    sudo chgrp $(id -g -n $USER) "${@}"
+}
+
+chmine-R () {
+    sudo chown -R $USER "${@}"
+    sudo chgrp -R $(id -g -n $USER) "${@}"
+
+}
+
+chmine-rw () {
+    chmine "${@}"
+    sudo chmod 664 "${@}"
 }
 
 function django_secret() { python -c "import string,random; uni=string.ascii_letters+string.digits+string.punctuation; print repr(''.join([random.SystemRandom().choice(uni) for i in range(random.randint(45,50))]))" ;}
