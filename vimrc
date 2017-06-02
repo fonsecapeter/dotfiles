@@ -8,7 +8,6 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'mechatroner/rainbow_csv'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'raimondi/delimitmate'
 Plugin 'junegunn/goyo.vim'
@@ -16,6 +15,7 @@ Plugin 'Yggdroot/indentLine'
 Plugin 'junegunn/limelight.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'kh3phr3n/python-syntax'
+Plugin 'mechatroner/rainbow_csv'
 Plugin 'scrooloose/syntastic'
 Plugin 'bling/vim-airline'
 Plugin 'nvie/vim-flake8'
@@ -47,22 +47,12 @@ autocmd BufNewFile,BufReadPost *.json set syntax=javascript
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 autocmd BufNewFile,BufReadPost *.txt set filetype=yaml
 " autocmd BufNewFile,BufReadPost *.txt set filetype=markdown
+autocmd BufNewFile,BufReadPost,FilterReadPost,FileReadPost *.{txt,md,y*ml,cfg,ini} :Goyo 120
 
 autocmd BufWritePre * :FixWhitespace
 
 " delete while in insert mode
 set backspace=indent,eol,start
-" -----------------------------------------
-
-" rainbow_csv
-" -----------------------------------------
-let g:rcsv_colorpairs = [
-    \ ['yellow',   'darkyellow'],
-    \ ['magenta',     'darkmagenta'],
-    \ ['blue',    'darkblue'],
-    \ ['green', 'darkgreen'],
-    \ ['NONE',        'NONE'],
-    \ ]
 " -----------------------------------------
 
 " ctrlp
@@ -78,6 +68,7 @@ let g:ctrlp_working_path_mode = 'rca'
 " immersive periferal hiding (with auto limelight)
 " :Goyo
 let g:limelight_conceal_ctermfg = 8
+let g:goyo_width = 120
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 " -----------------------------------------
@@ -112,6 +103,17 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 " python-syntax
 " -----------------------------------------
 let python_highlight_all=1
+" -----------------------------------------
+
+" rainbow_csv
+" -----------------------------------------
+let g:rcsv_colorpairs = [
+    \ ['yellow',   'darkyellow'],
+    \ ['magenta',     'darkmagenta'],
+    \ ['blue',    'darkblue'],
+    \ ['green', 'darkgreen'],
+    \ ['NONE',        'NONE'],
+    \ ]
 " -----------------------------------------
 
 " syntastic
