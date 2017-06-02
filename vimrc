@@ -82,6 +82,7 @@ set sw=4
 let g:indentLine_char = '|'
 let g:indentLine_setColors = 0
 highlight Conceal ctermbg=None ctermfg=0
+autocmd ColorScheme * highlight Conceal ctermbg=None ctermfg=0
 " -----------------------------------------
 
 " nerdtree
