@@ -171,6 +171,8 @@ function django_secret() { python -c "import string,random; uni=string.ascii_let
 
 alias matrix="cmatrix -b"
 
+function centercat() { clear && echo && echo && echo && echo && echo && cat "${@}" |  awk '{ z = '$(tput cols)' - length; y = int(z / 2); x = z - y; printf "%*s%s%*s\n", x, "", $0, y, ""; }' && echo && echo && echo && echo && echo ;}
+
 # added for jarbs
 alias jarbs='~/Projects/jarbs/scripts/start.sh'
 
