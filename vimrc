@@ -69,7 +69,11 @@ let g:ctrlp_working_path_mode = 'rca'
 " :Goyo
 let g:limelight_conceal_ctermfg = 8
 let g:goyo_width = 120
-autocmd! User GoyoEnter Limelight
+function! s:goyo_enter()
+    Limelight
+    GitGutterEnable
+endfunction
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave Limelight!
 " -----------------------------------------
 
