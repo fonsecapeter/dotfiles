@@ -51,6 +51,13 @@ autocmd BufNewFile,BufReadPost,FilterReadPost,FileReadPost *.{txt,md,y*ml,cfg,in
 
 autocmd BufWritePre * :FixWhitespace
 
+" set cursor highlighting in current window
+augroup CursorLine
+  au!
+  au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+  au WinLeave * setlocal nocursorline
+augroup END
+
 " delete while in insert mode
 set backspace=indent,eol,start
 " -----------------------------------------
