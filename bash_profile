@@ -173,10 +173,12 @@ alias matrix="cmatrix -b"
 
 function centercat() { clear && echo && echo && echo && echo && echo && cat "${@}" |  awk '{ z = '$(tput cols)' - length; y = int(z / 2); x = z - y; printf "%*s%s%*s\n", x, "", $0, y, ""; }' && echo && echo && echo && echo && echo ;}
 
-cal () {
+my_cal () {
+    echo
     today=$(date +%e)
-    cal  | sed "1s/^[[:space:]].*/$(tput setaf 5)&$(tput sgr0)/" | sed "2s/^Su.*/$(tput setaf 3)&$(tput sgr0)/" | sed "1,/${today}/ s/${today}/$(tput setaf 1)&$(tput sgr0)/"
+    cal | sed "1s/^[[:space:]].*/$(tput setaf 5)&$(tput sgr0)/" | sed "2s/^Su.*/$(tput setaf 3)&$(tput sgr0)/" | sed "1,/${today}/ s/${today}/$(tput setaf 1)&$(tput sgr0)/"
 }
+alias cal='my_cal'
 
 # added for jarbs
 alias jarbs='~/Projects/jarbs/scripts/start.sh'
