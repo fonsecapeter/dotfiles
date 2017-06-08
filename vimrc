@@ -38,6 +38,8 @@ set relativenumber
 " show status bar
 set laststatus=2
 set encoding=utf-8
+set t_Co=16
+set background=dark
 colorscheme noctu
 
 " autocmd BufNewFile,BufReadPost *.dtml, *.lxml set syntax=html
@@ -57,6 +59,10 @@ augroup CursorLine
   au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
   au WinLeave * setlocal nocursorline
 augroup END
+if has('macunix')
+    " why you change ctermfg based on ctermbg, osx vim??? D:
+    hi CursorLine ctermbg=None
+endif
 
 " delete while in insert mode
 set backspace=indent,eol,start
