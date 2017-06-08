@@ -181,11 +181,10 @@ my_cal () {
     echo
     today=$(date +%e)
     if [[ "${OSTYPE}" =~ ^darwin ]]; then
-        cal_cmd='cal'
+        cal_text=$(command cal)
     else
-        cal_cmd='cal -h'
+        cal_text=$(command cal -h)
     fi
-    cal_text=$("${cal_cmd}")
     hilight_title=$(sed "1s/^[[:space:]].*/${purple}&${reset}/" <<< "${cal_text}")
     hilight_days=$(sed "2s/^Su.*/${orange}&${reset}/" <<< "${hilight_title}")
     hilight_current_day=$(sed "1,/${today}/ s/${today}/${red}&${reset}/" <<< "${hilight_days}")
