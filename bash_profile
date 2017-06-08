@@ -176,7 +176,12 @@ function centercat() { clear && echo && echo && echo && echo && echo && cat "${@
 my_cal () {
     echo
     today=$(date +%e)
-    cal | sed "1s/^[[:space:]].*/$(tput setaf 5)&$(tput sgr0)/" | sed "2s/^Su.*/$(tput setaf 3)&$(tput sgr0)/" | sed "1,/${today}/ s/${today}/$(tput setaf 1)&$(tput sgr0)/"
+    if [[ "${OSTYPE}" =~ "^darwin" ]]; then
+        cal_cmd='cal'
+    else
+        cal_cmd='cal -h'
+    fi
+    eval "${cal_cmd}" | sed "1s/^[[:space:]].*/$(tput setaf 5)&$(tput sgr0)/" | sed "2s/^Su.*/$(tput setaf 3)&$(tput sgr0)/" | sed "1,/${today}/ s/${today}/$(tput setaf 1)&$(tput sgr0)/"
 }
 alias cal='my_cal'
 
