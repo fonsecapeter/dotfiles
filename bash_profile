@@ -12,10 +12,13 @@ red=$(tput setaf 1)
 alias red="tput setaf 1"
 green=$(tput setaf 2)
 alias green="tput setaf 2"
-blue=$(tput setaf 4)
-alias blue="tput setaf 4"
 orange=$(tput setaf 3)
 alias orange="tput setaf 3"
+blue=$(tput setaf 4)
+alias blue="tput setaf 4"
+purple=$(tput setaf 5)
+alias purple="tput setaf 5"
+
 reset=$(tput sgr0)
 alias reset="tput sgr0"
 
@@ -174,6 +177,7 @@ alias matrix="cmatrix -b"
 function centercat() { clear && echo && echo && echo && echo && echo && cat "${@}" |  awk '{ z = '$(tput cols)' - length; y = int(z / 2); x = z - y; printf "%*s%s%*s\n", x, "", $0, y, ""; }' && echo && echo && echo && echo && echo ;}
 
 my_cal () {
+    # use <<< because sibgle line | is too much
     echo
     today=$(date +%e)
     if [[ "${OSTYPE}" =~ ^darwin ]]; then
@@ -181,7 +185,12 @@ my_cal () {
     else
         cal_cmd='cal -h'
     fi
-    eval "${cal_cmd}" | sed "1s/^[[:space:]].*/$(tput setaf 5)&$(tput sgr0)/" | sed "2s/^Su.*/$(tput setaf 3)&$(tput sgr0)/" | sed "1,/${today}/ s/${today}/$(tput setaf 1)&$(tput sgr0)/"
+    cal_text=$("${cal_cmd}")
+    hilight_title=$(sed "1s/^[[:space:]].*/${purple}&${reset}/" <<< "${cal_text}")
+    hilight_days=$(sed "2s/^Su.*/${orange}&${reset}/" <<< "${hilight_title}")
+    hilight_current_day=$(sed "1,/${today}/ s/${today}/${red}&${reset}/" <<< "${hilight_days}")
+    echo "${hilight_current_day}"
+    echo
 }
 alias cal='my_cal'
 
