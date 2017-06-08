@@ -176,7 +176,7 @@ function centercat() { clear && echo && echo && echo && echo && echo && cat "${@
 my_cal () {
     echo
     today=$(date +%e)
-    if [[ "${OSTYPE}" =~ "^darwin" ]]; then
+    if [[ "${OSTYPE}" =~ ^darwin ]]; then
         cal_cmd='cal'
     else
         cal_cmd='cal -h'
