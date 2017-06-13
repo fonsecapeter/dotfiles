@@ -196,3 +196,5 @@ alias cal='my_cal'
 # added for jarbs
 alias jarbs='~/Projects/jarbs/scripts/start.sh'
 
+# added for ttam-buddy https://github.com/fonsecapeter/ttam_buddy/
+alias ttam-buddy='~/Projects/ttam_buddy/ttam_buddy.sh'
