@@ -267,3 +267,8 @@ nnoremap <C-K><C-Right> <C-W><R>
 nnoremap <C-K><C-Left> <C-W><S-R>
 " -----------------------------------------
 
+" use vim as man pager https://murukesh.me/2015/08/28/vim-for-man.html
+" -----------------------------------------
+if !empty($MAN_PN)
+    autocmd StdinReadPost * set ft=man | file $MAN_PN
+endif

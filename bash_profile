@@ -38,6 +38,9 @@ export PS1="\[\033[38;5;11m\]\u\[$(tput sgr0)\]\[\033[38;5;15m\]@\[$(tput sgr0)\
 
 export LSCOLORS="cxBxhxDxgxhxhxhxhxfxfx"
 
+# use vim as man pager
+export MANPAGER="vim -"
+
 # stop showing untracked files (shorthand for --untracket-files=no)
 # alias gs="git status -uno"
 alias gs="git status"
