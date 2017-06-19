@@ -132,7 +132,10 @@ alias notes=start_notes
 search_notes() {
   grep -ilr "${1}" "${notes_dir}" | grep -v "${notes_dir}/help/help.txt"
 }
-alias notesearch="search_notes"
+search_notes_verbose() {
+    grep -r "${notes_dir}" -e $@ | grep -v "${notes_dir}/help/help.txt"
+}
+alias notesearch="search_notes_verbose"
 alias notels="tree '${notes_dir}' -I help"
 open_note() {
   echo -n -e "\033]0;Notes\007"
@@ -148,6 +151,12 @@ note_search_open() {
   open_note "${result}"
 }
 alias notesearchopen="note_search_open"
+alias notefind="find ${notes_dir} -name $@"
+note_find_open() {
+    result=$(notefind $@)
+    open_note "${result}"
+}
+alias notefindopen="note_find_open"
 
 # dark gray, light red, light green, light blue, light magenta, light cyan, yellow, white
 # black,     dark red,  dark green,  dark blue,  dark magenta,  dark cyan,  brown,  light gray
