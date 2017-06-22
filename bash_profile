@@ -79,118 +79,46 @@ my_man() {
 alias man=my_man
 # -----------------------------------------
 
-
-# peter's awesome aliases
-# -----------------------------------------
-# timestamp
-stamp() {
-    orange
-    date +"%r"
-    reset
-    $@
-}
-alias stampwatch='export PS1="\D{%I:%M %p}\n${PS1}"'
-alias stampunwatch='export PS1=${PS1#"\D{%I:%M %p}\n"}'
-my_cal () {
-    # use <<< because single line | is too much
-    echo
-    today=$(date +%e)
-    if [[ "${OSTYPE}" =~ ^darwin ]]; then
-        cal_text=$(command cal)
-    else
-        cal_text=$(command cal -h)
-    fi
-    hilight_title=$(sed "1s/^[[:space:]].*/${purple}&${reset}/" <<< "${cal_text}")
-    hilight_days=$(sed "2s/^Su.*/${orange}&${reset}/" <<< "${hilight_title}")
-    hilight_current_day=$(sed "1,/${today}/ s/${today}/${red}&${reset}/" <<< "${hilight_days}")
-    echo "${hilight_current_day}"
-    echo
-}
-alias cal='my_cal'
-
-# gchat
-# dark gray, light red, light green, light blue, light magenta, light cyan, yellow, white
-# black,     dark red,  dark green,  dark blue,  dark magenta,  dark cyan,  brown,  light gray
-alias chat="hangups --col-msg-self-fg 'light magenta' --col-msg-sender-fg 'dark gray' --col-msg-text-fg 'light cyan' --col-msg-date-fg 'yellow' --col-active-tab-fg 'dark gray'"
-
-# disk space usage
-alias disk_unsorted="sudo du -x -d1 -h $1"
-alias disk="disk_unsorted | sort -hr"
-
-# permissions
-chmine () {
-    sudo chown $USER "${@}"
-    sudo chgrp $(id -g -n $USER) "${@}"
-}
-chmine-R () {
-    sudo chown -R $USER "${@}"
-    sudo chgrp -R $(id -g -n $USER) "${@}"
-
-}
-chmine-rw () {
-    chmine "${@}"
-    sudo chmod 664 "${@}"
-}
-
-# random django secret key generator
-function django_secret() { python -c "import string,random; uni=string.ascii_letters+string.digits+string.punctuation; print repr(''.join([random.SystemRandom().choice(uni) for i in range(random.randint(45,50))]))" ;}
-
-# obviously
-alias matrix="cmatrix -b"
-
-# makes my ansii art look cool
-function centercat() { clear && echo && echo && echo && echo && echo && cat "${@}" |  awk '{ z = '$(tput cols)' - length; y = int(z / 2); x = z - y; printf "%*s%s%*s\n", x, "", $0, y, ""; }' && echo && echo && echo && echo && echo ;}
-
-# TODO: work this into init_*.sh w/ cronjob to clean weekly
-function trash() { mv "${@}" ~/.Trash; }
-# -----------------------------------------
-
 # peter's awesome google-drive-tracked-vim-operated notes
 # -----------------------------------------
 notes_dir="${HOME}/GoogleDrive/Notes"
-start_notes() {
-  echo -n -e "\033]0;Notes\007"
-  cur_dir="${PWD}"
-  cd "${notes_dir}"
-  vim
-  cd "${cur_dir}"
-  echo -n -e "\033]0;Terminal\007"
+open_note() {
+    note_file_name=$(echo "$1" | sed "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K]//g") # remove colors/escape sequenses
+    echo -n -e "\033]0;Notes\007"
+    cur_dir="${PWD}"
+    cd "${notes_dir}"
+    vim "${note_file_name}"
+    cd "${cur_dir}"
+    echo -n -e "\033]0;Terminal\007"
 }
-alias notes=start_notes
+
+alias notefind="find ${notes_dir} -name $1"
+
+notes() {
+    if [[ -z "${1}" ]]; then
+        result="./"
+    else
+        result=$(notefind "$1")
+    fi
+    open_note "${result}"
+}
+
+alias notels="tree '${notes_dir}' -I help"
 
 search_notes_just_file_name() {
-  grep -ilr "${1}" "${notes_dir}" | grep -v "${notes_dir}/help/help.txt"
+    grep -ilr "${1}" "${notes_dir}" | grep -v "${notes_dir}/help/help.txt"
 }
 search_notes() {
     grep -r "${notes_dir}" -e $@ | grep -v "${notes_dir}/help/help.txt"
 }
 alias notesearch="search_notes"
 
-alias notels="tree '${notes_dir}' -I help"
-
-open_note() {
-  note_file_name=$(echo "$1" | sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K]//g") # remove colors/escape sequenses
-  echo -n -e "\033]0;Notes\007"
-  cur_dir="${PWD}"
-  cd "${notes_dir}"
-  vim "${note_file_name}"
-  cd "${cur_dir}"
-  echo -n -e "\033]0;Terminal\007"
-}
-alias noteopen="open_note"
-
 note_search_open() {
-  result=$(search_notes_just_file_name ${1} | head -n 1)
-  open_note "${result}"
+    result=$(search_notes_just_file_name ${1} | head -n 1)
+    open_note "${result}"
 }
 alias notesearchopen="note_search_open"
 
-alias notefind="find ${notes_dir} -name $@"
-note_find_open() {
-    result=$(notefind $@)
-    open_note "${result}"
-}
-alias notefindopen="note_find_open"
 # -----------------------------------------
 
 # work aliases
@@ -238,4 +166,70 @@ alias jarbs='~/Projects/jarbs/scripts/start.sh'
 
 # added for ttam-buddy https://github.com/fonsecapeter/ttam_buddy/
 alias ttam-buddy='~/Projects/ttam_buddy/ttam_buddy.sh'
+
+# peter's awesome aliases
+# -----------------------------------------
+# gchat
+# dark gray, light red, light green, light blue, light magenta, light cyan, yellow, white
+# black,     dark red,  dark green,  dark blue,  dark magenta,  dark cyan,  brown,  light gray
+alias chat="hangups --col-msg-self-fg 'light magenta' --col-msg-sender-fg 'dark gray' --col-msg-text-fg 'light cyan' --col-msg-date-fg 'yellow' --col-active-tab-fg 'dark gray'"
+
+# disk space usage
+alias disk_unsorted="sudo du -x -d1 -h $1"
+alias disk="disk_unsorted | sort -hr"
+
+# permissions
+chmine () {
+    sudo chown $USER "${@}"
+    sudo chgrp $(id -g -n $USER) "${@}"
+}
+chmine-R () {
+    sudo chown -R $USER "${@}"
+    sudo chgrp -R $(id -g -n $USER) "${@}"
+
+}
+chmine-rw () {
+    chmine "${@}"
+    sudo chmod 664 "${@}"
+}
+
+# random django secret key generator
+function django_secret() { python -c "import string,random; uni=string.ascii_letters+string.digits+string.punctuation; print repr(''.join([random.SystemRandom().choice(uni) for i in range(random.randint(45,50))]))" ;}
+
+# obviously
+alias matrix="cmatrix -b"
+
+# makes my ansii art look cool
+function centercat() { clear && echo && echo && echo && echo && echo && cat "${@}" |  awk '{ z = '$(tput cols)' - length; y = int(z / 2); x = z - y; printf "%*s%s%*s\n", x, "", $0, y, ""; }' && echo && echo && echo && echo && echo ;}
+
+# TODO: work this into init_*.sh w/ cronjob to clean weekly
+function trash() { mv "${@}" ~/.Trash; }
+
+# timestamp
+stamp() {
+    orange
+    date +"%r"
+    reset
+    $@
+}
+alias stampwatch='export PS1="\D{%I:%M %p}\n${PS1}"'
+alias stampunwatch='export PS1=${PS1#"\D{%I:%M %p}\n"}'
+my_cal () {
+    # use <<< because single line | is too much
+    echo
+    today=$(date +%e)
+    if [[ "${OSTYPE}" =~ ^darwin ]]; then
+        cal_text=$(command cal)
+    else
+        cal_text=$(command cal -h)
+    fi
+    hilight_title=$(sed "1s/^[[:space:]].*/${purple}&${reset}/" <<< "${cal_text}")
+    hilight_days=$(sed "2s/^Su.*/${orange}&${reset}/" <<< "${hilight_title}")
+    hilight_current_day=$(sed "1,/${today}/ s/${today}/${red}&${reset}/" <<< "${hilight_days}")
+    echo "${hilight_current_day}"
+    echo
+}
+alias cal='my_cal'
+# -----------------------------------------
+
 
