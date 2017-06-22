@@ -45,6 +45,8 @@ else
     echo
     echo $reset
 fi
+
+# TODO: make this a function... would be awesome if could pass in callback
 if [ ! -d ~/.bash_profile ]; then
     ln -s dotfiles/bash_profile ~/.bash_profile
 fi
@@ -86,8 +88,6 @@ if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
 fi
 sudo vim -c 'PluginInstall' -c 'qa!'
 sudo cp ~/dotfiles/peter_fall_airline_theme.vim ~/.vim/bundle/vim-airline/autoload/airline/themes/peter_fall.vim
-# vim as man pager
-ln -s ~/dotfiles/ftplugin/ ~/.dotfiles/ftplugin
 
 echo $blue
 echo

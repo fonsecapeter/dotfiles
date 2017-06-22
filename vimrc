@@ -42,16 +42,21 @@ set t_Co=16
 set background=dark
 colorscheme noctu
 
-" autocmd BufNewFile,BufReadPost *.dtml, *.lxml set syntax=html
 autocmd BufNewFile,BufReadPost *.html, *.dtml, *.lxml set filetype=htmldjango
 autocmd BufNewFile,BufReadPost *.html, *.dtml, *.lxml set syntax=htmldjango
 autocmd BufNewFile,BufReadPost *.json set syntax=javascript
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 autocmd BufNewFile,BufReadPost *.txt set filetype=yaml
-" autocmd BufNewFile,BufReadPost *.txt set filetype=markdown
 autocmd BufNewFile,BufReadPost,FilterReadPost,FileReadPost *.{txt,md,y*ml,cfg,ini} :Goyo 120
+autocmd BufNewFile,BufReadPost bash_profile set syntax=sh
+autocmd BufNewFile,BufReadPost vimrc set syntax=vim
+" for now, the only time i read from stdin is for manpages
+autocmd StdinReadPost * set ft=man
 
 autocmd BufWritePre * :FixWhitespace
+
+" quit all (great for in goyo)
+command Q qa
 
 " set cursor highlighting in current window
 augroup CursorLine
@@ -85,25 +90,10 @@ let g:goyo_width = 120
 function! s:goyo_enter()
     silent! Limelight
     GitGutterEnable
-    " Enable Quit Vim if this is the only remaining buffer
-    let b:quitting = 0
-    let b:quitting_bang = 0
-    autocmd QuitPre <buffer> let b:quitting = 1
-    cabbrev <buffer> q! let b:quitting_bang = 1 <bar> q!
-endfunction
-function! s:goyo_leave()
-    Limelight!
-    " Quit Vim if this is the only remaining buffer
-    if b:quitting && len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
-        if b:quitting_bang
-            qa!
-        else
-            qa
-        endif
-      endif
 endfunction
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
-autocmd! User GoyoLeave nested call <SID>goyo_leave()
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave Limelight!
 " -----------------------------------------
 
 " indent and indentLine
@@ -266,9 +256,3 @@ nnoremap <C-K><S-Left> <C-W><S-H>
 nnoremap <C-K><C-Right> <C-W><R>
 nnoremap <C-K><C-Left> <C-W><S-R>
 " -----------------------------------------
-
-" use vim as man pager https://murukesh.me/2015/08/28/vim-for-man.html
-" -----------------------------------------
-if !empty($MAN_PN)
-    autocmd StdinReadPost * set ft=man | file $MAN_PN
-endif
