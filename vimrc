@@ -46,7 +46,7 @@ autocmd BufNewFile,BufReadPost *.html, *.dtml, *.lxml set filetype=htmldjango
 autocmd BufNewFile,BufReadPost *.html, *.dtml, *.lxml set syntax=htmldjango
 autocmd BufNewFile,BufReadPost *.json set syntax=javascript
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
-autocmd BufNewFile,BufReadPost *.txt set filetype=yaml
+autocmd BufNewFile,BufReadPost *.txt set filetype=markdown
 autocmd BufNewFile,BufReadPost,FilterReadPost,FileReadPost *.{txt,md,y*ml,cfg,ini} :Goyo 120
 autocmd BufNewFile,BufReadPost bash_profile set syntax=sh
 autocmd BufNewFile,BufReadPost vimrc set syntax=vim
@@ -60,14 +60,14 @@ command Q qa
 
 " set cursor highlighting in current window
 augroup CursorLine
-  au!
-  au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
-  au WinLeave * setlocal nocursorline
-augroup END
-if has('macunix')
     " why you change ctermfg based on ctermbg, osx vim??? D:
-    hi CursorLine ctermbg=None
-endif
+    if !has('macunix')
+        au!
+        au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+        au WinLeave * setlocal nocursorline
+    endif
+augroup END
+" hi CursorLine ctermbg=None
 
 " delete while in insert mode
 set backspace=indent,eol,start
@@ -102,10 +102,16 @@ autocmd! User GoyoLeave Limelight!
 set et
 set ts=4
 set sw=4
+set autoindent
+set smartindent
 let g:indentLine_char = '|'
 let g:indentLine_setColors = 0
 highlight Conceal ctermbg=None ctermfg=0
 autocmd ColorScheme * highlight Conceal ctermbg=None ctermfg=0
+" for 2 space indentation
+autocmd BufNewFile,BufReadPost *.txt setlocal ts=2 sw=2 expandtab
+autocmd BufNewFile,BufReadPost *.md setlocal ts=2 sw=2 expandtab
+autocmd BufNewFile,BufReadPost *.rb setlocal ts=2 sw=2 expandtab
 " -----------------------------------------
 
 " nerdtree
