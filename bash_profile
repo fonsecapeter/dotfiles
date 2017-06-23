@@ -175,8 +175,15 @@ alias ttam-buddy='~/Projects/ttam_buddy/ttam_buddy.sh'
 alias chat="hangups --col-msg-self-fg 'light magenta' --col-msg-sender-fg 'dark gray' --col-msg-text-fg 'light cyan' --col-msg-date-fg 'yellow' --col-active-tab-fg 'dark gray'"
 
 # disk space usage
-alias disk_unsorted="sudo du -x -d1 -h $1"
-alias disk="disk_unsorted | sort -hr"
+# alias disk_unsorted="sudo du -x -d1 -h $1"
+disk_unsorted() {
+    sudo du -x -d1 -h $@
+}
+disk_sorted() {
+    disk_unsorted | sort -hr
+}
+alias disk=disk_sorted
+# alias disk="disk_unsorted | sort -hr"
 
 # permissions
 chmine () {
