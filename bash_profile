@@ -180,10 +180,6 @@ alias disk="disk_unsorted | sort -hr"
 
 # permissions
 chmine () {
-    sudo chown $USER "${@}"
-    sudo chgrp $(id -g -n $USER) "${@}"
-}
-chmine-R () {
     sudo chown -R $USER "${@}"
     sudo chgrp -R $(id -g -n $USER) "${@}"
 
