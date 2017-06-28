@@ -77,6 +77,11 @@ fi
 if [ ! -d ~/.config/neofetch/config ]; then
     ln -s ~/dotfiles/neofetch_config ~/.config/neofetch/config
 fi
+# notes
+gem install peter-notes
+if [ ! -f ~/.peter-notes.yml]; then
+    ln -s ~/dotfiles/peter-notes.yml ~/.peter-notes.yml
+fi
 
 echo $blue
 echo
