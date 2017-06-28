@@ -79,52 +79,10 @@ my_man() {
 alias man=my_man
 # -----------------------------------------
 
-# peter's awesome google-drive-tracked-vim-operated notes
-# -----------------------------------------
-notes_dir="${HOME}/GoogleDrive/Notes"
-open_note() {
-    note_file_name=$(echo "$1" | sed "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K]//g") # remove colors/escape sequenses
-    echo -n -e "\033]0;Notes\007"
-    cur_dir="${PWD}"
-    cd "${notes_dir}"
-    vim "${note_file_name}"
-    cd "${cur_dir}"
-    echo -n -e "\033]0;Terminal\007"
-}
-
-alias notefind="find ${notes_dir} -name $1"
-
-notes() {
-    if [[ -z "${1}" ]]; then
-        result="./"
-    else
-        result=$(notefind "$1")
-    fi
-    open_note "${result}"
-}
-
-alias notels="tree '${notes_dir}' -I help"
-
-search_notes_just_file_name() {
-    grep -ilr "${1}" "${notes_dir}" | grep -v "${notes_dir}/help/help.txt"
-}
-search_notes() {
-    grep -r "${notes_dir}" -e $@ | grep -v "${notes_dir}/help/help.txt"
-}
-alias notesearch="search_notes"
-
-note_search_open() {
-    result=$(search_notes_just_file_name ${1} | head -n 1)
-    open_note "${result}"
-}
-alias notesearchopen="note_search_open"
-
-# -----------------------------------------
-
 # work aliases
 # -----------------------------------------
 # can never remember where my docs are
-alias docs='cd ~/Documents/throwbacks/new_hire_stuff/code_base/'
+alias docs='cd ~/Documents/code_base/'
 
 # for printing through django stderr logs
 alias pbprint="echo \"import sys
