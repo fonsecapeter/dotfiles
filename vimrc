@@ -222,6 +222,12 @@ au BufNewFile,BufRead *.py
   \ set fileformat=unix
 " -----------------------------------------
 
+" vim-gfm-syntax
+" -----------------------------------------
+let g:gfm_syntax_emoji_conceal = 1
+let g:markdown_fenced_languages = ['ruby', 'python', 'json', 'sql']
+" -----------------------------------------
+
 " vim-livedown
 " -----------------------------------------
 " live markdown preview
