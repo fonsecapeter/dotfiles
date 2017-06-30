@@ -118,7 +118,7 @@ autocmd BufNewFile,BufReadPost *.rb setlocal ts=2 sw=2 expandtab
 " nerdtree
 " -----------------------------------------
 " file tree
-let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree"
+let NERDTreeIgnore=['\.pyc$', '\~$', '^node_modules$', '^venv$', '^\.cache$'] "ignore files in NERDTree"
 " toggle nerd tree
 map <C-\> :NERDTreeToggle<ESC>
 
@@ -129,6 +129,8 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " auto open if dir
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+
+let NERDTreeShowHidden = 1
 " -----------------------------------------
 
 " python-syntax
