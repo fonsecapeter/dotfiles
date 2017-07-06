@@ -101,8 +101,8 @@ autocmd! User GoyoLeave Limelight!
 " -----------------------------------------
 " default intent settings and indentline guides
 set et
-set ts=4
-set sw=4
+set ts=2
+set sw=2
 set autoindent
 set smartindent
 let g:indentLine_char = '|'
@@ -110,9 +110,10 @@ let g:indentLine_setColors = 0
 highlight Conceal ctermbg=None ctermfg=0
 autocmd ColorScheme * highlight Conceal ctermbg=None ctermfg=0
 " for 2 space indentation
-autocmd BufNewFile,BufReadPost *.txt setlocal ts=2 sw=2 expandtab
-autocmd BufNewFile,BufReadPost *.md setlocal ts=2 sw=2 expandtab
-autocmd BufNewFile,BufReadPost *.rb setlocal ts=2 sw=2 expandtab
+autocmd BufNewFile,BufReadPost *.py setlocal ts=4 sw=4 expandtab
+autocmd BufNewFile,BufReadPost *.html setlocal ts=4 sw=4 expandtab
+autocmd BufNewFile,BufReadPost *.dtml setlocal ts=4 sw=4 expandtab
+autocmd BufNewFile,BufReadPost *.js setlocal ts=4 sw=4 expandtab
 " -----------------------------------------
 
 " nerdtree
