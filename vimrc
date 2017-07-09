@@ -22,6 +22,7 @@ Plugin 'bling/vim-airline'
 Plugin 'nvie/vim-flake8'
 Plugin 'rhysd/vim-gfm-syntax'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'mxw/vim-jsx'
 Plugin 'shime/vim-livedown'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'noahfrederick/vim-noctu'
@@ -48,6 +49,7 @@ autocmd BufNewFile,BufReadPost *.html, *.dtml, *.lxml set syntax=htmldjango
 autocmd BufNewFile,BufReadPost *.json set syntax=javascript
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 autocmd BufNewFile,BufReadPost *.txt set filetype=markdown
+autocmd BufNewFile,BufReadPost *.ronn set filetype=markdown
 autocmd BufNewFile,BufReadPost,FilterReadPost,FileReadPost *.{txt,md,y*ml,cfg,ini} :Goyo 120
 autocmd BufNewFile,BufReadPost bash_profile set syntax=sh
 autocmd BufNewFile,BufReadPost vimrc set syntax=vim
@@ -157,6 +159,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 1
 let g:syntastic_aggregate_errors = 1
+let g:syntastic_javascript_checkers = ['eslint']
 " -----------------------------------------
 
 " vim-airline
