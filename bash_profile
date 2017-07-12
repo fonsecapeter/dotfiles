@@ -127,6 +127,13 @@ alias ttam-buddy='~/Projects/ttam_buddy/ttam_buddy.sh'
 
 # peter's awesome aliases
 # -----------------------------------------
+find () {
+  grep --color=always -rn "$1" "$2"
+}
+replace () {
+  grep -rl "$1" "$3" | xargs sed -i '' "s/$1/$2/g"
+}
+
 # gchat
 # dark gray, light red, light green, light blue, light magenta, light cyan, yellow, white
 # black,     dark red,  dark green,  dark blue,  dark magenta,  dark cyan,  brown,  light gray
