@@ -127,10 +127,10 @@ alias ttam-buddy='~/Projects/ttam_buddy/ttam_buddy.sh'
 
 # peter's awesome aliases
 # -----------------------------------------
-find () {
+fnd () {
   grep --color=always -rn "$1" "$2"
 }
-replace () {
+rpl () {
   grep -rl "$1" "$3" | xargs sed -i '' "s/$1/$2/g"
 }
 
