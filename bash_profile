@@ -186,15 +186,32 @@ my_cal () {
     # use <<< because single line | is too much
     echo
     today=$(date +%e)
-    if [[ "${OSTYPE}" =~ ^darwin ]]; then
-        cal_text=$(command cal)
+    this_month=$(date +%B | tr '[:upper:]' '[:lower:]')
+    this_year=$(date +%Y | tr '[:upper:]' '[:lower:]')
+    if [ -z "$1" ]; then
+        month="${this_month}"
     else
-        cal_text=$(command cal -h)
+        month=$(echo "$1" | tr '[:upper:]' '[:lower:]')
+    fi
+    if [ -z "$2" ]; then
+        year="${this_year}"
+    else
+        year="$2"
+    fi
+
+    if [[ "${OSTYPE}" =~ ^darwin ]]; then
+        cal_text=$(command cal ${month} ${year})
+    else
+        cal_text=$(command cal -h ${month} ${year})
     fi
     hilight_title=$(sed "1s/^[[:space:]].*/${purple}&${reset}/" <<< "${cal_text}")
     hilight_days=$(sed "2s/^Su.*/${orange}&${reset}/" <<< "${hilight_title}")
-    hilight_current_day=$(sed "1,/${today}/ s/${today}/${red}&${reset}/" <<< "${hilight_days}")
-    echo "${hilight_current_day}"
+    if [ "${month}" == "${this_month}" ] && [ "${year}" == "${this_year}" ]; then
+        hilight_current_day=$(sed "1,/${today}/ s/${today}/${red}&${reset}/" <<< "${hilight_days}")
+        echo "${hilight_current_day}"
+    else
+        echo "${hilight_days}"
+    fi
     echo
 }
 alias cal='my_cal'
