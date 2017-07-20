@@ -19,6 +19,7 @@ sudo add-apt-repository ppa:papirus/arc-kde
 sudo add-apt-repository ppa:papirus/papirus
 sudo add-apt-repository ppa:snwh/pulp
 sudo add-apt-repository universe
+sudo add-apt-repository ppa:twodopeshaggy/ccat
 # neofetch
 if ! type neofetch >/dev/null 2>&1; then
     echo "deb http://dl.bintray.com/dawidd6/neofetch jessie main" | sudo tee -a /etc/apt/sources.list
@@ -26,7 +27,7 @@ if ! type neofetch >/dev/null 2>&1; then
 fi
 
 sudo apt update
-sudo apt install -y git make tree vim fontforge inkscape gimp python3-pip python3.6 virtualenv xclip sqlite3 screenfetch wget curl fortune cowsay boxes neofetch cmatrix
+sudo apt install -y git make tree vim fontforge inkscape gimp python3-pip python3.6 virtualenv xclip sqlite3 screenfetch wget curl fortune cowsay boxes neofetch cmatrix ccat
 pip3 install hangups
 
 echo $blue

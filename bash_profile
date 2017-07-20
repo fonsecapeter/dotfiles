@@ -45,6 +45,7 @@ alias grep='grep --color=always'
 alias egrep='egrep --color=always'
 # ignore stuff in tree
 alias tree="tree -C -I 'node_modules|*.pyc|venv'"
+alias cat="ccat"
 # -----------------------------------------
 
 # git
@@ -127,10 +128,10 @@ alias ttam-buddy='~/Projects/ttam_buddy/ttam_buddy.sh'
 
 # peter's awesome aliases
 # -----------------------------------------
-fnd () {
+search () {
   grep --color=always -rn "$1" "$2"
 }
-rpl () {
+replace () {
   grep -rl "$1" "$3" | xargs sed -i '' "s/$1/$2/g"
 }
 

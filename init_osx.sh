@@ -1,2 +1,2 @@
-brew install neofetch cmatrix
+brew install neofetch cmatrix ccat
 gem install peter-notes
