@@ -63,6 +63,16 @@ colorized_git_last() {
       # | cat | tr '\n' '\f' | sed -e "s/a^Author:\f\f[[:space:]].*/$green&$reset/"  \
 }
 alias gl=colorized_git_last
+
+rebase_onto() {
+  git rebase -i --onto "$1" "$2~1"
+}
+alias gr=rebase_onto
+
+pull_rebase() {
+  git pull $@ --rebase
+}
+alias gp=pull_rebase
 # -----------------------------------------
 
 # rbenv
@@ -134,6 +144,14 @@ search () {
 replace () {
   grep -rl "$1" "$3" | xargs sed -i '' "s/$1/$2/g"
 }
+replace_alt () {
+  grep -rl "$1" "$3" | xargs sed -i '' "s|$1|$2|g"
+}
+alias replace-alt="replace_alt"
+replace_alt_alt () {
+  grep -rl "$1" "$3" | xargs sed -i '' "s@$1@$2@g"
+}
+alias replace-alt-alt="replace_alt_alt"
 
 # gchat
 # dark gray, light red, light green, light blue, light magenta, light cyan, yellow, white
@@ -150,6 +168,18 @@ disk_sorted() {
 }
 alias disk=disk_sorted
 # alias disk="disk_unsorted | sort -hr"
+
+# finding whos listening on my ports
+alias localhost_ports="netstat -a | grep LISTEN | grep localhost"
+alias listening="netstat -a | grep LISTEN"
+localhosts() {
+  if [ -z "$1" ]; then
+    localhost_ports
+  else
+    lsof -i ":$1"
+  fi
+}
+alias ports=localhosts
 
 # permissions
 chmine () {

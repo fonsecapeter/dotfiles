@@ -8,6 +8,7 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 
+Plugin 'w0rp/ale'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'raimondi/delimitmate'
 Plugin 'junegunn/goyo.vim'
@@ -17,7 +18,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'kh3phr3n/python-syntax'
 Plugin 'mechatroner/rainbow_csv'
-Plugin 'scrooloose/syntastic'
+" Plugin 'scrooloose/syntastic'
 Plugin 'bling/vim-airline'
 Plugin 'nvie/vim-flake8'
 Plugin 'rhysd/vim-gfm-syntax'
@@ -76,6 +77,12 @@ augroup END
 set backspace=indent,eol,start
 " -----------------------------------------
 
+" ale
+" -----------------------------------------
+let g:ale_python_flake8_executable = 'python3'
+let g:ale_python_flake8_args = '-m flake8'
+" -----------------------------------------
+
 " ctrlp
 " -----------------------------------------
 " fuzzy file finder
@@ -111,11 +118,13 @@ let g:indentLine_char = '|'
 let g:indentLine_setColors = 0
 highlight Conceal ctermbg=None ctermfg=0
 autocmd ColorScheme * highlight Conceal ctermbg=None ctermfg=0
-" for 2 space indentation
+" for 4 space indentation
 autocmd BufNewFile,BufReadPost *.py setlocal ts=4 sw=4 expandtab
 autocmd BufNewFile,BufReadPost *.html setlocal ts=4 sw=4 expandtab
 autocmd BufNewFile,BufReadPost *.dtml setlocal ts=4 sw=4 expandtab
 autocmd BufNewFile,BufReadPost *.js setlocal ts=4 sw=4 expandtab
+autocmd BufNewFile,BufReadPost *.jsx setlocal ts=4 sw=4 expandtab
+autocmd BufNewFile,BufReadPost *.scss setlocal ts=4 sw=4 expandtab
 " -----------------------------------------
 
 " nerdtree
@@ -155,11 +164,11 @@ let g:rcsv_colorpairs = [
 " syntastic
 " -----------------------------------------
 " check linters/syntax
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 1
-let g:syntastic_aggregate_errors = 1
-let g:syntastic_javascript_checkers = ['eslint']
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_check_on_open = 0
+" let g:syntastic_check_on_wq = 1
+" let g:syntastic_aggregate_errors = 1
+" let g:syntastic_javascript_checkers = ['eslint']
 " -----------------------------------------
 
 " vim-airline
