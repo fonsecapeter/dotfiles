@@ -18,7 +18,6 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'kh3phr3n/python-syntax'
 Plugin 'mechatroner/rainbow_csv'
-" Plugin 'scrooloose/syntastic'
 Plugin 'bling/vim-airline'
 Plugin 'nvie/vim-flake8'
 Plugin 'rhysd/vim-gfm-syntax'
@@ -64,12 +63,12 @@ command Q qa
 
 " set cursor highlighting in current window
 augroup CursorLine
-    " why you change ctermfg based on ctermbg, osx vim??? D:
-    if !has('macunix')
-        au!
-        au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
-        au WinLeave * setlocal nocursorline
-    endif
+  " why you change ctermfg based on ctermbg, osx vim??? D:
+  if !has('macunix')
+    au!
+    au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+    au WinLeave * setlocal nocursorline
+  endif
 augroup END
 " hi CursorLine ctermbg=None
 
@@ -98,8 +97,8 @@ let g:ctrlp_working_path_mode = 'rca'
 let g:limelight_conceal_ctermfg = 8
 let g:goyo_width = 120
 function! s:goyo_enter()
-    silent! Limelight
-    GitGutterEnable
+  silent! Limelight
+  GitGutterEnable
 endfunction
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
@@ -109,9 +108,12 @@ autocmd! User GoyoLeave Limelight!
 " indent and indentLine
 " -----------------------------------------
 " default intent settings and indentline guides
-set et
-set ts=2
-set sw=2
+if @% !~# 'Makefile'
+  set et
+  set ts=2
+  set sw=2
+endif
+
 set autoindent
 set smartindent
 let g:indentLine_char = '|'
@@ -145,6 +147,16 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 let NERDTreeShowHidden = 1
 " -----------------------------------------
 
+" nerdcommenter
+" -----------------------------------------
+" \ c <space>
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+
+" Align line-wise comment delimiters flush left instead of following code indentation
+let g:NERDDefaultAlign = 'left'
+" -----------------------------------------
+
 " python-syntax
 " -----------------------------------------
 let python_highlight_all=1
@@ -153,22 +165,12 @@ let python_highlight_all=1
 " rainbow_csv
 " -----------------------------------------
 let g:rcsv_colorpairs = [
-    \ ['yellow',   'darkyellow'],
-    \ ['magenta',     'darkmagenta'],
-    \ ['blue',    'darkblue'],
-    \ ['green', 'darkgreen'],
-    \ ['NONE',        'NONE'],
-    \ ]
-" -----------------------------------------
-
-" syntastic
-" -----------------------------------------
-" check linters/syntax
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_check_on_open = 0
-" let g:syntastic_check_on_wq = 1
-" let g:syntastic_aggregate_errors = 1
-" let g:syntastic_javascript_checkers = ['eslint']
+  \ ['yellow',   'darkyellow'],
+  \ ['magenta',     'darkmagenta'],
+  \ ['blue',    'darkblue'],
+  \ ['green', 'darkgreen'],
+  \ ['NONE',        'NONE'],
+  \ ]
 " -----------------------------------------
 
 " vim-airline
@@ -205,20 +207,20 @@ let g:airline_section_y = ''
 let g:airline_section_z = '%l/%L:%c'
 
 function! MyMode()
-    let l:m = mode()
-    if l:m ==# 'i'
-        return 'insert'
-    elseif l:m ==# 'n'
-        return 'normal'
-    elseif l:m =~# '\v(v|V|s|S|)'
-        return 'visual'
-    elseif l:m ==# 't'
-        return 'terminal'
-    elseif l:m ==# 'R'
-        return 'replace'
-    else
-        return 'inactive'
-    endif
+  let l:m = mode()
+  if l:m ==# 'i'
+    return 'insert'
+  elseif l:m ==# 'n'
+    return 'normal'
+  elseif l:m =~# '\v(v|V|s|S|)'
+    return 'visual'
+  elseif l:m ==# 't'
+    return 'terminal'
+  elseif l:m ==# 'R'
+    return 'replace'
+  else
+    return 'inactive'
+  endif
 endfunction
 
 let g:airline_section_a = '%{MyMode()}'

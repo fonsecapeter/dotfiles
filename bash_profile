@@ -73,6 +73,14 @@ pull_rebase() {
   git pull $@ --rebase
 }
 alias gp=pull_rebase
+
+git-squash() {
+  if [ -z "$1" ]; then
+    echo 'How many commits to squash???'
+    exit 1
+  fi
+  git rebase -i "HEAD~$1"
+}
 # -----------------------------------------
 
 # rbenv
