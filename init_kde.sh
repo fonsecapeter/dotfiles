@@ -28,7 +28,7 @@ fi
 
 sudo apt update
 sudo apt install -y git make tree vim fontforge inkscape gimp python3-pip python3.6 virtualenv xclip sqlite3 screenfetch wget curl fortune cowsay boxes neofetch cmatrix ccat
-pip3 install hangups
+pip3 install hangups ipython[all]
 
 echo $blue
 echo
@@ -77,6 +77,9 @@ if [ ! -d ~/.local/share/konsole/Peter_hidpi.profile ]; then
 fi
 if [ ! -d ~/.config/neofetch/config ]; then
     ln -s ~/dotfiles/neofetch_config ~/.config/neofetch/config
+fi
+if [ ! -d ~/.ipython ]; then
+    ln -s ~/dotfiles/ipython ~/.ipython
 fi
 # notes
 gem install peter-notes

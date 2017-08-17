@@ -313,6 +313,7 @@ from pygments.token import (
     Number, Operator, Text, Literal, Token
 )
 
+
 class Shellectric(Style):
     default_style = ""
     styles = {
@@ -334,6 +335,7 @@ class Shellectric(Style):
         Error:                  '#ansiyellow',
     }
 
+
 overrides = {
     Token.Prompt: '#ansifuchsia',
     Token.PromptNum: '#ansiblue',
@@ -343,6 +345,7 @@ overrides = {
     Token.Menu.Completions.Completion.Current: '#ansiyellow',
     Token.MatchingBracket.Other: '#ansiyellow',
 }
+
 
 c.TerminalInteractiveShell.highlighting_style = Shellectric
 c.TerminalInteractiveShell.highlighting_style_overrides = overrides
@@ -354,7 +357,25 @@ c.TerminalInteractiveShell.highlighting_style_overrides = overrides
 
 ## Class used to generate Prompt token for prompt_toolkit
 #c.TerminalInteractiveShell.prompts_class = 'IPython.terminal.prompts.Prompts'
+from IPython.terminal.prompts import Prompts, Token
 
+
+class MyPrompt(Prompts):
+    def in_prompt_tokens(self, cli=None):
+        return [(Token.Prompt, '  > ')]
+
+    def out_prompt_tokens(self, cli=None):
+        return [(Token.Prompt, '  < ')]
+
+    # def continuation_prompt_tokens(self, cli=None):
+    def continuation_prompt_tokens(self, *args, **kwargs):
+        return [(Token.Prompt, '... ')]
+
+    def rewrite_prompt_tokens(self, cli=None):
+        return [(Token.Prompt, '--- ')]
+
+
+c.TerminalInteractiveShell.prompts_class = MyPrompt
 ## Use `raw_input` for the REPL, without completion and prompt colors.
 #
 #  Useful when controlling IPython as a subprocess, and piping STDIN/OUT/ERR.
@@ -363,6 +384,7 @@ c.TerminalInteractiveShell.highlighting_style_overrides = overrides
 #
 #  This mode default to `True` if the `IPY_TEST_SIMPLE_PROMPT` environment
 #  variable is set, or the current terminal is not a tty.
+
 #c.TerminalInteractiveShell.simple_prompt = False
 
 ## Number of line at the bottom of the screen to reserve for the completion menu

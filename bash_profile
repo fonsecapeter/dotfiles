@@ -89,6 +89,11 @@ export RBENV_ROOT=/usr/local/var/rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 # -----------------------------------------
 
+# ipython
+# -----------------------------------------
+alias ipython='ipython3'
+# -----------------------------------------
+
 # use vim as manpager
 # -----------------------------------------
 # export MANPAGER="vim -" is overkill, don't want to use vim for all paging...
