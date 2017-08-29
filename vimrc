@@ -18,6 +18,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'kh3phr3n/python-syntax'
 Plugin 'mechatroner/rainbow_csv'
+Plugin 'gcmt/taboo.vim'
 Plugin 'bling/vim-airline'
 Plugin 'nvie/vim-flake8'
 Plugin 'rhysd/vim-gfm-syntax'
@@ -76,6 +77,7 @@ augroup END
 set backspace=indent,eol,start
 " -----------------------------------------
 
+
 " ale
 " -----------------------------------------
 let g:ale_python_flake8_executable = 'python3'
@@ -85,7 +87,7 @@ let g:ale_python_flake8_args = '-m flake8'
 " ctrlp
 " -----------------------------------------
 " fuzzy file finder
-let g:ctrlp_map = '<c-p>'
+let g:ctrlp_map = '<C-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'rca'
 " -----------------------------------------
@@ -135,6 +137,7 @@ autocmd BufNewFile,BufReadPost *.scss setlocal ts=4 sw=4 expandtab
 let NERDTreeIgnore=['\.pyc$', '\~$', '^node_modules$', '^venv$', '^\.cache$'] "ignore files in NERDTree"
 " toggle nerd tree
 map <C-\> :NERDTreeToggle<ESC>
+map <Bar> :NERDTreeFind<ESC>
 
 " auto open if no file specified
 autocmd StdinReadPre * let s:std_in=1
@@ -143,9 +146,6 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " auto open if dir
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
-
-" auto open in new tab
-let NERDTreeMapOpenInTab='<ENTER>'
 
 let NERDTreeShowHidden = 1
 " -----------------------------------------
@@ -174,6 +174,11 @@ let g:rcsv_colorpairs = [
   \ ['green', 'darkgreen'],
   \ ['NONE',        'NONE'],
   \ ]
+" -----------------------------------------
+
+" taboo
+" -----------------------------------------
+let g:taboo_tab_format = "%N:%f%m "
 " -----------------------------------------
 
 " vim-airline
