@@ -1,3 +1,6 @@
 --python-kinds=-iv
 --exclude=build
 --exclude=dist
+--exclude=node_modules
+--exclude=venv
+--exclude=.git
