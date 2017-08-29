@@ -144,6 +144,9 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 
+" auto open in new tab
+let NERDTreeMapOpenInTab='<ENTER>'
+
 let NERDTreeShowHidden = 1
 " -----------------------------------------
 
@@ -285,4 +288,12 @@ nnoremap <C-K><S-Left> <C-W><S-H>
 " supposed to rotation but not working
 nnoremap <C-K><C-Right> <C-W><R>
 nnoremap <C-K><C-Left> <C-W><S-R>
+
+" move through tabs
+nnoremap > :tabnext<CR>
+nnoremap < :tabprevious<CR>
+nnoremap <C-t> :tabnew<CR>
+
+" ctags go to new tab
+:nnoremap <C-]> <C-w><C-]><C-w>T
 " -----------------------------------------

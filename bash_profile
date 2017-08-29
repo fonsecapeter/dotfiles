@@ -40,12 +40,25 @@ MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 # test -e ~/.dircolors && \
 eval `dircolors -b ~/.dircolors`
 
-alias ls='gls --color=always --ignore=*.pyc --ignore=__pycache__'
+# alias ls='gls --color=always --ignore=*.pyc --ignore=__pycache__'
+alias ll='gls --color=always --ignore=*.pyc --ignore=__pycache__ -la'
 alias grep='grep --color=always'
 alias egrep='egrep --color=always'
 # ignore stuff in tree
-alias tree="tree -C -I 'node_modules|*.pyc|venv'"
+alias tree="tree -C -I 'node_modules|*.pyc|venv' --dirsfirst"
+alias ls="tree -L 1"
 alias cat="ccat"
+alias mkdir="mkdir -pv"
+alias diff="colordiff"
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias .4='cd ../../../..'
+alias .5='cd ../../../../..'
+
+alias ping="ping -c 5"
+alias fastping="ping -c 10 -i .2"
 # -----------------------------------------
 
 # git
@@ -166,6 +179,8 @@ replace_alt_alt () {
 }
 alias replace-alt-alt="replace_alt_alt"
 
+alias space-to-underscore='for f in *\ *; do mv "$f" "${f// /_}"; done'
+
 # gchat
 # dark gray, light red, light green, light blue, light magenta, light cyan, yellow, white
 # black,     dark red,  dark green,  dark blue,  dark magenta,  dark cyan,  brown,  light gray
@@ -204,6 +219,9 @@ chmine-rw () {
     chmine "${@}"
     sudo chmod 664 "${@}"
 }
+
+# ctags
+alias retag="ctags -R ."
 
 # random django secret key generator
 function django_secret() { python -c "import string,random; uni=string.ascii_letters+string.digits+string.punctuation; print repr(''.join([random.SystemRandom().choice(uni) for i in range(random.randint(45,50))]))" ;}

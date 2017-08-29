@@ -27,7 +27,7 @@ if ! type neofetch >/dev/null 2>&1; then
 fi
 
 sudo apt update
-sudo apt install -y git make tree vim fontforge inkscape gimp python3-pip python3.6 virtualenv xclip sqlite3 screenfetch wget curl fortune cowsay boxes neofetch cmatrix ccat
+sudo apt install -y git make tree vim fontforge inkscape gimp python3-pip python3.6 virtualenv xclip sqlite3 screenfetch wget curl fortune cowsay boxes neofetch cmatrix ccat ctags
 pip3 install hangups ipython[all]
 
 echo $blue
@@ -53,6 +53,9 @@ if [ ! -d ~/.bash_profile ]; then
 fi
 if [ ! -d ~/.vimrc ]; then
     ln -s dotfiles/vimrc ~/.vimrc
+fi
+if [ ! -d ~/.ctags ]; then
+    ln -s dotfiles/ctags ~/.ctags
 fi
 if [ ! -d ~/.dircolors ]; then
     ln -s dotfiles/dircolors ~/.dircolors
