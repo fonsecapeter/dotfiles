@@ -12,5 +12,5 @@ PATH=$PATH:~/.local/bin
 
 # ================================================================
 source ~/.bash_profile
-alias ls='ls --color=always'
+alias ll='ls -apug'  # using tree
 # ================================================================
