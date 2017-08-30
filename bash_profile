@@ -96,15 +96,21 @@ git-squash() {
 }
 # -----------------------------------------
 
-# rbenv
+# ruby
 # -----------------------------------------
+# rbenv
 export RBENV_ROOT=/usr/local/var/rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 # -----------------------------------------
 
-# ipython
+# python
 # -----------------------------------------
+# ipython
 alias ipython='ipython3'
+alias activate='. venv/bin/activate'
+
+# random django secret key generator
+function django_secret() { python -c "import string,random; uni=string.ascii_letters+string.digits+string.punctuation; print repr(''.join([random.SystemRandom().choice(uni) for i in range(random.randint(45,50))]))" ;}
 # -----------------------------------------
 
 # use vim as manpager
@@ -223,9 +229,6 @@ chmine-rw () {
 # ctags
 alias retag="ctags -R ."
 
-# random django secret key generator
-function django_secret() { python -c "import string,random; uni=string.ascii_letters+string.digits+string.punctuation; print repr(''.join([random.SystemRandom().choice(uni) for i in range(random.randint(45,50))]))" ;}
-
 # obviously
 alias matrix="cmatrix -b"
 
@@ -233,9 +236,10 @@ alias matrix="cmatrix -b"
 function centercat() { clear && echo && echo && echo && echo && echo && cat "${@}" |  awk '{ z = '$(tput cols)' - length; y = int(z / 2); x = z - y; printf "%*s%s%*s\n", x, "", $0, y, ""; }' && echo && echo && echo && echo && echo ;}
 
 # TODO: work this into init_*.sh w/ cronjob to clean weekly
+# and figure out linux vs osx
 function trash() { mv "${@}" ~/.Trash; }
 
-# timestamp
+# time
 stamp() {
     orange
     date +"%r"
