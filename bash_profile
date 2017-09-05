@@ -49,7 +49,7 @@ alias tree="tree -C -I 'node_modules|*.pyc|venv' --dirsfirst"
 alias ls="tree -L 1"
 alias cat="ccat"
 alias mkdir="mkdir -pv"
-alias diff="colordiff"
+alias diff="colordiff -u"
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
@@ -124,6 +124,9 @@ alias man=my_man
 
 # work aliases
 # -----------------------------------------
+# need this all the time
+alias accounts='cat $(notes --find new_account)'
+
 # can never remember where my docs are
 alias docs='cd ~/Documents/code_base/'
 
@@ -170,8 +173,9 @@ alias ttam-buddy='~/Projects/ttam_buddy/ttam_buddy.sh'
 
 # peter's awesome aliases
 # -----------------------------------------
+alias refresh="source ~/.bash_profile"
 search () {
-  grep --color=always -rn "$1" "$2"
+  grep --color=always -rn "$1" "$2" | tee /dev/tty | echo "${purple}$(wc -l) ${orange}matches${reset}"
 }
 replace () {
   grep -rl "$1" "$3" | xargs sed -i '' "s/$1/$2/g"
