@@ -24,5 +24,5 @@ echo
 echo "  --->${purple}Running init.sh"
 echo
 echo $reset
-~/dotfiles/scripts/kde/add_apt_source.sh
-~/dotfiles/scripts/kde/init.sh
+~/dotfiles/scripts/osx/install_homebrew.sh
+~/dotfiles/scripts/osx/init.sh

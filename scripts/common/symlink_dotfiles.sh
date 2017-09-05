@@ -11,6 +11,9 @@ fi
 if [ ! -f ~/.dircolors ]; then
     ln -s dotfiles/dircolors ~/.dircolors
 fi
+if [ ! -f ~/.colordiffrc ]; then
+    ln -s dotfiles/colordiffrc ~/.colordiffrc
+fi
 if [ ! -f ~/.gitconfig ]; then
     ln -s dotfiles/gitconfig ~/.gitconfig
 fi

@@ -14,19 +14,19 @@ echo
 echo "  --->${purple} Installing jarbs"
 echo
 echo $reset
-~/dotfiles/scripts/kde/install_jarbs.sh
+~/dotfiles/scripts/common/install_jarbs.sh
 echo $blue
 echo
 echo "  --->${purple} Symlinking dotfiles"
 echo
 echo $reset
-~/dotfiles/scripts/kde/symlink_dotfiles.sh
+~/dotfiles/scripts/common/symlink_dotfiles.sh
 echo $blue
 echo
 echo "  --->${purple} Setting up vim"
 echo
 echo $reset
-~/dotfiles/scripts/kde/customize_vim.sh
+~/dotfiles/scripts/common/customize_vim.sh
 echo $blue
 echo
 echo "  --->${purple} Installing ui extensions"
