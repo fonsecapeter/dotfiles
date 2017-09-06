@@ -38,6 +38,9 @@ fi
 if [ ! -d ~/.ipython ]; then
     ln -s ~/dotfiles/ipython ~/.ipython
 fi
+if [ ! -d ~/.pryrc ]; then
+    ln -s ~/dotfiles/pryrc ~/.pryrc
+fi
 if [ ! -f ~/.peter-notes.yml ]; then
     ln -s ~/dotfiles/peter-notes.yml ~/.peter-notes.yml
 fi
