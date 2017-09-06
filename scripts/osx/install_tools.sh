@@ -1,7 +1,7 @@
 brew update && brew upgrade
 brew install vim --with-override-system-vi
-brew install neofetch tree coreutils cmatrix ccat python3 ctags colordiff
+brew install neofetch tree coreutils cmatrix ccat python3 ctags colordiff rbenv
 
 pip3 install ipython[all]
 
-gem install peter-notes
+sudo gem install peter-notes pry
