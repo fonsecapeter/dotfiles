@@ -189,7 +189,21 @@ replace_alt_alt () {
 }
 alias replace-alt-alt="replace_alt_alt"
 
-alias space-to-underscore='for f in *\ *; do mv "$f" "${f// /_}"; done'
+# convert all filenames in pwd to snake_case
+alias snakify='for f in *\ *; do mv "$f" "${f// /_}"; done'
+
+pypathify() {
+  # my/file/name.py -> my.file.name
+  echo "$1" |  sed "s|/|.|g" | sed "s/[.]py//"
+}
+unpypathify() {
+  # my.file.name.py -> my/file/name.py
+  slash_path="$(echo "$1" | sed "s|[.]|/|g" | sed "s|/py|.py|")"
+  if [[ ${slash_path: -3} != .py ]]; then  # only works with .py files
+    slash_path="${slash_path}.py"
+  fi;
+  echo "${slash_path}"
+}
 
 # gchat
 # dark gray, light red, light green, light blue, light magenta, light cyan, yellow, white
