@@ -182,7 +182,11 @@ let g:rcsv_colorpairs = [
 
 " taboo
 " -----------------------------------------
-let g:taboo_tab_format = " %N:%f%m"
+" let g:taboo_tab_format = " %N:%f%m "
+let g:taboo_tab_format = " %f%m "
+:hi TabLineFill ctermfg=0 ctermbg=0
+:hi TabLine ctermfg=15 ctermbg=0
+:hi TabLineSel ctermfg=7 ctermbg=NONE
 " -----------------------------------------
 
 " vim-airline
