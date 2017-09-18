@@ -95,9 +95,11 @@ let g:ale_python_flake8_args = '-m flake8'
 let g:ctrlp_map = '<C-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'rca'
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|.git\|venv\|.npm\|.vagrant\|data23\|emails\web\|**/*.pyc'
+" let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|.git\|venv\|.npm\|.vagrant\|data23\|emails\web\|**/*.pyc'
 " seems to be a pretty bad idea...
 " let g:ctrlp_max_files=0
+" maybe use ag instead?
+let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden -g ""'
 " -----------------------------------------
 
 " goyo.vim + limelight.vim

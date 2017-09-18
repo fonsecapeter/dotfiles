@@ -44,3 +44,6 @@ fi
 if [ ! -f ~/.peter-notes.yml ]; then
   ln -sv ~/dotfiles/peter-notes.yml ~/.peter-notes.yml
 fi
+if [ ! -f ~/.agignore ]; then
+  ln -sv ~/dotfiles/agignore ~/.agignore
+fi

@@ -1,0 +1,11 @@
+.git
+.svn
+.hg
+.DS_Store
+node_modules
+venv
+.npm
+.vagrant
+data23
+emails/web
+"**/*.pyc"

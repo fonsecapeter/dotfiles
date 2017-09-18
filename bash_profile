@@ -40,16 +40,18 @@ MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 # test -e ~/.dircolors && \
 eval `dircolors -b ~/.dircolors`
 
-# alias ls='gls --color=always --ignore=*.pyc --ignore=__pycache__'
 alias ll='gls --color=always --ignore=*.pyc --ignore=__pycache__ -la'
 alias grep='grep --color=always'
 alias egrep='egrep --color=always'
-# ignore stuff in tree
 alias tree="tree -C -I 'node_modules|*.pyc|venv' --dirsfirst"
+
+alias cp='cp -v'
+alias ln='ln -v'
 alias ls="tree -L 1"
-alias cat="ccat"
 alias mkdir="mkdir -pv"
-alias diff="colordiff -u"
+alias mv='mv -v'
+alias rm='rm -v'
+
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
@@ -57,8 +59,11 @@ alias .....='cd ../../../..'
 alias .4='cd ../../../..'
 alias .5='cd ../../../../..'
 
-alias ping="ping -c 5"
+alias ag='ag --path-to-ignore ~/.agignore --stats'
+alias cat="ccat"
+alias diff="colordiff -u"
 alias fastping="ping -c 10 -i .2"
+alias ping="ping -c 5"
 # -----------------------------------------
 
 # git
@@ -174,38 +179,39 @@ alias ttam-buddy='~/Projects/ttam_buddy/ttam_buddy.sh'
 # peter's awesome aliases
 # -----------------------------------------
 alias refresh="source ~/.bash_profile"
-search () {
-  search_help_message="
- ${green}-- Recursively Search For Text Accross Files --${reset}
-
- usage: ${green}search ${purple}<regex> <optional-path>${reset}
-
- ex 1: search for ${blue}TODO${reset} within a project
-   ${green}search ${purple}\"TODO\" ./Projects/time_machine${reset}
-
- ex 2: search for lines starting with ${blue}I do declare.${reset} within ${blue}pwd${reset}
-   ${green}search ${purple}\"^I do declare[.]\"${reset}
-"
-  if [ -z "$1" ]; then
-    echo
-    echo "${orange} !! No search regex given !!${reset}"
-    echo "${search_help_message}"
-    return 1
-  else
-    search_regex="$1"
-  fi
-  if [ "$1" == "-h" ] || [ "$1" == "--help" ] || [ "$1" == "HALP" ]; then
-    echo "${search_help_message}"
-    return 1
-  fi
-  if [ -z "$2" ]; then
-    search_path="./"
-  else
-    search_path="$2"
-  fi
-
-  grep --color=always -rn "${search_regex}" "${search_path}" | tee /dev/tty | echo "${purple}$(wc -l) ${orange}matches${reset}"
-}
+# search () {
+#   search_help_message="
+#  ${green}-- Recursively Search For Text Accross Files --${reset}
+#
+#  usage: ${green}search ${purple}<regex> <optional-path>${reset}
+#
+#  ex 1: search for ${blue}TODO${reset} within a project
+#    ${green}search ${purple}\"TODO\" ./Projects/time_machine${reset}
+#
+#  ex 2: search for lines starting with ${blue}I do declare.${reset} within ${blue}pwd${reset}
+#    ${green}search ${purple}\"^I do declare[.]\"${reset}
+# "
+#   if [ -z "$1" ]; then
+#     echo
+#     echo "${orange} !! No search regex given !!${reset}"
+#     echo "${search_help_message}"
+#     return 1
+#   else
+#     search_regex="$1"
+#   fi
+#   if [ "$1" == "-h" ] || [ "$1" == "--help" ] || [ "$1" == "HALP" ]; then
+#     echo "${search_help_message}"
+#     return 1
+#   fi
+#   if [ -z "$2" ]; then
+#     search_path="./"
+#   else
+#     search_path="$2"
+#   fi
+#
+#   grep --color=always -rn "${search_regex}" "${search_path}" | tee /dev/tty | echo "${purple}$(wc -l) ${orange}matches${reset}"
+# }
+alias search='ag'
 replace () {
   grep -rl "$1" "$3" | xargs sed -i '' "s/$1/$2/g"
 }
@@ -217,6 +223,45 @@ replace_alt_alt () {
   grep -rl "$1" "$3" | xargs sed -i '' "s@$1@$2@g"
 }
 alias replace-alt-alt="replace_alt_alt"
+
+explative () {
+  array[0]="h*ck"
+  array[1]="fl*p"
+  array[2]="f*dge"
+
+  size=${#array[@]}
+  index=$(($RANDOM % $size))
+  echo ${array[$index]}
+}
+
+my_tarball () {
+  if [ -z "$1" ]; then
+    echo "What the $(explative) am i supposed to call the tarball?"
+    return
+  fi
+  out_name=$(echo "$1" | sed -e "s/[.]gz$//" | sed -e "s/[.]tar$//")
+  shift
+  if [ -z "$1" ]; then
+    # ball up pwd by default
+    in_stuff="./"
+  else
+    in_stuff=$@
+  fi
+  eval "tar -cvzf \"${out_name}.tar.gz\" ${in_stuff}"
+}
+alias tarball=my_tarball
+
+untarball () {
+  if [ -z "$1" ]; then
+    echo "What the $(explative) am i supposed to untarball?"
+    return
+  fi
+  if [ -z "$2" ]; then
+    # unpack to pwd by default
+    tar -xvzf "$1"
+  fi
+  tar -xvzf "$1" -C "$2"
+}
 
 # convert all filenames in pwd to snake_case
 alias snakify='for f in *\ *; do mv "$f" "${f// /_}"; done'
