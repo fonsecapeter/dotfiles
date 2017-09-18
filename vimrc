@@ -46,6 +46,9 @@ set encoding=utf-8
 set t_Co=16
 set background=dark
 colorscheme noctu
+filetype plugin on
+" allow :!bashrc-alias
+:set shellcmdflag=-lic
 
 autocmd BufNewFile,BufReadPost *.html, *.dtml, *.lxml set filetype=htmldjango
 autocmd BufNewFile,BufReadPost *.html, *.dtml, *.lxml set syntax=htmldjango
@@ -92,7 +95,7 @@ let g:ale_python_flake8_args = '-m flake8'
 let g:ctrlp_map = '<C-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'rca'
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|.git\|venv\|.npm\|.vagrant\|data23\|emails\web\'
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|.git\|venv\|.npm\|.vagrant\|data23\|emails\web\|**/*.pyc'
 " seems to be a pretty bad idea...
 " let g:ctrlp_max_files=0
 " -----------------------------------------
@@ -157,7 +160,10 @@ let NERDTreeShowHidden = 1
 
 " nerdcommenter
 " -----------------------------------------
-" \ c <space>
+" \ c <space> is easy to forget...
+xnoremap ? :call NERDComment(0, "toggle")<CR>
+nnoremap ? :call NERDComment(0, "toggle")<CR>
+
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
 
