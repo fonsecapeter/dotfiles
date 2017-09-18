@@ -19,6 +19,7 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'kh3phr3n/python-syntax'
 Plugin 'mechatroner/rainbow_csv'
 Plugin 'gcmt/taboo.vim'
+Plugin 'majutsushi/tagbar'
 Plugin 'bling/vim-airline'
 Plugin 'craigemery/vim-autotag'
 Plugin 'nvie/vim-flake8'
@@ -162,6 +163,12 @@ let g:NERDSpaceDelims = 1
 
 " Align line-wise comment delimiters flush left instead of following code indentation
 let g:NERDDefaultAlign = 'left'
+
+" Add your own custom formats or override the defaults
+let g:NERDCustomDelimiters = { 'vim': { 'left': '"', 'right': ''}, 'python': { 'left': '#', 'right': ''} }
+
+" Allow commenting and inverting empty lines (useful when commenting a region)
+let g:NERDCommentEmptyLines = 1
 " -----------------------------------------
 
 " python-syntax
@@ -187,6 +194,12 @@ let g:taboo_tab_format = " %f%m "
 :hi TabLineFill ctermfg=0 ctermbg=0
 :hi TabLine ctermfg=15 ctermbg=0
 :hi TabLineSel ctermfg=7 ctermbg=NONE
+" -----------------------------------------
+
+" tagbar
+" -----------------------------------------
+" C-_ behaves weird but should be C--
+nnoremap <C-_> :TagbarToggle<CR>
 " -----------------------------------------
 
 " vim-airline
@@ -309,4 +322,9 @@ nnoremap <C-t> :tabnew<CR>
 
 " ctags go to new tab
 :nnoremap <C-]> <C-w><C-]><C-w>T
+
+" make brackets open up nicely
+inoremap {<CR> {<CR>}<C-o>O
+inoremap [<CR> [<CR>]<C-o>O<tab>
+inoremap (<CR> (<CR>)<C-o>O<tab>
 " -----------------------------------------
