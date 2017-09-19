@@ -1,4 +1,4 @@
-source ~/dotfiles/colors.sh
+source ~/dotfiles/bash_extras/colors.sh
 cur_dir=$PWD
 # or forget about ppa and install with
 # wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/arc-kde/master/install-arc-kde-home.sh | sh

@@ -1,4 +1,4 @@
-source ~/dotfiles/colors.sh
+source ~/dotfiles/bash_extras/colors.sh
 echo $orange
 echo
 echo '  ------------- Fresh Install Automated -------------'

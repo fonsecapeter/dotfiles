@@ -1,4 +1,4 @@
-source ~/dotfiles/colors.sh
+source ~/dotfiles/bash_extras/colors.sh
 cur_dir=$PWD
 if [ ! -d ~/Projects/jarbs ]; then
     sudo git clone https://github.com/fonsecapeter/jarbs ~/Projects/jarbs
