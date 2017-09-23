@@ -1,2 +1,3 @@
 editor: vim
 notes_dir: ~/GoogleDrive/Notes
+searcher: "ag \"%{regex}\" \"%{notes_dir}\""

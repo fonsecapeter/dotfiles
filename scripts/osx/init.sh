@@ -27,6 +27,12 @@ echo "  --->${purple} Setting up vim"
 echo
 echo $reset
 ~/dotfiles/scripts/common/customize_vim.sh
+echo $blue
+echo
+echo "  --->${purple} Setting up rbenv"
+echo
+echo $reset
+~/dotfiles/scripts/common/set_up_rbenv.sh
 echo $orange
 echo
 echo '  -------------------- Finished ---------------------'

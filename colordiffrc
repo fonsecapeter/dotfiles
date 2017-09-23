@@ -2,4 +2,4 @@
 plain=off
 newtext=darkgreen
 oldtext=darkred
-diffstuff=darkcyan
+diffstuff=black
