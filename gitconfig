@@ -1,6 +1,8 @@
 [user]
 	name = Peter Fonseca
 	email = peter.nfonseca@gmail.com
+[commit]
+  template = ~/dotfiles/gitmessage
 [core]
   editor = vim
 [color "diff"]

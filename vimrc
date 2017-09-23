@@ -67,16 +67,16 @@ autocmd BufWritePre * :FixWhitespace
 " quit all (great for in goyo)
 command Q qa
 
-" set cursor highlighting in current window
-augroup CursorLine
-  " why you change ctermfg based on ctermbg, osx vim??? D:
-  if !has('macunix')
-    au!
-    au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
-    au WinLeave * setlocal nocursorline
-  endif
-augroup END
-" hi CursorLine ctermbg=None
+" " set cursor highlighting in current window
+" augroup CursorLine
+"   " why you change ctermfg based on ctermbg, osx vim??? D:
+"   if !has('macunix')
+"     au!
+"     au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+"     au WinLeave * setlocal nocursorline
+"   endif
+" augroup END
+" " hi CursorLine ctermbg=None
 
 " delete while in insert mode
 set backspace=indent,eol,start
