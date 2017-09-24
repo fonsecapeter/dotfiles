@@ -1,5 +1,6 @@
 # ipython
 # alias ipython='ipython3'
+alias py='ipython3'
 
 alias activate='. venv/bin/activate'
 
