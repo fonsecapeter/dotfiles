@@ -8,6 +8,9 @@ echo
 echo "  --->${purple} Installing tools"
 echo
 echo $reset
+if [ ! -d ~/.Projects ]; then
+  mkdir -v ~/Projects
+fi
 ~/dotfiles/scripts/kde/install_tools.sh
 echo $blue
 echo

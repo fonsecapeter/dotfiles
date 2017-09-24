@@ -23,6 +23,9 @@ fi
 if [ ! -d ~/.local/share/konsole ]; then
     mkdir ~/.local/share/konsole
 fi
+if [ ! -f ~/.local/share/konsole/Shellectric.colorscheme ]; then
+  ln -sv ~/Projects/shellectric-color-scheme/Shellectric.colorscheme ~/.local/share/konsole/Shellectric.colorscheme
+fi
 if [ ! -f ~/.local/share/konsole/Peter.colorscheme ]; then
   ln -sv ~/dotfiles/Peter.colorscheme ~/.local/share/konsole/Peter.colorscheme
 fi
