@@ -1,6 +1,6 @@
 [Appearance]
 BoldIntense=true
-ColorScheme=Peter
+ColorScheme=Shellectric
 Font=Peter Mono Cozy,11,-1,0,50,0,0,0,0,0
 LineSpacing=2
 UseFontLineChararacters=true
