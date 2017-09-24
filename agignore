@@ -8,4 +8,5 @@ venv
 .vagrant
 data23
 emails/web
+tags
 "**/*.pyc"
