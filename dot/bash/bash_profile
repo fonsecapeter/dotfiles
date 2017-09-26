@@ -9,6 +9,7 @@ else
 fi
 echo
 neofetch --ascii "${ascii_file}" --ascii_colors "${ascii_colors}"
+echo
 # -----------------------------------------
 
 source ~/dotfiles/dot/bash/lib/manifest.sh
