@@ -6,7 +6,10 @@ my_dash () {
   fi
   if git rev-parse --git-dir > /dev/null 2>&1; then
     git_status=$(git status 2>&1)
-    if [[ "${git_status}" =~ "Changes not staged" ]]; then
+    if [[ "${git_status}" =~ "interactive rebase" ]]; then
+      echo -e "${purple}.."
+      return 0
+    elif [[ "${git_status}" =~ "Changes not staged" ]]; then
       echo -e "${red}**"
       return 0
     elif [[ "${git_status}" =~ "Untracked files" ]]; then
@@ -23,9 +26,6 @@ my_dash () {
       return 0
     elif [[ "${git_status}" =~ "branch is behind" ]]; then
       echo -e "${orange}~~"
-      return 0
-    elif [[ "${git_status}" =~ "interactive rebase" ]]; then
-      echo -e "${purple}.."
       return 0
     fi
   fi
