@@ -1,8 +1,8 @@
 [user]
   name = Peter Fonseca
-	email = pfonseca@23andme.com
+	email = peter.nfonseca@gmail.com
 [commit]
-  template = ~/.gitmessage
+  template = ~/dotfiles/dot/git/gitmessage
 [core]
   editor = vim
 [color "diff"]
