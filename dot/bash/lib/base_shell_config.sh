@@ -1,5 +1,5 @@
 # export PS1="${bright_orange}\u${bright_white}@${red}\h${bright_white}:${bright_red}\W${bright_white}$ ${reset}"
-my_dash () {
+dashes () {
   if [ ! $? -eq 0 ]; then
     echo "${bright_red}xx"
     return 0
@@ -7,32 +7,31 @@ my_dash () {
   if git rev-parse --git-dir > /dev/null 2>&1; then
     git_status=$(git status 2>&1)
     if [[ "${git_status}" =~ "interactive rebase" ]]; then
-      echo -e "${purple}.."
+      echo -en "\001${purple}\002.."
       return 0
     elif [[ "${git_status}" =~ "Changes not staged" ]]; then
-      echo -e "${red}**"
+      echo -en "\001${red}\002**"
       return 0
     elif [[ "${git_status}" =~ "Untracked files" ]]; then
-      echo -e "${red}**"
+      echo -en "\001${red}\002**"
       return 0
     elif [[ "${git_status}" =~ "Changes to be committed" ]]; then
-      echo -e "${bright_orange}++"
+      echo -en "\001${bright_orange}\002++"
       return 0
     elif [[ "${git_status}" =~ "different commits" ]]; then
-      echo -e "${orange}~~"
+      echo -en "\001${orange}\002~~"
       return 0
     elif [[ "${git_status}" =~ "branch is ahead" ]]; then
-      echo -e "${orange}~~"
+      echo -en "\001${orange}\002~~"
       return 0
     elif [[ "${git_status}" =~ "branch is behind" ]]; then
-      echo -e "${orange}~~"
+      echo -en "\001${orange}\002~~"
       return 0
     fi
   fi
-  echo -e "${bright_black}--"
+  echo -en "\001${bright_black}\002--"
 }
-dashes='echo "$(my_dash)"'
-export PS1=" \`${dashes}\` ${bright_green}\W${white}$ ${reset}"
+export PS1=' $(dashes) \[${bright_green}\]\W\[${white}\]$ \[${reset}\]'
 export LSCOLORS="cxBxhxDxgxhxhxhxhxfxfx"
 
 PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
