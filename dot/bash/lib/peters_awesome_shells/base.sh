@@ -6,7 +6,7 @@ alias snakify='for f in *\ *; do mv "$f" "${f// /_}"; done'
 # gchat
 # dark gray, light red, light green, light blue, light magenta, light cyan, yellow, white
 # black,     dark red,  dark green,  dark blue,  dark magenta,  dark cyan,  brown,  light gray
-alias chat="hangups --col-msg-self-fg 'light magenta' --col-msg-sender-fg 'dark gray' --col-msg-text-fg 'light cyan' --col-msg-date-fg 'yellow' --col-active-tab-fg 'dark gray'"
+alias chat="hangups --col-msg-self-fg 'light magenta' --col-msg-sender-fg 'dark gray' --col-msg-text-fg 'white' --col-msg-date-fg 'yellow' --col-active-tab-fg 'dark gray'"
 
 # disk space usage
 # alias disk_unsorted="sudo du -x -d1 -h $1"
