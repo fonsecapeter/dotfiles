@@ -52,7 +52,8 @@ set background=dark
 colorscheme noctu
 filetype plugin on
 " allow :!bashrc-alias
-:set shellcmdflag=-lic
+" causing way too many problems dont do dis
+" :set shellcmdflag=-lic
 
 autocmd BufNewFile,BufReadPost *.html, *.dtml, *.lxml set filetype=htmldjango
 autocmd BufNewFile,BufReadPost *.html, *.dtml, *.lxml set syntax=htmldjango
@@ -98,7 +99,7 @@ nnoremap <C-s> :Ag!<Space>
 let g:ale_python_flake8_executable = 'python3'
 let g:ale_python_flake8_args = '-m flake8'
 let g:ale_linters = {
-\  'ruby': [],
+\  'ruby': ['rubocop'],
 \  'python': ['flake8'],
 \  'javascript': ['eslint'],
 \}
