@@ -24,6 +24,12 @@ my_man() {
 alias man=my_man
 # -----------------------------------------
 
+# stop <C-s> from halting terminal output
+# -----------------------------------------
+bind -r '\C-s'
+stty -ixon
+# -----------------------------------------
+
 # added for jarbs
 alias jarbs='~/Projects/jarbs/bin/start.sh'
 
