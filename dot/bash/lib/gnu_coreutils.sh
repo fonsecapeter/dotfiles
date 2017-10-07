@@ -18,7 +18,7 @@ alias .4='cd ../../../..'
 alias .5='cd ../../../../..'
 
 alias ag='ag --path-to-ignore ~/.agignore --stats'
-alias cat="ccat"
+# alias cat="ccat"
 alias diff="colordiff -u"
 alias fastping="ping -c 10 -i .2"
 alias ping="ping -c 5"
