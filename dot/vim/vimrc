@@ -64,6 +64,16 @@ autocmd BufNewFile,BufReadPost *.ronn set filetype=markdown
 autocmd BufNewFile,BufReadPost,FilterReadPost,FileReadPost *.{txt,md,y*ml,cfg,ini} :Goyo 120
 autocmd BufNewFile,BufReadPost bash_profile set syntax=sh
 autocmd BufNewFile,BufReadPost vimrc set syntax=vim
+
+" spell-checking
+" use <C-P> (with shift) in insert for spell completion
+" use zg in normal mode to add word under cursor to spellfile
+" use zw in normal mode to mark as wrong (comments out if in spellfile)
+set spelllang=en
+set spellfile=$HOME/dotfiles/dot/vim/spell.utf-8.add
+autocmd FileType markdown setlocal spell
+autocmd FileType markdown setlocal complete+=kspell
+
 " for now, the only time i read from stdin is for manpages
 autocmd StdinReadPost * set ft=man
 
