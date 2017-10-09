@@ -154,6 +154,7 @@ endif
 
 set autoindent
 set smartindent
+set breakindent
 let g:indentLine_char = '|'
 let g:indentLine_setColors = 0
 highlight Conceal ctermbg=None ctermfg=0
