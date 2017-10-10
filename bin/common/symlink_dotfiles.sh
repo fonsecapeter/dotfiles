@@ -50,3 +50,15 @@ fi
 if [ ! -f ~/.agignore ]; then
   ln -sv ~/dotfiles/dot/agignore ~/.agignore
 fi
+if [ ! -f ~/.zshlogin ]; then
+  ln -sv ~/dotfiles/dot/zsh/zshlogin ~/.zshlogin
+fi
+if [ ! -f ~/.zshrc ]; then
+  ln -sv ~/dotfiles/dot/zsh/zshrc ~/.zshrc
+fi
+if [ ! -f ~/.oh-my-zsh/themes/shellectric.zsh-theme ]; then
+  ln -sv ~/dotfiles/dot/zsh/shellectric.zsh-theme ~/.oh-my-zsh/themes/shellectric.zsh-theme
+fi
+if [ ! -f ~/.oh-my-zsh/themes/shellectric-verbose.zsh-theme ]; then
+  ln -sv ~/dotfiles/dot/zsh/shellectric-verbose.zsh-theme ~/.oh-my-zsh/themes/shellectric-verbose.zsh-theme
+fi

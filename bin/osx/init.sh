@@ -1,3 +1,6 @@
+#!/usr/bin/env bash
+set -eu -o pipefail
+
 source ~/dotfiles/dot/bash/lib/colors.sh
 echo $orange
 echo

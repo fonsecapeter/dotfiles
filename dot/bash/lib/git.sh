@@ -1,4 +1,4 @@
-source ~/.git-completion.bash
+# source ~/.git-completion.bash
 alias gs="git status"
 colorized_git_last() {
   git last \

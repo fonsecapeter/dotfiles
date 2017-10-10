@@ -1,3 +1,6 @@
+#!/usr/bin/env bash
+set -eu -o pipefail
+
 source ~/dotfiles/dot/bash/lib/colors.sh
 echo $orange
 echo
@@ -8,7 +11,7 @@ echo
 echo "  --->${purple} Installing tools"
 echo
 echo $reset
-if [ ! -d ~/.Projects ]; then
+if [ ! -d ~/Projects ]; then
   mkdir -v ~/Projects
 fi
 ~/dotfiles/bin/kde/install_tools.sh

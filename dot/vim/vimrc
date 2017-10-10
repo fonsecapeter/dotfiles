@@ -24,7 +24,6 @@ Plugin 'majutsushi/tagbar'
 Plugin 'bling/vim-airline'
 Plugin 'craigemery/vim-autotag'
 Plugin 'tpope/vim-endwise'
-" Plugin 'nvie/vim-flake8'
 Plugin 'tpope/vim-fugitive'
 Plugin 'rhysd/vim-gfm-syntax'
 Plugin 'airblade/vim-gitgutter'
@@ -58,6 +57,7 @@ filetype plugin on
 autocmd BufNewFile,BufReadPost *.html, *.dtml, *.lxml set filetype=htmldjango
 autocmd BufNewFile,BufReadPost *.html, *.dtml, *.lxml set syntax=htmldjango
 autocmd BufNewFile,BufReadPost *.json set syntax=javascript
+autocmd BufNewFile,BufReadPost *.zsh-theme set syntax=zsh
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 autocmd BufNewFile,BufReadPost *.txt set filetype=markdown
 autocmd BufNewFile,BufReadPost *.ronn set filetype=markdown
@@ -177,8 +177,8 @@ map <C-\> :NERDTreeToggle<ESC>
 map <Bar> :NERDTreeFind<ESC>
 
 " auto open if no file specified
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" autocmd StdinReadPre * let s:std_in=1
+" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " auto open if dir
 autocmd StdinReadPre * let s:std_in=1
@@ -291,19 +291,6 @@ endfunction
 let g:airline_section_a = '%{MyMode()}'
 " ------------------------------------------
 
-" vim-flake8
-" -----------------------------------------
-" pep8 settings
-au BufNewFile,BufRead *.py
-  \ set tabstop=4
-" \ set softtabstop=4
-  \ set shiftwidth=4
-  \ set textwidth=79
-  \ set expandtab
-  \ set autoindent
-  \ set fileformat=unix
-" -----------------------------------------
-
 " vim-fugitive
 " -----------------------------------------
 nnoremap <C-b> :Gblame<CR>
@@ -368,4 +355,13 @@ nnoremap <C-t> :tabnew<CR>
 inoremap {<CR> {<CR>}<C-o>O
 inoremap [<CR> [<CR>]<C-o>O<tab>
 inoremap (<CR> (<CR>)<C-o>O<tab>
+
+" use tab like esc (ADM-3A-like)
+" http://vim.wikia.com/wiki/Avoid_the_escape_key
+nnoremap <Tab> <Esc>
+vnoremap <Tab> <Esc>gV
+onoremap <Tab> <Esc>
+cnoremap <Tab> <C-C><Esc>
+inoremap <Tab> <Esc>`^
+inoremap <Leader><Tab> <Tab>
 " -----------------------------------------
