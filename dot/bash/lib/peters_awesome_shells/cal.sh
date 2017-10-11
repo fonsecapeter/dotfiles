@@ -1,4 +1,4 @@
-my_cal () {
+function my_cal {
   today=$(date +%e)
   this_month=$(date +%B | tr '[:upper:]' '[:lower:]')
   this_year=$(date +%Y | tr '[:upper:]' '[:lower:]')
@@ -25,7 +25,7 @@ my_cal () {
 
   echo
   # highlight today if looking at present
-  if [ "${month}" == "${this_month}" ] && [ "${year}" == "${this_year}" ]; then
+  if [[ "${month}" == "${this_month}" ]] && [[ "${year}" == "${this_year}" ]]; then
     this_year_2d=$(date +%y)
     hilight_current_day=$(echo "${hilight_days}" | sed "s/${today}[^(?:${this_year_2d})]/${red}&${reset}/")
     echo "${hilight_current_day}"

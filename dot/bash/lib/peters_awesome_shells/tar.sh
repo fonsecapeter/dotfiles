@@ -1,9 +1,9 @@
-my_tarball () {
+function my_tarball {
   if [ -z "$1" ]; then
     echo "What the $(explative) am i supposed to call the tarball?"
     return
   fi
-  out_name=$(echo "$1" | sed -e "s/[.]gz$//" | sed -e "s/[.]tar$//")
+  local -r out_name=$(echo "$1" | sed -e "s/[.]gz$//" | sed -e "s/[.]tar$//")
   shift
   if [ -z "$1" ]; then
     # ball up pwd by default
@@ -15,7 +15,7 @@ my_tarball () {
 }
 alias tarball=my_tarball
 
-untarball () {
+function untarball {
   if [ -z "$1" ]; then
     echo "What the $(explative) am i supposed to untarball?"
     return

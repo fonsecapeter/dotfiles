@@ -50,9 +50,6 @@ fi
 if [ ! -f ~/.agignore ]; then
   ln -sv ~/dotfiles/dot/agignore ~/.agignore
 fi
-if [ ! -f ~/.zshlogin ]; then
-  ln -sv ~/dotfiles/dot/zsh/zshlogin ~/.zshlogin
-fi
 if [ ! -f ~/.zshrc ]; then
   ln -sv ~/dotfiles/dot/zsh/zshrc ~/.zshrc
 fi

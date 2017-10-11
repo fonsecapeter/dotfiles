@@ -1,9 +1,7 @@
-explative () {
-  array[0]="h*ck"
-  array[1]="fl*p"
-  array[2]="f*dge"
+function explative {
+  local swear_words=('h*ck' 'fl*p' 'f*dge')
 
-  size=${#array[@]}
+  local -r size=${#swear_words[@]}
   index=$(($RANDOM % $size))
-  echo ${array[$index]}
+  echo ${swear_words[$index]}
 }

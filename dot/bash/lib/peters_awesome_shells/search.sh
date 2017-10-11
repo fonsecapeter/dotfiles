@@ -1,5 +1,5 @@
-search () {
-  search_help_message="
+function search {
+  local -r search_help_message="
  ${green}-- Recursively Search For Text Accross Files --${reset}
 
  usage: ${green}search ${purple}<regex> <optional-path>${reset}
@@ -16,16 +16,16 @@ search () {
     echo "${search_help_message}"
     return 1
   else
-    search_regex="$1"
+    local -r search_regex="$1"
   fi
-  if [ "$1" == "-h" ] || [ "$1" == "--help" ] || [ "$1" == "HALP" ]; then
+  if [[ "$1" == "-h" ]] || [[ "$1" == "--help" ]] || [[ "$1" == "HALP" ]]; then
     echo "${search_help_message}"
     return 1
   fi
   if [ -z "$2" ]; then
-    search_path="./"
+    local -r search_path="./"
   else
-    search_path="$2"
+    local -r search_path="$2"
   fi
 
   grep --color=always -rn "${search_regex}" "${search_path}" | tee /dev/tty | echo "${purple}$(wc -l) ${orange}matches${reset}"

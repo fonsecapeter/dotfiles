@@ -10,19 +10,19 @@ alias chat="hangups --col-msg-self-fg 'light magenta' --col-msg-sender-fg 'dark 
 
 # disk space usage
 # alias disk_unsorted="sudo du -x -d1 -h $1"
-disk_unsorted() {
+function disk_unsorted {
     sudo du -x -d1 -h $@
 }
-disk_sorted() {
+function disk_sorted {
     disk_unsorted | sort -hr
 }
 alias disk=disk_sorted
 # alias disk="disk_unsorted | sort -hr"
 
 # finding whos listening on my ports
-alias localhost_ports="netstat -a | grep LISTEN | grep localhost"
-alias listening="netstat -a | grep LISTEN"
-localhosts() {
+alias localhost_ports='netstat -a | grep LISTEN | grep localhost'
+alias listening='netstat -a | grep LISTEN'
+function localhosts {
   if [ -z "$1" ]; then
     localhost_ports
   else
@@ -32,25 +32,25 @@ localhosts() {
 alias ports=localhosts
 
 # permissions
-chmine () {
+function chmine {
     sudo chown -R $USER "${@}"
     sudo chgrp -R $(id -g -n $USER) "${@}"
 
 }
-chmine-rw () {
+function chmine-rw {
     chmine "${@}"
     sudo chmod 664 "${@}"
 }
 
 # ctags
-alias retag="ctags -R ."
+alias retag='ctags -R .'
 
 # obviously
-alias matrix="cmatrix -b"
+alias matrix='cmatrix -b'
 
 # makes my ansii art look cool
 # function centercat() { clear && echo && echo && echo && echo && echo && cat "${@}" |  awk '{ z = '$(tput cols)' - length; y = int(z / 2); x = z - y; printf "%*s%s%*s\n", x, "", $0, y, ""; }' && echo && echo && echo && echo && echo ;}
-function centercat() {
+function centercat {
   clear
   echo && echo && echo && echo && echo
   cat "${@}" |  awk '{ z = '$(tput cols)' - length; y = int(z / 2); x = z - y; printf "%*s%s%*s\n", x, "", $0, y, ""; }'
@@ -59,10 +59,10 @@ function centercat() {
 
 # TODO: work this into init_*.sh w/ cronjob to clean weekly
 # and figure out linux vs osx
-function trash() { mv "${@}" ~/.Trash; }
+function trash { mv "${@}" ~/.Trash; }
 
 # time
-stamp() {
+function stamp {
     orange
     date +"%r"
     reset

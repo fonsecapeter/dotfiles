@@ -51,7 +51,7 @@ DISABLE_AUTO_TITLE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(brew django docker gem git httpie npm pip python vagrant web-search wd zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -83,7 +83,6 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-source ~/.zshlogin
 source ~/dotfiles/dot/zsh/yoink_from_bash.zsh
 alias search=ag
 
@@ -101,3 +100,5 @@ alias man=my_man
 # bind -r '\C-s'
 stty -ixon
 # -----------------------------------------
+
+alias ttam-buddy='~/Projects/ttam_buddy/ttam_buddy.sh'
