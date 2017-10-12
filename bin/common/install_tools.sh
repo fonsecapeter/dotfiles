@@ -1,4 +1,4 @@
-if [ ! -d ~/.Projects ]; then
+if [ ! -d ~/Projects ]; then
   mkdir -v ~/Projects
 fi
 # pip3 install hangups
