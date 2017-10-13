@@ -364,4 +364,7 @@ onoremap <Tab> <Esc>
 cnoremap <Tab> <C-C><Esc>
 inoremap <Tab> <Esc>`^
 inoremap <Leader><Tab> <Tab>
+
+" dont overwrite rigister on paste
+xnoremap p "_dP
 " -----------------------------------------
