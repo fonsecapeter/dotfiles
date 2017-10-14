@@ -38,7 +38,7 @@ echo
 echo "  --->${purple} Setting up rbenv"
 echo
 echo $reset
-~/dotfiles/bin/common/set_up_rbenv.sh
+~/dotfiles/bin/kde/set_up_rbenv.sh
 echo $blue
 echo
 echo "  --->${purple} Installing ui extensions"

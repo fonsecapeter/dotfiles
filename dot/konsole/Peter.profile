@@ -6,10 +6,11 @@ LineSpacing=2
 UseFontLineChararacters=true
 
 [Cursor Options]
-CustomCursorColor=77,144,123
+CustomCursorColor=78,163,126
 UseCustomCursorColor=true
 
 [General]
+Command=/bin/zsh
 Name=Peter
 Parent=FALLBACK/
 TerminalColumns=112
