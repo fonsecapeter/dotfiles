@@ -67,23 +67,23 @@ EIGHTBIT 1
 # NOTES:
 # - See http://www.oreilly.com/catalog/wdnut/excerpt/color_names.html
 # - Color combinations
-#   ANSI Color code       PeterFall
+#   ANSI Color code       Shellectric
 #   ~~~~~~~~~~~~~~~       ~~~~~~~~~
 #   00    none            sand
 #   30    black           black
 #   01;30 bright black    drk gray
-#   31    red             lighter red
-#   01;31 bright red      red
-#   32    green           blue green
-#   01;32 bright green    forest green
+#   31    red             red
+#   01;31 bright red      pink-red
+#   32    green           forrest green
+#   01;32 bright green    green
 #   33    yellow          orange
 #   01;33 bright yellow   burnt pumpkin
 #   34    blue            blue
-#   01;34 bright blue     light moss
-#   35    magenta         deep blue
-#   01;35 bright magenta  whale blue
-#   36    cyan            brown
-#   01;36 bright cyan     dark brown
+#   01;34 bright blue     sky blue
+#   35    magenta         magenta
+#   01;35 bright magenta  bright magenta
+#   36    cyan            cyan
+#   01;36 bright cyan     light cyan
 #   37    white           mid gray
 #   01;37 bright white    light gray
 
@@ -135,17 +135,18 @@ EXEC 01;34  # Unix
 ### Text formats
 
 # Text that we can edit with a regular editor
-.txt 00
-.org 00
 .md 00
 .mkd 00
+.org 00
 .pdc 00
+.txt 00
 
 # Source text
 .h 01;33
 .c 01;33
 .C 01;33
 .cc 01;33
+.cr 01;33
 .cxx 01;33
 .objc 01;33
 .sh 01;33
@@ -185,12 +186,14 @@ EXEC 01;34  # Unix
 .tex 01;33
 
 #Data
-.npy 01;32
-.pickle 01;32
-.sql 01;32
-.json 01;32
-.tsv 01;32
-.csv 01;32
+.npy 35
+.pickle 35
+.sql 35
+.json 35
+.tsv 35
+.csv 35
+.yml 35
+.yaml 35
 
 ### Multimedia formats
 
@@ -271,6 +274,12 @@ EXEC 01;34  # Unix
 .wmv 36
 
 ### Misc
+
+# Special files
+# doesnt seem to work
+# README.md 35
+# LICENSE 34
+
 
 # Binary document formats and multimedia source
 .doc 00

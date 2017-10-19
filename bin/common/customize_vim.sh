@@ -1,8 +1,5 @@
-if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
-    sudo git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-fi
-sudo vim -c 'PluginInstall' -c 'qa!'
+source ~/dotfiles/bin/common/clone_from_git.sh
+source ~/dotfiles/bin/common/symlink_stuff.sh
 
-if [ ! -f ~/.vim/bundle/vim-airline/autoload/airline/themes/peter_fall.vim ]; then
-  sudo ln -sv ~/dotfiles/dot/vim/peter_fall_airline_theme.vim ~/.vim/bundle/vim-airline/autoload/airline/themes/peter_fall.vim
-fi
+clone_from_git https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+sudo vim -c 'PluginInstall' -c 'qa!'

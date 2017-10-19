@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -eu -o pipefail
-
 source ~/dotfiles/dot/bash/lib/colors.sh
+
 echo $orange
 echo
 echo '  ------------- Fresh Install Automated -------------'
@@ -11,22 +11,7 @@ echo
 echo "  --->${purple} Installing tools"
 echo
 echo $reset
-if [ ! -d ~/Projects ]; then
-  mkdir -v ~/Projects
-fi
 ~/dotfiles/bin/kde/install_tools.sh
-echo $blue
-echo
-echo "  --->${purple} Installing jarbs"
-echo
-echo $reset
-~/dotfiles/bin/common/install_jarbs.sh
-echo $blue
-echo
-echo "  --->${purple} Symlinking dotfiles"
-echo
-echo $reset
-~/dotfiles/bin/common/symlink_dotfiles.sh
 echo $blue
 echo
 echo "  --->${purple} Setting up vim"
@@ -45,6 +30,12 @@ echo "  --->${purple} Installing ui extensions"
 echo
 echo $reset
 ~/dotfiles/bin/kde/install_ui_extensions.sh
+echo $blue
+echo
+echo "  --->${purple} Symlinking dotfiles"
+echo
+echo $reset
+~/dotfiles/bin/common/symlink_dotfiles.sh
 echo $orange
 echo
 echo '  -------------------- Finished ---------------------'
