@@ -32,8 +32,8 @@ function verbose_dashes {
 }
 
 PROMPT=' $(verbose_dashes)%b %F{green}%c%F{white}%B$%f%b '
-RPROMPT='%F{yellow}%t%f'
+RPROMPT='%B%t%b'
 TRAPALRM() {
-    zle reset-prompt
+  zle reset-prompt
 }
 TMOUT=8

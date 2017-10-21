@@ -110,6 +110,7 @@ nnoremap <C-s> :Ag!<Space>
 let g:ale_python_flake8_executable = 'python3'
 let g:ale_python_flake8_args = '-m flake8'
 let g:ale_linters = {
+\  'crystal': ['crystal'],
 \  'ruby': ['rubocop'],
 \  'python': ['flake8'],
 \  'javascript': ['eslint'],
@@ -323,9 +324,11 @@ let g:multi_cursor_quit_key='<Esc>'
 " mappings (aliases)
 " -----------------------------------------
 " for line insertion in normal mode
-map <Enter> o<ESC>
-map <S-Enter> O<ESC>
-
+noremap <CR> o<ESC>
+" only works for iterm
+" Preferences > Profiles > Keys > + > Insert text: ☻
+noremap ☻ O<ESC>
+noremap <S-CR> O<ESC>
 
 " for split windows like sublime origami
 " navigating

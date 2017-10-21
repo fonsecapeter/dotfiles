@@ -32,8 +32,8 @@ function dashes {
 }
 
 PROMPT=' $(dashes)%b%F{white}%B$%f%b '
-RPROMPT='%F{yellow}%t%f'
+RPROMPT='%B%t%b'
 TRAPALRM() {
-    zle reset-prompt
+  zle reset-prompt
 }
 TMOUT=8
