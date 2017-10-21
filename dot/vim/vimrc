@@ -324,11 +324,11 @@ let g:multi_cursor_quit_key='<Esc>'
 " mappings (aliases)
 " -----------------------------------------
 " for line insertion in normal mode
-noremap <CR> o<ESC>
+nnoremap <CR> o<ESC>
 " only works for iterm
 " Preferences > Profiles > Keys > + > Insert text: ☻
-noremap ☻ O<ESC>
-noremap <S-CR> O<ESC>
+nnoremap ☻ O<ESC>
+nnoremap <S-CR> O<ESC>
 
 " for split windows like sublime origami
 " navigating

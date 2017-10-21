@@ -39,9 +39,10 @@ symlink_file ~/dotfiles/dot/ruby/pryrc ~/.pryrc
 
 # zsh
 # -----------------------------------------
+mkdir -p ~/.oh-my-zsh/custom/themes
 symlink_file ~/dotfiles/dot/zsh/zshrc ~/.zshrc
-symlink_file ~/dotfiles/dot/zsh/shellectric.zsh-theme ~/.oh-my-zsh/themes/shellectric.zsh-theme
-symlink_file ~/dotfiles/dot/zsh/shellectric-verbose.zsh-theme ~/.oh-my-zsh/themes/shellectric-verbose.zsh-theme
+symlink_file ~/dotfiles/dot/zsh/shellectric.zsh-theme ~/.oh-my-zsh/custom/themes/shellectric.zsh-theme
+symlink_file ~/dotfiles/dot/zsh/shellectric-verbose.zsh-theme ~/.oh-my-zsh/custom/themes/shellectric-verbose.zsh-theme
 # -----------------------------------------
 
 # vim
