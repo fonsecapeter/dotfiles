@@ -18,8 +18,8 @@ clone_from_git https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my
 # -----------------------------------------
 
 # miso
-clone_from_git https://github.com/fonsecapeter/miso-buddy ~/Projects/miso-buddy
 if [ ! -x "$(command -v miso)" ]; then
+  clone_from_git https://github.com/fonsecapeter/miso-buddy ~/Projects/miso-buddy
   cur_dir=$PWD
   cd ~/Projects/miso-buddy
   make
