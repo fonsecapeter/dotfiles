@@ -1,4 +1,4 @@
-function dashes {
+function git_dash {
   if [ ! $? -eq 0 ]; then
     echo -en "%F{red}%Bx"
     return 0
@@ -31,9 +31,10 @@ function dashes {
   echo -en "%F{black}%B-"
 }
 
-PROMPT=' $(dashes)%b%F{white}%B$%f%b '
+PROMPT='$(git_dash)%b%F{white}%B$%f%b '
 RPROMPT='%B%t%b'
 TRAPALRM() {
   zle reset-prompt
 }
 TMOUT=8
+# ZLE_RPROMPT_INDENT=0

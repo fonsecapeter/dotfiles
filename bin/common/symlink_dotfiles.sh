@@ -11,12 +11,6 @@ symlink_file ~/dotfiles/dot/peter-notes.yml ~/.peter-notes.yml
 symlink_file ~/dotfiles/dot/neofetch_config ~/.config/neofetch/config
 # -----------------------------------------
 
-# git
-# -----------------------------------------
-symlink_file ~/dotfiles/dot/git/gitconfig ~/.gitconfig
-# symlink_file ~/dotfiles/dot/git/git-completion.bash ~/.git-completion.bash  # zsh doesn't like dis
-# -----------------------------------------
-
 # colors
 # -----------------------------------------
 if [ ! -d ~/.local/share/konsole ]; then
@@ -25,6 +19,12 @@ fi
 symlink_file ~/Projects/shellectric-color-scheme/Shellectric.colorscheme ~/.local/share/konsole/Shellectric.colorscheme
 symlink_file ~/dotfiles/dot/konsole/Peter.profile ~/.local/share/konsole/Peter.profile
 symlink_file ~/dotfiles/dot/konsole/Peter_hidpi.profile ~/.local/share/konsole/Peter_hidpi.profile
+# -----------------------------------------
+
+# git
+# -----------------------------------------
+symlink_file ~/dotfiles/dot/git/gitconfig ~/.gitconfig
+# symlink_file ~/dotfiles/dot/git/git-completion.bash ~/.git-completion.bash  # zsh doesn't like dis
 # -----------------------------------------
 
 # python
@@ -37,16 +37,15 @@ symlink_dir ~/dotfiles/dot/python/ipython ~/.ipython
 symlink_file ~/dotfiles/dot/ruby/pryrc ~/.pryrc
 # -----------------------------------------
 
+# vim
+# -----------------------------------------
+symlink_file ~/dotfiles/dot/vim/vimrc ~/.vimrc
+symlink_file ~/dotfiles/dot/vim/peter_fall_airline_theme.vim ~/.vim/bundle/vim-airline/autoload/airline/themes/peter_fall.vim
+# -----------------------------------------
+
 # zsh
 # -----------------------------------------
 mkdir -p ~/.oh-my-zsh/custom/themes
 symlink_file ~/dotfiles/dot/zsh/zshrc ~/.zshrc
 symlink_file ~/dotfiles/dot/zsh/shellectric.zsh-theme ~/.oh-my-zsh/custom/themes/shellectric.zsh-theme
-symlink_file ~/dotfiles/dot/zsh/shellectric-verbose.zsh-theme ~/.oh-my-zsh/custom/themes/shellectric-verbose.zsh-theme
-# -----------------------------------------
-
-# vim
-# -----------------------------------------
-symlink_file ~/dotfiles/dot/vim/vimrc ~/.vimrc
-symlink_file ~/dotfiles/dot/vim/peter_fall_airline_theme.vim ~/.vim/bundle/vim-airline/autoload/airline/themes/peter_fall.vim
 # -----------------------------------------

@@ -1,50 +1,53 @@
 #!/usr/bin/env bash
 set -eu -o pipefail
 source ~/dotfiles/dot/bash/lib/colors.sh
+source ~/dotfiles/dot/bash/lib/printing.sh
 
-echo $orange
 echo
-echo '  ------------- Fresh Install Automated -------------'
+echo $bold
+rule '-'
+message_rule " ${red}Fresh Install Automated ${reset}${bold}" '='
+rule '-'
 echo
-echo $blue
-echo
-echo "  --->${purple} Installing tools"
-echo
+echo "--> ${purple}Installing tools"
 echo $reset
+echo
 ~/dotfiles/bin/kde/install_tools.sh
-echo $blue
 echo
-echo "  --->${purple} Setting up vim"
-echo
+echo $bold
+echo "--> ${purple}Setting up vim"
 echo $reset
+echo
 ~/dotfiles/bin/common/customize_vim.sh
-echo $blue
 echo
-echo "  --->${purple} Setting up rbenv"
-echo
+echo $bold
+echo "--> ${purple}Setting up rbenv"
 echo $reset
+echo
 ~/dotfiles/bin/kde/set_up_rbenv.sh
-echo $blue
 echo
-echo "  --->${purple} Installing ui extensions"
-echo
+echo $bold
+echo "--> ${purple}Installing ui extensions"
 echo $reset
+echo
 ~/dotfiles/bin/kde/install_ui_extensions.sh
-echo $blue
 echo
-echo "  --->${purple} Symlinking dotfiles"
-echo
+echo $bold
+echo "--> ${purple}Symlinking dotfiles"
 echo $reset
+echo
 ~/dotfiles/bin/common/symlink_dotfiles.sh
-echo $orange
 echo
-echo '  -------------------- Finished ---------------------'
+echo $bold
+rule '-'
+message_rule " ${green}Finished ${reset}${bold}" '='
+rule '-'
 echo
-echo $blue
+echo $bold
 echo '    Be sure to also:'
 echo '      - Open dotfiles/bashrc and follow directions'
 echo '      - Go to https://www.thefanclub.co.za/overgrive'
 echo '        and install overGrive'
 echo '      - Change your themes'
-echo
 echo $reset
+echo

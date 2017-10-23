@@ -1,1 +1,3 @@
 dot/python/ipython/profile_default/history.sqlite
+*.swp
+*.swo
