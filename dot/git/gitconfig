@@ -4,7 +4,7 @@
 [commit]
   template = ~/dotfiles/dot/git/gitmessage
 [core]
-  editor = "vim -c'startinsert!'"
+  editor = "vim"
 [color "diff"]
   # http://shallowsky.com/blog/programming/gitcolors.html
   meta = white

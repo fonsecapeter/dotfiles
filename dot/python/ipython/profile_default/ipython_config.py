@@ -337,9 +337,11 @@ class Shellectric(Style):
 
 
 overrides = {
-    Token.Prompt: '#ansifuchsia',
+    # Token.Prompt: '#ansifuchsia',
+    Token.Prompt: '#ansibrown',
     Token.PromptNum: '#ansiblue',
-    Token.OutPrompt: '#ansifuchsia',
+    # Token.OutPrompt: '#ansifuchsia',
+    Token.OutPrompt: '#ansibrown',
     Token.OutPromptNum: '#ansiblue',
     Token.Menu.Completions.Completion: '#ansiyellow',
     Token.Menu.Completions.Completion.Current: '#ansiyellow',
