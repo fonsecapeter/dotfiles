@@ -364,17 +364,17 @@ from IPython.terminal.prompts import Prompts, Token
 
 class MyPrompt(Prompts):
     def in_prompt_tokens(self, cli=None):
-        return [(Token.Prompt, '  > ')]
+        return [(Token.Prompt, ' > ')]
 
     def out_prompt_tokens(self, cli=None):
-        return [(Token.Prompt, '  < ')]
+        return [(Token.Prompt, ' < ')]
 
     # def continuation_prompt_tokens(self, cli=None):
     def continuation_prompt_tokens(self, *args, **kwargs):
-        return [(Token.Prompt, '... ')]
+        return [(Token.Prompt, ' * ')]
 
     def rewrite_prompt_tokens(self, cli=None):
-        return [(Token.Prompt, '--- ')]
+        return [(Token.Prompt, ' - ')]
 
 
 c.TerminalInteractiveShell.prompts_class = MyPrompt
