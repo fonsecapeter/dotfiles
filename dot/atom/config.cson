@@ -1,0 +1,81 @@
+"*":
+  core:
+    audioBeep: false
+    disabledPackages: [
+      "minimap"
+    ]
+    ignoredNames: [
+      ".git"
+      ".hg"
+      ".svn"
+      ".DS_Store"
+      "._*"
+      "Thumbs.db"
+      "desktop.ini"
+      "node_modules"
+      "venv"
+    ]
+    telemetryConsent: "limited"
+    themes: [
+      "isotope-ui"
+      "shellectric-syntax"
+    ]
+    titleBar: "custom"
+  editor:
+    fontFamily: "Peter Mono"
+    fontSize: 10
+    invisibles: {}
+    lineHeight: 1
+    tabLength: 4
+    tabType: "soft"
+  "exception-reporting":
+    userId: "e3466ace-9f17-9540-85cd-ae3328f7078b"
+  "file-icons": {}
+  "file-types":
+    txt: "source.yaml"
+  "isotope-ui":
+    customBackgroundColor: true
+    customBackgroundColorPicker: "#454c50"
+    fontFamily: "Ubuntu"
+    lowContrastTooltip: true
+    matchEditorFont: true
+    minimalMode: true
+    tabSizing: "Minimum"
+  "letter-spacing":
+    "letter-spacing": 0.4
+  linter: {}
+  "linter-pep8":
+    ignoreErrorCodes: [
+      "E501"
+      "E241"
+    ]
+    maxLineLength: 120
+  minimap:
+    minimapScrollIndicator: false
+  "nord-atom-ui":
+    tabSizing: false
+  "spell-check":
+    grammars: [
+      "source.asciidoc"
+      "source.gfm"
+      "text.git-commit"
+      "text.plain"
+      "text.plain.null-grammar"
+      "text.html.basic"
+      "source.dtml"
+      "text.xml"
+      "string.quoted.double.single-line.python"
+    ]
+    locales: [
+      "en-US"
+    ]
+  welcome:
+    showOnStartup: false
+  whitespace:
+    ensureSingleTrailingNewline: false
+".basic.html.text":
+  editor:
+    tabLength: 4
+".django.html.text":
+  editor:
+    tabLength: 4
