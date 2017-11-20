@@ -3,6 +3,9 @@
     audioBeep: false
     disabledPackages: [
       "minimap"
+      "antialiased"
+      "atom-ide-ui"
+      "ide-python"
     ]
     ignoredNames: [
       ".git"
@@ -23,10 +26,9 @@
     titleBar: "custom"
   editor:
     fontFamily: "Peter Mono"
-    fontSize: 10
+    fontSize: 12
     invisibles: {}
-    lineHeight: 1
-    tabLength: 4
+    lineHeight: 1.25
     tabType: "soft"
   "exception-reporting":
     userId: "e3466ace-9f17-9540-85cd-ae3328f7078b"
@@ -50,10 +52,17 @@
       "E241"
     ]
     maxLineLength: 120
+  "linter-ui-default": {}
   minimap:
     minimapScrollIndicator: false
   "nord-atom-ui":
     tabSizing: false
+  pigments:
+    extendedSearchNames: [
+      "**/*.css"
+      "**/*.sass"
+      "**/*.less"
+    ]
   "spell-check":
     grammars: [
       "source.asciidoc"

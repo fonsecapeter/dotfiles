@@ -46,4 +46,7 @@ alias man=my_man
 stty -ixon
 # -----------------------------------------
 
+# brew uses suffixed python stuff
+alias pip=pip2
+
 alias ttam-buddy='~/Projects/ttam_buddy/ttam_buddy.sh'
