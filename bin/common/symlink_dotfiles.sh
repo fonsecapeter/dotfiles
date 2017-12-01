@@ -43,6 +43,16 @@ symlink_file ~/dotfiles/dot/vim/vimrc ~/.vimrc
 symlink_file ~/dotfiles/dot/vim/peter_fall_airline_theme.vim ~/.vim/bundle/vim-airline/autoload/airline/themes/peter_fall.vim
 # -----------------------------------------
 
+# atom
+# -----------------------------------------
+symlink_file ~/dotfiles/dot/atom/config.cson ~/.atom/config.cson
+symlink_file ~/dotfiles/dot/atom/init.coffee ~/.atom/init.coffee
+symlink_file ~/dotfiles/dot/atom/keymap.cson ~/.atom/keymap.cson
+symlink_file ~/dotfiles/dot/atom/package.list ~/.atom/package.list
+symlink_file ~/dotfiles/dot/atom/snippets.cson ~/.atom/snippets.cson
+symlink_file ~/dotfiles/dot/atom/styles.less ~/.atom/styles.less
+# -----------------------------------------
+
 # zsh
 # -----------------------------------------
 mkdir -p ~/.oh-my-zsh/custom/themes

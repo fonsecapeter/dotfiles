@@ -9,84 +9,109 @@
  * http://lesscss.org
  */
 
-
-/*
- * Examples
- * (To see them, uncomment and save)
- */
-
-// style the background color of the tree view
-.tree-view {
-  // background-color: whitesmoke;\
+// Hide tree-view by default (see init.coffee)
+atom-workspace.loading .left {
+	display: none;
 }
 
-// style the background and foreground colors on the atom-text-editor-element itself
-atom-text-editor {
-  // color: white;
-  // background-color: hsl(180, 24%, 12%);
-}
-
-// To style other content in the text editor's shadow DOM, use the ::shadow expression
-atom-text-editor::shadow .cursor {
-  // border-color: red;
-}
-
-@camel: #f1e2bf;
-@very-light-gray: #c5c8c6;
-@light-gray: #94a1a8;
-@gray: #7e898e;
-@dark-gray: #51595e;
-@very-dark-gray: #464d51;
-
-@cyan: #65c6ba;
-@blue: #749bcd;
-@purple: #bf94c3;
-@green: #80b7a0;
-@red: #f6819e;
-@orange: #f9997e;
-@light-orange: #f6c693;
+// re-color file-icons
+@import "syntax-variables";  // to get colors
 
 // Red
-@medium-red: @red;
-@light-red: @red;
-@dark-red:   @red;
+.medium-red:before {
+  color: @red;
+}
+.light-red:before {
+  color: @red;
+}
+.dark-red:before {
+  color: @red;
+}
 
 // Green
-@medium-green: @green;
-@light-green: @green;
-@dark-green:   @green;
+.medium-green:before {
+  color: @green;
+}
+.light-green:before {
+  color: @green;
+}
+.dark-green:before {
+  color: @green;
+}
 
 // Yellow
-@medium-yellow: @light-orange;
-@light-yellow: @light-orange;
-@dark-yellow:   @light-orange;
+.medium-yellow:before {
+  color: @light-orange;
+}
+.light-yellow:before {
+  color: @light-orange;
+}
+.dark-yellow:before {
+  color: @light-orange;
+}
 
 // Blue
-@medium-blue: @blue;
-@light-blue: @blue;
-@dark-blue:   @blue;
+.medium-blue:before {
+  color: @blue;
+}
+.light-blue:before {
+  color: @blue;
+}
+.dark-blue:before {
+  color: @blue;
+}
 
 // Maroon
-@medium-maroon: @purple;
-@light-maroon: @purple;
-@dark-maroon:   @purple;
+.medium-maroon:before {
+  color: @purple;
+}
+.light-maroon:before {
+  color: @purple;
+}
+.dark-maroon:before {
+  color: @purple;
+}
 
 // Purple
-@medium-purple: @purple;
-@light-purple: @purple;
-@dark-purple:   @purple;
+.medium-purple:before {
+  color: @light-purple;
+}
+.light-purple:before {
+  color: @light-purple;
+}
+.dark-purple:before {
+  color: @light-purple;
+}
 
 // Orange
-@medium-orange: @orange;
-@light-orange: @orange;
-@dark-orange:   @orange;
+.medium-orange:before {
+  color: @orange;
+}
+.light-orange:before {
+  color: @orange;
+}
+.dark-orange:before {
+  color: @orange;
+}
 
 // Cyan
-@medium-cyan: @cyan;
-@light-cyan: @cyan;
-@dark-cyan:   @cyan;
+.medium-cyan:before {
+  color: @cyan;
+}
+.light-cyan:before {
+  color: @cyan;
+}
+.dark-cyan:before {
+  color: @cyan;
+}
 
 // Pink
-@medium-pink: @red;
-@light-pink: @red;
-@dark-pink:   @red;
+.medium-pink:before {
+  color: @light-red;
+}
+.light-pink:before {
+  color: @light-red;
+}
+.dark-pink:before {
+  color: @light-red;
+}

@@ -34,7 +34,7 @@
     template: "atom"
   editor:
     fontFamily: "Peter Mono"
-    fontSize: 12
+    fontSize: 10
     invisibles: {}
     lineHeight: 1.2
     tabType: "soft"

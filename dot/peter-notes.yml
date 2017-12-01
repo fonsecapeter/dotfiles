@@ -1,4 +1,4 @@
 ---
-editor: vim
+editor: atom
 notes_dir: ~/GoogleDrive/Notes
 searcher: ag "%{regex}" "%{notes_dir}"

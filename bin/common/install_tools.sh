@@ -17,6 +17,9 @@ clone_from_git https://github.com/zsh-users/zsh-autosuggestions.git ~/.oh-my-zsh
 clone_from_git https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 # -----------------------------------------
 
+# atom
+apm install --packages-file ~/dotfiles/dot/atom/package.list
+
 # miso
 if [ ! -x "$(command -v miso)" ]; then
   clone_from_git https://github.com/fonsecapeter/miso-buddy ~/Projects/miso-buddy
