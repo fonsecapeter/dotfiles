@@ -23,7 +23,7 @@
       "node_modules"
       "venv"
     ]
-    projectHome: "/Users/pfonseca/Projects/atom"
+    projectHome: "~/Projects/atom"
     telemetryConsent: "limited"
     themes: [
       "isotope-ui"
