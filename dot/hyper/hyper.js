@@ -21,7 +21,7 @@ module.exports = {
     cursorShape: 'BLOCK',
 
     // set to true for blinking cursor
-    cursorBlink: false,
+    cursorBlink: true,
 
     // color of the text
     foregroundColor: '#f5e6c2',
@@ -84,7 +84,7 @@ module.exports = {
     //
     // Powershell on Windows
     // - Example: `C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe`
-    shell: '',
+    shell: '/usr/local/bin/zsh',
 
     // for setting shell arguments (i.e. for using interactive shellArgs: ['-i'])
     // by default ['--login'] will be used
@@ -119,6 +119,7 @@ module.exports = {
     'hyper-statusline',
     'hyperterm-cursor',
     'hyperterm-alternatescroll',
+    'hyper-nobold',
   ],
 
   // in development, you can create a directory under
