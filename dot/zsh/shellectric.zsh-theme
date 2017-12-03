@@ -28,7 +28,7 @@ function git_dash {
       return 0
     fi
   fi
-  echo -en "%F{black}%B-"
+  echo -en "%F{black}%B "
 }
 
 PROMPT='$(git_dash)%b%F{white}%B$%f%b '
