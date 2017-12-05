@@ -1,5 +1,6 @@
 set nocompatible
 filetype off
+set term=builtin_ansi
 
 " Vundle
 " -----------------------------------------
@@ -244,7 +245,7 @@ nnoremap <C-_> :TagbarToggle<CR>
 " bar at bottom (with my highly lightened customiation)
 let g:airline_extensions = []
 set noshowmode
-let g:airline_theme='peter_fall'
+let g:airline_theme='shellectric'
 let g:airline_symbols_ascii = 1
 
 if !exists('g:airline_symbols')

@@ -32,7 +32,8 @@ function git_dash {
 }
 
 PROMPT='$(git_dash)%b%F{white}%B$%f%b '
-RPROMPT='%B%t%b'
+# RPROMPT='%B%t%b'
+RPROMPT='%B%F{black}%t%f%b'
 TRAPALRM() {
   zle reset-prompt
 }

@@ -1,6 +1,6 @@
 " vim-airline template by chartoin (http://github.com/chartoin)
 " Base 16 Ashes Scheme by Peter Fonseca (https://github.com/fonsecapeter)
-let g:airline#themes#peter_fall#palette = {}
+let g:airline#themes#shellectric#palette = {}
 let s:gui00 = "#1C2023"
 let s:gui01 = "#393F45"
 let s:gui02 = "#565E65"
@@ -28,23 +28,23 @@ let s:green = 2
 
 let s:N1   = [ s:gui01, s:gui0B, s:dark_gray, s:green ]
 let s:COLORLESS   = [ s:gui05, s:gui01, s:mid_gray, s:dark_gray ]
-let g:airline#themes#peter_fall#palette.normal = airline#themes#generate_color_map(s:N1, s:COLORLESS, s:COLORLESS)
+let g:airline#themes#shellectric#palette.normal = airline#themes#generate_color_map(s:N1, s:COLORLESS, s:COLORLESS)
 
 let s:I1   = [ s:gui01, s:gui0D, s:dark_gray, s:orange ]
-let g:airline#themes#peter_fall#palette.insert = airline#themes#generate_color_map(s:I1, s:COLORLESS, s:COLORLESS)
+let g:airline#themes#shellectric#palette.insert = airline#themes#generate_color_map(s:I1, s:COLORLESS, s:COLORLESS)
 
 let s:R1   = [ s:gui01, s:gui08, s:dark_gray, s:bright_cyan ]
-let g:airline#themes#peter_fall#palette.replace = airline#themes#generate_color_map(s:R1, s:COLORLESS, s:COLORLESS)
+let g:airline#themes#shellectric#palette.replace = airline#themes#generate_color_map(s:R1, s:COLORLESS, s:COLORLESS)
 
 let s:V1   = [ s:gui01, s:gui0E, s:dark_gray, s:bright_blue ]
 let s:V2   = [ s:gui06, s:gui02, s:mid_gray, s:dark_gray ]
 let s:V3   = [ s:gui09, s:gui01, s:dark_gray, s:dark_gray ]
-let g:airline#themes#peter_fall#palette.visual = airline#themes#generate_color_map(s:V1, s:COLORLESS, s:COLORLESS)
+let g:airline#themes#shellectric#palette.visual = airline#themes#generate_color_map(s:V1, s:COLORLESS, s:COLORLESS)
 
 let s:IA1   = [ s:gui05, s:gui01, s:mid_gray, s:dark_gray ]
 let s:IA2   = [ s:gui05, s:gui01, s:mid_gray, s:dark_gray ]
 let s:IA3   = [ s:gui05, s:gui01, s:mid_gray, s:dark_gray ]
-let g:airline#themes#peter_fall#palette.inactive = airline#themes#generate_color_map(s:COLORLESS, s:COLORLESS, s:COLORLESS)
+let g:airline#themes#shellectric#palette.inactive = airline#themes#generate_color_map(s:COLORLESS, s:COLORLESS, s:COLORLESS)
 
 " Here we define the color map for ctrlp.  We check for the g:loaded_ctrlp
 " variable so that related functionality is loaded iff the user is using
@@ -53,7 +53,7 @@ let g:airline#themes#peter_fall#palette.inactive = airline#themes#generate_color
 if !get(g:, 'loaded_ctrlp', 0)
   finish
 endif
-let g:airline#themes#peter_fall#palette.ctrlp = airline#extensions#ctrlp#generate_color_map(
+let g:airline#themes#shellectric#palette.ctrlp = airline#extensions#ctrlp#generate_color_map(
       \ [ s:gui07, s:gui02, s:light_gray, s:dark_gray, '' ],
       \ [ s:gui07, s:gui04, s:light_gray, s:mid_gray, '' ],
       \ [ s:gui05, s:gui01, s:green, s:dark_gray, 'bold' ])

@@ -11,6 +11,8 @@
       "antialiased"
       "linter-eslint"
       "language-gfm"
+      "ide-crystal"
+      "minimap"
     ]
     ignoredNames: [
       ".git"
@@ -43,7 +45,8 @@
   "file-icons": {}
   "file-types":
     cfg: "source.shell"
-    txt: "source.gfm"
+    txt: "text.md"
+  "git-diff": {}
   "ide-crystal":
     compilerColorOutput: true
   "ide-python":

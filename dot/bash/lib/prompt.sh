@@ -28,7 +28,7 @@ function git-dash {
       return 0
     fi
   fi
-  echo -en "\001${bright_black}\002-"
+  echo -en "\001${bright_black}\002 "
 }
 
 export PS1='$(git-dash)\[${white}\]$\[${reset}\] '

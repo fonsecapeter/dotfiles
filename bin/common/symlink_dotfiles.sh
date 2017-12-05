@@ -40,7 +40,7 @@ symlink_file ~/dotfiles/dot/ruby/pryrc ~/.pryrc
 # vim
 # -----------------------------------------
 symlink_file ~/dotfiles/dot/vim/vimrc ~/.vimrc
-symlink_file ~/dotfiles/dot/vim/peter_fall_airline_theme.vim ~/.vim/bundle/vim-airline/autoload/airline/themes/peter_fall.vim
+symlink_file ~/dotfiles/dot/vim/shellectric_airline_theme.vim ~/.vim/bundle/vim-airline/autoload/airline/themes/shellectric.vim
 # -----------------------------------------
 
 # atom
@@ -59,3 +59,6 @@ mkdir -p ~/.oh-my-zsh/custom/themes
 symlink_file ~/dotfiles/dot/zsh/zshrc ~/.zshrc
 symlink_file ~/dotfiles/dot/zsh/shellectric.zsh-theme ~/.oh-my-zsh/custom/themes/shellectric.zsh-theme
 # -----------------------------------------
+
+
+symlink_file ~/dotfiles/dot/hyper/hyper.js ~/.hyper.js
