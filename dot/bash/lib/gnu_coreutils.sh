@@ -1,6 +1,5 @@
 # alias ll='gls --color=always --ignore=*.pyc --ignore=__pycache__ -la'
 
-alias ll='tree -apug'  # using tree
 alias grep='grep --color=always'
 alias egrep='egrep --color=always'
 alias tree="tree -C -I 'node_modules|*.pyc|venv' --dirsfirst"
@@ -8,6 +7,7 @@ alias tree="tree -C -I 'node_modules|*.pyc|venv' --dirsfirst"
 alias cp='cp -v'
 alias ln='ln -v'
 alias ls="tree -L 1"
+alias ll='tree -apug -L 1'  # using tree
 alias mkdir="mkdir -pv"
 alias mv='mv -v'
 alias rm='rm -v'
