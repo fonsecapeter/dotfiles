@@ -31,4 +31,11 @@ function git-dash {
   echo -en "\001${bright_black}\002 "
 }
 
-export PS1='$(git-dash)\[${white}\]$\[${reset}\] '
+export PS1='$(git-dash)\[${bright_white}\]$\[${reset}\] '
+
+# name tab by active process
+PROMPT_COMMAND='printf "\033]0;%s\a" "$(basename $0)"'
+function proc_title {
+  printf "\033]0;%s\a" "${BASH_COMMAND}"
+}
+trap proc_title DEBUG

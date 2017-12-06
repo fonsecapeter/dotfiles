@@ -4,16 +4,56 @@
 
 module.exports = {
   config: {
-    hyperTabs: {
-      trafficButtons: true,
-      tabIconsColored: true,
-      activityColor: '#f9997e'
-    },
-
     hyperStatusLine: {
       footerTransparent: false,
       dirtyColor: '#f6c693',
       aheadColor: '#bf94c3'
+    },
+
+    tabIcons: {
+      processNameRegex: /^([\w\-]+)/,  // first word
+      mapIcons: {
+        python: [
+          'py',
+          'python',
+          'django',
+          'ipython'
+        ],
+        ruby: [
+          'rb',
+          'pry',
+          'rake',
+          'irb',
+          'ruby',
+          'rake'
+        ],
+        make: [
+          'make',
+          'work-up'
+        ]
+      },
+      mapColors: {
+        bash: '#c5a2c0',
+        zsh: '#8aa9d1',
+        git: '#e47e71',
+        py: '#8aa9d1',
+        python: '#8aa9d1',
+        ipython: '#8aa9d1',
+        django: '#8aa9d1',
+        rb: '#e47e71',
+        pry: '#e47e71',
+        rake: '#e47e71',
+        irb: '#e47e71',
+        ruby: '#e47e71',
+        rails: '#e47e71',
+        docker: '#97c3d3',
+        node: '#80b7a0',
+        grunt: '#f6c693',
+        http: '#f6c693',
+        curl: '#f6c693',
+        make: 'white',
+        'work-up': '#9edad6'
+      }
     },
 
     // Choose either "stable" for receiving highly polished,
@@ -45,10 +85,44 @@ module.exports = {
     borderColor: '#464d51',
 
     // custom css to embed in the main window
-    css: 'footer {font-family: "Peter Mono"; -webkit-font-smoothing: subpixel-antialiased !important; font-size: 10px !important;} header {font-family: "Peter Mono";}',
+    css: `
+      .hyper_main {
+        border: none;
+      }
+      footer.footer_footer {
+        font-family: "Peter Mono";
+        -webkit-font-smoothing: subpixel-antialiased;
+        font-size: 10px;
+        background-color: #394044;
+      }
+      footer.footer_footer .footer_group {
+        color: white;
+      }
+      header {
+        font-family: "Peter Mono";
+        -webkit-font-smoothing: subpixel-antialiased;
+        background: #394044;
+        border: none;
+      }
+      header.header_i1rech {
+        top: 0;
+        left: 0;
+        width: 100%;
+      }
+      .tab_hasActivity {
+        color: #f5e6c2;
+      }
+      .tab_active {
+        background: #464d51;
+      }
+    `,
 
     // custom css to embed in the terminal window
-    termCSS: 'x-screen {-webkit-font-smoothing: subpixel-antialiased !important;}',
+    termCSS: `
+      x-screen {
+        -webkit-font-smoothing: subpixel-antialiased !important;
+      }
+    `,
 
     // set to `true` (without backticks) if you're using a Linux setup that doesn't show native menus
     // default: `false` on Linux, `true` on Windows (ignored on macOS)
@@ -132,7 +206,7 @@ module.exports = {
     'hyperterm-cursor',
     'hyperterm-alternatescroll',
     'hyper-nobold',
-    'hyper-tabs-enhanced'
+    'hyper-tab-icons'
   ],
 
   // in development, you can create a directory under

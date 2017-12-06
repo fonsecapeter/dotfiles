@@ -50,3 +50,11 @@ stty -ixon
 alias pip=pip2
 
 alias ttam-buddy='~/Projects/ttam_buddy/ttam_buddy.sh'
+
+# name tab by active process
+function precmd {
+  printf "\033]0;%s\a" "$(basename $SHELL)"
+}
+preexec() {
+  printf "\033]0;%s\a" "${1%% *}"
+}
