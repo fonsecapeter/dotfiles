@@ -1,6 +1,6 @@
 export ZSH=~/.oh-my-zsh
 
-ZSH_THEME="shellectric"
+ZSH_THEME="super-simple"
 DISABLE_AUTO_TITLE="true"
 plugins=(
   brew
