@@ -19,7 +19,7 @@ const colors = {
 };
 const otherColors = {
   camel: '#f5e6c2',
-  darkBlack: '#393f49'
+  backgroundColor: '#464d51'
 };
 
 module.exports = {
@@ -37,45 +37,47 @@ module.exports = {
     cursorBlink: true,
     cursorColor: '#4ea37e',
     foregroundColor: otherColors.camel,
-    backgroundColor: '#464d51',
-    borderColor: otherColors.darkBlack,
+    backgroundColor: otherColors.backgroundColor,
+    borderColor: otherColors.backgroundColor,
 
     padding: '5px',
     colors: colors,
 
     // UI
     css: `
-      .hyper_main {
-        border: none;
-      }
       footer.footer_footer {
         font-family: "Peter Mono";
         -webkit-font-smoothing: subpixel-antialiased;
         font-size: 10px;
-        background-color: ${otherColors.darkBlack};
+        background-color: ${otherColors.backgroundColor};
       }
       footer.footer_footer .footer_group {
         color: white;
       }
       header {
         font-family: "Peter Mono";
-        -webkit-font-smoothing: subpixel-antialiased;
-        background: ${otherColors.darkBlack};
         border: none;
       }
-      header.header_i1rech {
+      header.header_header {
         top: 0;
         left: 0;
         width: 100%;
       }
-      ul.tabs_list > li.tab_tab: {
-        border: none !important;
+      nav.tabs_nav {
+        height: 28px;
+        line-height: 28px;
+      }
+      ul.tabs_list {
+        max-height: 28px;
+      }
+      div.terms_terms {
+        margin-top: 28px;
       }
       .tab_hasActivity {
-        color: ${otherColors.camel};
+        color: ${colors.camel};
       }
       .tab_active {
-        background: #40484d;
+        background: ${colors.black};
       }
     `,
 

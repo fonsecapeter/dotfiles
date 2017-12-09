@@ -1,7 +1,9 @@
 antialiased@0.1.0
+atom-clock@0.1.15
 atom-ide-ui@0.6.0
 block-travel@1.0.5
 busy-signal@1.4.3
+color-picker@2.2.5
 emmet@2.4.3
 file-icons@2.1.14
 file-types@0.5.5
@@ -22,7 +24,7 @@ language-markdown@0.25.1
 line-count-status@0.0.3
 linter@2.2.0
 linter-eslint@8.4.0
-linter-flake8@2.2.1
+linter-flake8@2.3.0
 linter-rubocop@2.2.0
 linter-sass-lint@1.8.3
 linter-ui-default@1.6.10
@@ -34,7 +36,8 @@ pigments@0.40.2
 project-manager@3.3.5
 python-indent@1.1.4
 regex-railroad-diagram@0.19.4
-shellectric-syntax@0.2.2
+shellectric-syntax@0.2.3
 splash-ui@0.4.0
 tabs-to-spaces@1.0.3
+teletype@0.2.3
 
