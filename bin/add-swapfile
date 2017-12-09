@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # add 1gb swap file for machine with no swap partition
 sudo fallocate -l 1g /mnt/1gb.swap
 sudo chmod 600 /mnt/1gb.swap

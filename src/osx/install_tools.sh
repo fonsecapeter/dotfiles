@@ -5,4 +5,4 @@ brew update && brew upgrade
 brew install vim --with-override-system-vi
 brew install neofetch tree coreutils cmatrix python3 ctags colordiff rbenv ag zsh httpie crystal
 
-~/dotfiles/bin/common/install_tools.sh
+~/dotfiles/src/common/install_tools.sh

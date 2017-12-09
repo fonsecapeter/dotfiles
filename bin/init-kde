@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-~/dotfiles/bin/kde/init.sh
+~/dotfiles/src/kde/init.sh

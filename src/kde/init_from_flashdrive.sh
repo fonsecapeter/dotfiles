@@ -24,5 +24,5 @@ echo
 echo "  --->${purple}Running init.sh"
 echo
 echo $reset
-~/dotfiles/bin/kde/add_apt_source.sh
-~/dotfiles/bin/init_kde.sh
+~/dotfiles/src/kde/add_apt_source.sh
+~/dotfiles/bin/init-kde

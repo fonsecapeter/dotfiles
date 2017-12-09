@@ -1,4 +1,6 @@
 "*":
+  "atom-clock":
+    dateFormat: "h:mm"
   "atom-ide-ui":
     "atom-ide-diagnostics-ui": {}
     use:
@@ -123,7 +125,8 @@
   "splash-ui":
     useSplash: true
     useSyntax: true
-  "status-bar": {}
+  "status-bar":
+    selectionCountFormat: " "
   welcome:
     showOnStartup: false
   whitespace: {}

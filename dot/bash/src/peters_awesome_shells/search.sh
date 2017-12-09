@@ -1,3 +1,6 @@
+# DEPRECATED!
+# => Using alias search='ag' instead
+#    Ag uses the same args/defaults and is much faster/readable :D
 function search {
   local -r search_help_message="
  ${green}-- Recursively Search For Text Accross Files --${reset}

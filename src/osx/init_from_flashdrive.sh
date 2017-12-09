@@ -24,5 +24,5 @@ echo
 echo "  --->${purple}Running init.sh"
 echo
 echo $reset
-~/dotfiles/bin/osx/install_homebrew.sh
-~/dotfiles/bin/init_osx.sh
+~/dotfiles/src/osx/install_homebrew.sh
+~/dotfiles/bin/init-osx

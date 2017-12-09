@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -eu -o pipefail
-source ~/dotfiles/dot/bash/lib/colors.sh
-source ~/dotfiles/dot/bash/lib/printing.sh
+source ~/dotfiles/dot/bash/src/colors.sh
+source ~/dotfiles/dot/bash/src/printing.sh
 
 echo
 echo $bold
@@ -12,31 +12,31 @@ echo
 echo "--> ${purple}Installing tools"
 echo $reset
 echo
-~/dotfiles/bin/kde/install_tools.sh
+~/dotfiles/src/kde/install_tools.sh
 echo
 echo $bold
 echo "--> ${purple}Setting up vim"
 echo $reset
 echo
-~/dotfiles/bin/common/customize_vim.sh
+~/dotfiles/src/common/customize_vim.sh
 echo
 echo $bold
 echo "--> ${purple}Setting up rbenv"
 echo $reset
 echo
-~/dotfiles/bin/kde/set_up_rbenv.sh
+~/dotfiles/src/kde/set_up_rbenv.sh
 echo
 echo $bold
 echo "--> ${purple}Installing ui extensions"
 echo $reset
 echo
-~/dotfiles/bin/kde/install_ui_extensions.sh
+~/dotfiles/src/kde/install_ui_extensions.sh
 echo
 echo $bold
 echo "--> ${purple}Symlinking dotfiles"
 echo $reset
 echo
-~/dotfiles/bin/common/symlink_dotfiles.sh
+~/dotfiles/src/common/symlink_dotfiles.sh
 echo
 echo $bold
 rule '-'

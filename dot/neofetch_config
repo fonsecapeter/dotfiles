@@ -502,7 +502,7 @@ thumbnail_dir="${XDG_CACHE_HOME:-${HOME}/.cache}/thumbnails/neofetch"
 # NOTE: Only change this if "neofetch -v" says that it "couldn't find w3m-img".
 # Neofetch has a function that automatically finds w3m-img for you. It looks
 # in the following directories:
-#    /usr/lib/w3m/w3mimgdisplay
+#    /usr/src/w3m/w3mimgdisplay
 #    /usr/libexec/w3m/w3mimgdisplay
 #    /usr/lib64/w3m/w3mimgdisplay
 #    /usr/libexec64/w3m/w3mimgdisplay
@@ -510,7 +510,7 @@ thumbnail_dir="${XDG_CACHE_HOME:-${HOME}/.cache}/thumbnails/neofetch"
 # and I'll add it to the function inside the script. If w3m-img is installed
 # in a non-standard way (in your home folder, etc) then change the variable
 # below to the custom location. Otherwise, don't touch this.
-w3m_img_path="/usr/lib/w3m/w3mimgdisplay"
+w3m_img_path="/usr/src/w3m/w3mimgdisplay"
 
 # Crop mode
 #

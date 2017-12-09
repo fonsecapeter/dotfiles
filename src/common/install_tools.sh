@@ -1,4 +1,4 @@
-source ~/dotfiles/bin/common/clone_from_git.sh
+source ~/dotfiles/src/common/clone_from_git.sh
 mkdir ~/Projects
 
 sudo pip3 install ipython[all]

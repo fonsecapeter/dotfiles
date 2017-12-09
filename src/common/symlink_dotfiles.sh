@@ -1,4 +1,4 @@
-source ~/dotfiles/bin/common/symlink_stuff.sh
+source ~/dotfiles/src/common/symlink_stuff.sh
 
 # basic
 # -----------------------------------------

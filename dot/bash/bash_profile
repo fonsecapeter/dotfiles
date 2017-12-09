@@ -1,4 +1,4 @@
-source ~/dotfiles/dot/bash/lib/manifest.sh
+source ~/dotfiles/dot/bash/src/manifest.sh
 alias search=ag
 
 # use vim as manpager

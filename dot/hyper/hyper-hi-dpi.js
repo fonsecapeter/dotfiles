@@ -16,11 +16,11 @@ const colors = {
   lightMagenta: '#c5a2c0',
   lightCyan: '#b5ede6',
   lightWhite: '#c5c8c6'
-}
+};
 const otherColors = {
   camel: '#f5e6c2',
   darkBlack: '#393f49'
-}
+};
 
 module.exports = {
   config: {
@@ -125,6 +125,9 @@ module.exports = {
         bash: colors.lightMagenta,
         zsh: colors.blue,
         git: colors.red,
+        gs: colors.red,
+        gl: colors.red,
+        gr: colors.red,
         py: colors.blue,
         python: colors.blue,
         ipython: colors.blue,
@@ -141,6 +144,8 @@ module.exports = {
         grunt: colors.yellow,
         http: colors.yellow,
         curl: colors.yellow,
+        vi: colors.green,
+        vim: colors.green,
         make: 'white',
         'work-up': colors.cyan
       }

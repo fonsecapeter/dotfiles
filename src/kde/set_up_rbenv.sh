@@ -8,4 +8,4 @@ if [ ! -d ~/.rbenv ]; then
   sudo chown -R $USER ~/.rbenv/plugins/ruby-build
   sudo chgrp -R $(id -g -n $USER) ~/.rbenv/plugins/ruby-build
 fi
-~/dotfiles/bin/common/set_up_rbenv.sh
+~/dotfiles/src/common/set_up_rbenv.sh

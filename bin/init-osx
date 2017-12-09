@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-~/dotfiles/bin/osx/init.sh
+~/dotfiles/src/osx/init.sh
