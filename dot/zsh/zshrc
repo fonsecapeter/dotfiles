@@ -58,3 +58,5 @@ function precmd {
 preexec() {
   printf "\033]0;%s\a" "${1%% *}"
 }
+
+export PKG_CONFIG_PATH=/usr/local/opt/openssl/lib/pkgconfig
