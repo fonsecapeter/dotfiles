@@ -47,6 +47,7 @@
   "file-icons": {}
   "file-types":
     cfg: "source.shell"
+    env: "source.shell"
     txt: "text.md"
   "git-diff": {}
   "ide-crystal":

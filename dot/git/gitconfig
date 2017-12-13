@@ -10,5 +10,11 @@
   meta = white
   frag = bold
 [alias]
+  it = !git init && git commit -m "🎉" --allow-empty
   lol = log --oneline --decorate --graph --all
   last = log --name-status HEAD^..HEAD
+  shorty = status --short --branc
+  commend = commit --amend --no-edit
+  please = push --force-with-lease
+  merc = merge --no-ff
+  burninate = clean -fxd

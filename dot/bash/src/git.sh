@@ -1,5 +1,5 @@
 # source ~/.git-completion.bash
-alias gs="git status"
+alias gs="git shorty"
 colorized_git_last() {
   git last \
       | sed "s/^commit[[:space:]].*/$orange&$reset/" \
@@ -21,6 +21,8 @@ pull_rebase() {
   git pull $@ --rebase
 }
 alias gp=pull_rebase
+
+alias gm='git merc'
 
 git-squash() {
   if [ -z "$1" ]; then
