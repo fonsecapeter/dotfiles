@@ -1,4 +1,18 @@
-alias refresh="source ~/.bash_profile"
+alias refresh='source ~/.bash_profile'
+function fresh {
+  local -r update_node="npm update -g \
+    && printf '${bright_orange}node${reset}: ' \
+    && node -v \
+    && printf '${bright_orange}npm${reset}: ' \
+    && npm -v"
+  if [[ "$OSTYPE" == "darwin"* ]]; then
+    brew update && brew upgrade && brew cleanup
+  else
+    apt update && apt full-upgrade && apt autoremove
+  fi
+  eval "${update_node}"
+}
+
 
 # convert all filenames in pwd to snake_case
 alias snakify='for f in *\ *; do mv "$f" "${f// /_}"; done'
@@ -11,10 +25,10 @@ alias chat="hangups --col-msg-self-fg 'light magenta' --col-msg-sender-fg 'dark 
 # disk space usage
 # alias disk_unsorted="sudo du -x -d1 -h $1"
 function disk_unsorted {
-    sudo du -x -d1 -h $@
+  sudo du -x -d1 -h $@
 }
 function disk_sorted {
-    disk_unsorted | sort -hr
+  disk_unsorted | sort -hr
 }
 alias disk=disk_sorted
 # alias disk="disk_unsorted | sort -hr"
@@ -73,3 +87,6 @@ alias stampunwatch='export PS1=${PS1#"\D{%I:%M %p}\n"}'
 
 # super dumn typo
 alias maketart="echo '${blue}o${cyan}%${red}@${purple}8${reset}' && echo '\\__/'"
+
+# nmap common
+alias netmap="nmap --top-ports 1000 -T4 -sC ${@}"

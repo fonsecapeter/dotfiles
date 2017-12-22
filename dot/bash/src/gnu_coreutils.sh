@@ -3,6 +3,7 @@
 alias grep='grep --color=always'
 alias egrep='egrep --color=always'
 alias tree="tree -C -I 'node_modules|*.pyc|venv' --dirsfirst"
+alias treee="tree -L 3"
 
 alias cp='cp -v'
 alias ln='ln -v'

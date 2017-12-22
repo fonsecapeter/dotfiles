@@ -141,6 +141,7 @@ module.exports = {
         ruby: colors.red,
         rails: colors.red,
         docker: colors.lightBlue,
+        'docker-compose': colors.lightBlue,
         npm: colors.red,
         node: colors.lightGreen,
         grunt: colors.yellow,
@@ -160,7 +161,8 @@ module.exports = {
     'hyperterm-alternatescroll',
     'hyper-nobold',
     'hyper-tab-icons',
-    'hypercwd'
+    'hypercwd',
+    'hyper-search'
   ],
 
   // in development, you can create a directory under

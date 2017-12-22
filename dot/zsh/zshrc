@@ -30,6 +30,8 @@ source $ZSH/oh-my-zsh.sh
 source ~/dotfiles/dot/zsh/yoink_from_bash.zsh
 alias search=ag
 alias vi=vim
+alias refresh='source ~/.zshrc'
+alias freshest="upgrade_oh_my_zsh && fresh"
 
 # use vim as manpager
 # -----------------------------------------
@@ -47,7 +49,7 @@ stty -ixon
 # -----------------------------------------
 
 # brew uses suffixed python stuff
-alias pip=pip2
+# alias pip=pip2
 
 alias ttam-buddy='~/Projects/ttam_buddy/ttam_buddy.sh'
 

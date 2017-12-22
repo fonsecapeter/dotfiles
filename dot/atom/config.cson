@@ -47,6 +47,7 @@
   "file-icons": {}
   "file-types":
     cfg: "source.shell"
+    env: "source.shell"
     txt: "text.md"
   "git-diff": {}
   "ide-crystal":
@@ -127,6 +128,8 @@
     useSyntax: true
   "status-bar":
     selectionCountFormat: " "
+  "tree-view":
+    hideVcsIgnoredFiles: true
   welcome:
     showOnStartup: false
   whitespace: {}
