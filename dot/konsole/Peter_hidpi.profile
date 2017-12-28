@@ -1,7 +1,7 @@
 [Appearance]
 BoldIntense=true
 ColorScheme=Shellectric
-Font=Peter Mono Cozy,15,-1,5,50,0,0,0,0,0,Regular
+Font=Brass Mono Cozy,15,-1,5,50,0,0,0,0,0,Regular
 LineSpacing=2
 UseFontLineChararacters=true
 

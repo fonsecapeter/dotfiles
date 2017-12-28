@@ -37,7 +37,7 @@
   "custom-title":
     template: "atom"
   editor:
-    fontFamily: "Peter Mono"
+    fontFamily: "Brass Mono"
     fontSize: 10
     invisibles: {}
     lineHeight: 1.2

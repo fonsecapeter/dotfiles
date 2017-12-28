@@ -11,11 +11,11 @@ if [ ! -d ~/Projects ]; then
     mkdir ~/Projects
 fi
 
-if [ ! -d ~/Projects/peter_mono ]; then
-    sudo git clone https://github.com/fonsecapeter/peter_mono ~/Projects/peter_mono
-    sudo chown -R $USER ~/Projects/peter_mono
-    sudo chgrp -R $(id -g -n $USER) ~/Projects/peter_mono
-    cd ~/Projects/peter_mono
+if [ ! -d ~/Projects/brass_mono ]; then
+    sudo git clone https://github.com/fonsecapeter/brass_mono ~/Projects/brass_mono
+    sudo chown -R $USER ~/Projects/brass_mono
+    sudo chgrp -R $(id -g -n $USER) ~/Projects/brass_mono
+    cd ~/Projects/brass_mono
     sudo git checkout extras
     sudo git pull origin extras
     make init
@@ -25,7 +25,7 @@ if [ ! -d ~/Projects/peter_mono ]; then
 else
     echo $orange
     echo
-    echo "       Peter Mono already installed!"
+    echo "       Brass Mono already installed!"
     echo
     echo $reset
 fi

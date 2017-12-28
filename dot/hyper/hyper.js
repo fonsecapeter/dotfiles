@@ -30,7 +30,7 @@ module.exports = {
     shell: '/usr/local/bin/zsh',
     shellArgs: ['--login'],
     fontSize: 12,
-    fontFamily: '"Peter Mono"',
+    fontFamily: '"Brass Mono"',
 
     // `BEAM` for |, `UNDERLINE` for _, `BLOCK` for █
     cursorShape: 'BLOCK',
@@ -46,7 +46,7 @@ module.exports = {
     // UI
     css: `
       footer.footer_footer {
-        font-family: "Peter Mono";
+        font-family: "Brass Mono";
         -webkit-font-smoothing: subpixel-antialiased;
         font-size: 10px;
         background-color: ${otherColors.backgroundColor};
@@ -55,7 +55,7 @@ module.exports = {
         color: white;
       }
       header {
-        font-family: "Peter Mono";
+        font-family: "Brass Mono";
         border: none;
       }
       header.header_header {

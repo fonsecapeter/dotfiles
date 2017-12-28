@@ -1,5 +1,5 @@
 " vim-airline template by chartoin (http://github.com/chartoin)
-" Base 16 Ashes Scheme by Peter Fonseca (https://github.com/fonsecapeter)
+" Shellectric Scheme by Peter Fonseca (https://github.com/fonsecapeter)
 let g:airline#themes#shellectric#palette = {}
 let s:gui00 = "#1C2023"
 let s:gui01 = "#393F45"
