@@ -29,7 +29,7 @@ module.exports = {
     updateChannel: 'stable',
     shell: '/usr/local/bin/zsh',
     shellArgs: ['--login'],
-    fontSize: 10,
+    fontSize: 11,
     fontFamily: '"Brass Mono"',
 
     // `BEAM` for |, `UNDERLINE` for _, `BLOCK` for █

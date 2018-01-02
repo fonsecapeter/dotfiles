@@ -38,7 +38,7 @@
     template: "atom"
   editor:
     fontFamily: "Brass Mono"
-    fontSize: 10
+    fontSize: 11
     invisibles: {}
     lineHeight: 1.2
     tabType: "soft"

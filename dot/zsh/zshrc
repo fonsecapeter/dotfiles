@@ -31,7 +31,7 @@ source ~/dotfiles/dot/zsh/yoink_from_bash.zsh
 alias search=ag
 alias vi=vim
 alias refresh='source ~/.zshrc'
-alias freshest="upgrade_oh_my_zsh && fresh"
+alias fresh="upgrade_oh_my_zsh && fresh"
 
 # use vim as manpager
 # -----------------------------------------

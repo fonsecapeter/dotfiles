@@ -163,11 +163,15 @@ EXEC 01;34  # Unix
 .php 01;33
 .htm 01;33
 .html 01;33
+.dtml 01;33
 .shtml 01;33
 .xml 01;33
+.lxml 01;33
 .rdf 01;33
 .css 01;33
+.scss 01;33
 .js 01;33
+.jsx 01;33
 .man 01;33
 .0 01;33
 .1 01;33
