@@ -33,7 +33,7 @@ module.exports = {
     fontFamily: '"Brass Mono"',
 
     // `BEAM` for |, `UNDERLINE` for _, `BLOCK` for █
-    cursorShape: 'BLOCK',
+    cursorShape: 'BEAM',
     cursorBlink: true,
     cursorColor: '#4ea37e',
     foregroundColor: otherColors.camel,
@@ -104,6 +104,21 @@ module.exports = {
     tabIcons: {
       processNameRegex: /^([\w\-]+)/,  // first word
       mapIcons: {
+        atom: [
+          'atom',
+          'apm'
+        ],
+        bq: [
+          'ag',
+          'grep',
+          'search',
+        ],
+        git: [
+          'git',
+          'gs',
+          'gl',
+          'gr'
+        ],
         python: [
           'py',
           'python',
@@ -124,8 +139,13 @@ module.exports = {
         ]
       },
       mapColors: {
+        ag: colors.green,
+        grep: colors.green,
+        search: colors.green,
+        apm: colors.lightGreen,
+        atom: colors.lightGreen,
         bash: colors.lightMagenta,
-        zsh: colors.blue,
+        zsh: colors.green,
         git: colors.red,
         gs: colors.red,
         gl: colors.red,
@@ -149,7 +169,7 @@ module.exports = {
         curl: colors.yellow,
         vi: colors.green,
         vim: colors.green,
-        make: 'white',
+        make: colors.yellow,
         'work-up': colors.cyan
       }
     }

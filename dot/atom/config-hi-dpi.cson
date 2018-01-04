@@ -89,6 +89,8 @@
       "E241"
     ]
     maxLineLength: 120
+  "linter-sass-lint":
+    configFile: ".scss-lint.yml"
   "linter-ui-default": {}
   "markdown-preview": {}
   minimap:
