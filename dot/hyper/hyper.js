@@ -19,23 +19,24 @@ const colors = {
 };
 const otherColors = {
   camel: '#f5e6c2',
-  backgroundColor: '#464d51'
+  backgroundColor: '#464d51',
+  cursorColor: '#4ea37e',
 };
+const UIConstants = {
+  navHeight: '28px',
+  font: '"Brass Mono"'
+}
 
 module.exports = {
   config: {
-    // Choose either "stable" for receiving highly polished,
-    // or "canary" for less polished but more frequent updates
     updateChannel: 'stable',
     shell: '/usr/local/bin/zsh',
     shellArgs: ['--login'],
-    fontSize: 12,
-    fontFamily: '"Brass Mono"',
-
-    // `BEAM` for |, `UNDERLINE` for _, `BLOCK` for █
-    cursorShape: 'BEAM',
+    fontSize: 11,
+    fontFamily: UIConstants.font,
+    cursorShape: 'BLOCK',
     cursorBlink: true,
-    cursorColor: '#4ea37e',
+    cursorColor: otherColors.cursorColor,
     foregroundColor: otherColors.camel,
     backgroundColor: otherColors.backgroundColor,
     borderColor: otherColors.backgroundColor,
@@ -43,10 +44,9 @@ module.exports = {
     padding: '5px',
     colors: colors,
 
-    // UI
     css: `
       footer.footer_footer {
-        font-family: "Brass Mono";
+        font-family: ${UIConstants.font};
         -webkit-font-smoothing: subpixel-antialiased;
         font-size: 10px;
         background-color: ${otherColors.backgroundColor};
@@ -55,7 +55,7 @@ module.exports = {
         color: white;
       }
       header {
-        font-family: "Brass Mono";
+        font-family: ${UIConstants.font};
         border: none;
       }
       header.header_header {
@@ -64,24 +64,27 @@ module.exports = {
         width: 100%;
       }
       nav.tabs_nav {
-        height: 28px;
-        line-height: 28px;
+        height: ${UIConstants.navHeight};
+        line-height: ${UIConstants.navHeight};
       }
       ul.tabs_list {
-        max-height: 28px;
+        max-height: ${UIConstants.navHeight};
+        background: ${colors.black};
       }
       div.terms_terms {
-        margin-top: 28px;
+        margin-top: ${UIConstants.navHeight};
       }
       .tab_hasActivity {
         color: ${colors.camel};
       }
       .tab_active {
-        background: ${colors.black};
+        background: ${otherColors.backgroundColor};
+      }
+      .tab_tab {
+        border: none;
       }
     `,
 
-    // Syntax
     termCSS: `
       x-screen {
         -webkit-font-smoothing: subpixel-antialiased !important;
@@ -184,14 +187,6 @@ module.exports = {
     'hypercwd',
     'hyper-search'
   ],
-
-  // in development, you can create a directory under
-  // `~/.hyper_plugins/local/` and include it here
-  // to load it and avoid it being `npm install`ed
   localPlugins: [],
-
-  keymaps: {
-    // Example
-    // 'window:devtools': 'cmd+alt+o',
-  }
+  keymaps: {}
 };
