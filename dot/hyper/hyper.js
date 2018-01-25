@@ -138,6 +138,7 @@ module.exports = {
         ],
         make: [
           'make',
+          'remake',
           'work-up'
         ]
       },
@@ -173,6 +174,7 @@ module.exports = {
         vi: colors.green,
         vim: colors.green,
         make: colors.yellow,
+        remake: colors.yellow,
         'work-up': colors.cyan
       }
     }

@@ -87,6 +87,7 @@ alias stampunwatch='export PS1=${PS1#"\D{%I:%M %p}\n"}'
 
 # super dumn typo
 alias maketart="echo '${blue}o${cyan}%${red}@${purple}8${reset}' && echo '\\__/'"
+alias remake='make clean && make'
 
 # nmap common
 alias netmap="nmap --top-ports 1000 -T4 -sC ${@}"

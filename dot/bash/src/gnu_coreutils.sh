@@ -5,10 +5,13 @@ alias egrep='egrep --color=always'
 alias tree="tree -C -I 'node_modules|*.pyc|venv' --dirsfirst"
 alias treee="tree -L 3"
 
-alias cp='cp -v'
 alias ln='ln -v'
+alias l='"ls" --color=always --group-directories-first'
+alias ll='"ls" -lah --color=always --group-directories-first'
+# alias ll='tree -apug -L 1'  # using tree
 alias ls="tree -L 1"
-alias ll='tree -apug -L 1'  # using tree
+
+alias cp='cp -v'
 alias mkdir="mkdir -pv"
 alias mv='mv -v'
 alias rm='rm -v'
