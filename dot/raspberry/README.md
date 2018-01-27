@@ -22,3 +22,9 @@
     - `raspi-config --expand-rootfs` if not there
     - `sudo reboot`
   - `curl -sSL https://get.docker.com | sh`
+
+## Customize bash
+  - update:
+    - `vi ~/.bash_profile`
+    - `sudo vi /etc/motd`
+    - `touch ~/.welcome.sh`

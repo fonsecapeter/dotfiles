@@ -99,7 +99,7 @@ DIR 32
 # symbolic link
 LINK 31
 
-# pipe, socket, block device, character device (blue bg)
+# pipe, socket, block device, character device
 FIFO 33
 SOCK 33
 DOOR 33
