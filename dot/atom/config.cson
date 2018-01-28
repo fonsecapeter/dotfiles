@@ -10,7 +10,6 @@
     closeEmptyWindows: false
     disabledPackages: [
       "emmet"
-      "antialiased"
       "linter-eslint"
       "language-gfm"
       "ide-crystal"

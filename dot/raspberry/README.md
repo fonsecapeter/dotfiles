@@ -15,7 +15,7 @@
   - Add password to `psk`
     - keep `"`s arround `ssid` and `psk`
 
-## Boot the pi
+## Boot the Pi
   - Eject SD Card and put it in the pi
   - Find it's ip (go to wifi website or `arp -a`)
   - `raspi-config` to change creds and expand
@@ -23,8 +23,16 @@
     - `sudo reboot`
   - `curl -sSL https://get.docker.com | sh`
 
-## Customize bash
-  - update:
-    - `vi ~/.bash_profile`
-    - `sudo vi /etc/motd`
-    - `touch ~/.welcome.sh`
+## Update System
+  - `sudo apt update && sudo apt upgrade && sudo apt install vim`
+  - `vim ~/.vimrc` copy from here
+  - `mkdir -p .vim/colors`
+  - `vim .vim/colors/noctu.vim` <= copy from [here](https://raw.githubusercontent.com/noahfrederick/vim-noctu/master/colors/noctu.vim)
+  - `vim ~/.bash_profile` update from here
+  - `vim ~/.dircolors` copy from common
+  - `sudo vim /etc/motd` empty
+  - `touch ~/.welcome.sh` copy from here
+
+## Install Docker
+  - `curl -sSL https://get.docker.com | sh`
+  - `sudo usermod -aG docker pi`

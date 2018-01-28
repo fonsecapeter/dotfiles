@@ -1,2 +1,3 @@
+echo
 df -h /
 echo

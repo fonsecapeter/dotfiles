@@ -1,0 +1,17 @@
+syntax on
+set number
+set relativenumber
+set encoding=utf-8
+set t_Co=16
+set background=dark
+colorscheme noctu
+
+if @% !~# 'Makefile'
+  set et
+  set ts=2
+  set sw=2
+endif
+set autoindent
+nnoremap <CR> o<ESC>
+nnoremap <S-CR> O<ESC>
+xnoremap p "_dP
