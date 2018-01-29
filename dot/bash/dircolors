@@ -69,9 +69,9 @@ EIGHTBIT 1
 # - Color combinations
 #   ANSI Color code       Shellectric
 #   ~~~~~~~~~~~~~~~       ~~~~~~~~~
-#   00    none            sand
+#   00    none            camel
 #   30    black           black
-#   01;30 bright black    drk gray
+#   01;30 bright black    dark gray
 #   31    red             red
 #   01;31 bright red      pink-red
 #   32    green           forrest green
@@ -80,8 +80,8 @@ EIGHTBIT 1
 #   01;33 bright yellow   burnt pumpkin
 #   34    blue            blue
 #   01;34 bright blue     sky blue
-#   35    magenta         magenta
-#   01;35 bright magenta  bright magenta
+#   35    magenta         purple
+#   01;35 bright magenta  lavender
 #   36    cyan            cyan
 #   01;36 bright cyan     light cyan
 #   37    white           mid gray
@@ -134,14 +134,20 @@ EXEC 01;34  # Unix
 
 ### Text formats
 
-# Text that we can edit with a regular editor
-.md 00
-.mkd 00
-.org 00
-.pdc 00
-.txt 00
+# Content
+.md 33
+.mkd 33
+.org 33
+.pdc 33
+.txt 33
+.htm 33
+.html 33
+.dtml 33
+.shtml 33
+.xml 33
+.lxml 33
 
-# Source text
+# Source Code
 .h 01;33
 .c 01;33
 .C 01;33
@@ -161,12 +167,6 @@ EXEC 01;34  # Unix
 .rb 01;33
 .hs 01;33
 .php 01;33
-.htm 01;33
-.html 01;33
-.dtml 01;33
-.shtml 01;33
-.xml 01;33
-.lxml 01;33
 .rdf 01;33
 .css 01;33
 .scss 01;33
@@ -189,15 +189,20 @@ EXEC 01;34  # Unix
 .pod 01;33
 .tex 01;33
 
-#Data
+# Data
 .npy 35
 .pickle 35
 .sql 35
+.cson 35
 .json 35
 .tsv 35
 .csv 35
+.cfg 35
 .yml 35
 .yaml 35
+
+# Compiled
+.pyc 37
 
 ### Multimedia formats
 
@@ -283,7 +288,6 @@ EXEC 01;34  # Unix
 # doesnt seem to work
 # README.md 35
 # LICENSE 34
-
 
 # Binary document formats and multimedia source
 .doc 00
