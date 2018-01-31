@@ -14,20 +14,15 @@ function my_cal {
   else
     year="$2"
   fi
-  # need -h in linux
-  if [[ "${OSTYPE}" =~ ^darwin ]]; then
-    cal_text=$(command cal ${month} ${year})
-  else
-    cal_text=$(command cal -h ${month} ${year})
-  fi
-  hilight_title=$(echo "${cal_text}" | sed "1s/^[[:space:]].*/${purple}&${reset}/")
-  hilight_days=$(echo "${hilight_title}" | sed "2s/^Su.*/${orange}&${reset}/")
+  cal_text=$(command cal -h ${month} ${year})
+  hilight_title=$(echo "${cal_text}" | sed "1s/^[[:space:]].*/${bright_purple}&${reset}/")
+  hilight_days=$(echo "${hilight_title}" | sed "2s/^Su.*/${white}&${reset}/")
 
   echo
   # highlight today if looking at present
   if [[ "${month}" == "${this_month}" ]] && [[ "${year}" == "${this_year}" ]]; then
     this_year_2d=$(date +%y)
-    hilight_current_day=$(echo "${hilight_days}" | sed "s/${today}[^(?:${this_year_2d})]/${red}&${reset}/")
+    hilight_current_day=$(echo "${hilight_days}" | sed "s/${today}[^(?:${this_year_2d})]/${bright_orange}&${reset}/")
     echo "${hilight_current_day}"
   else
     echo "${hilight_days}"
