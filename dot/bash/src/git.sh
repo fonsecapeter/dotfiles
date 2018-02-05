@@ -6,7 +6,8 @@ colorized_git_last() {
       | sed "5s/^[[:space:]].*/$green&$reset/" \
       | sed "s/^M[[:space:]].*/$orange&$reset/" \
       | sed "s/^A[[:space:]].*/$green&$reset/" \
-      | sed "s/^D[[:space:]].*/$red&$reset/"
+      | sed "s/^D[[:space:]].*/$red&$reset/" \
+      | sed "s/^R[0-9].*/$purple&$reset/"
       # | cat | tr '\n' '\f' | sed -e "s/a^Author:\f\f[[:space:]].*/$(tput setaf 2)&$(tput sgr0)/" | tr '\f' '\n'
       # | cat | tr '\n' '\f' | sed -e "s/a^Author:\f\f[[:space:]].*/$green&$reset/"  \
 }
