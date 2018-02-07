@@ -1,6 +1,6 @@
 alias refresh='source ~/.bash_profile'
 function fresh {
-  local -r update_node="npm update -g \
+  local -r update_node="sudo n latest && npm update -g \
     && printf '${bright_orange}node${reset}: ' \
     && node -v \
     && printf '${bright_orange}npm${reset}: ' \
@@ -8,7 +8,7 @@ function fresh {
   if [[ "$OSTYPE" == "darwin"* ]]; then
     brew update && brew upgrade && brew cleanup
   else
-    apt update && apt full-upgrade && apt autoremove
+    sudo apt update && sudo apt full-upgrade && sudo apt autoremove
   fi
   eval "${update_node}"
 }

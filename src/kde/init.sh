@@ -27,6 +27,13 @@ echo
 ~/dotfiles/src/kde/set_up_rbenv.sh
 echo
 echo $bold
+echo "--> ${purple}Setting up node with n"
+echo $reset
+echo
+~/dotfiles/src/kde/set_up_nodejs_n.sh
+echo
+
+echo $bold
 echo "--> ${purple}Installing ui extensions"
 echo $reset
 echo
