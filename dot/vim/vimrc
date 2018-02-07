@@ -1,6 +1,6 @@
 set nocompatible
 filetype off
-set term=builtin_ansi
+" set term=builtin_ansi
 
 " Vundle
 " -----------------------------------------

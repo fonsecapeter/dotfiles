@@ -9,6 +9,7 @@ plugins=(
   gem
   git
   httpie
+  heroku
   npm
   pip
   python
