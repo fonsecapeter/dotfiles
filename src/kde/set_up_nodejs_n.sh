@@ -1,4 +1,4 @@
-if [ ! -z n ]; then
+if [ ! -x "$(command -v n)" ]; then
   sudo npm install -g n
   sudo n stable
   echo 'Plz symlink your new node'

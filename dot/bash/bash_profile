@@ -23,3 +23,5 @@ alias jarbs='~/Projects/jarbs/scripts/start.sh'
 alias ttam-buddy='~/Projects/ttam_buddy/ttam_buddy.sh'
 
 export API_HOST=api.23andme.local
+
+export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
