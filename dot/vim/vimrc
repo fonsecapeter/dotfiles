@@ -1,6 +1,5 @@
 set nocompatible
 filetype off
-" set term=builtin_ansi
 
 " Vundle
 " -----------------------------------------
@@ -52,10 +51,8 @@ set t_Co=16
 set background=dark
 colorscheme noctu
 filetype plugin on
-" allow :!bashrc-alias
-" causing way too many problems dont do dis
-" :set shellcmdflag=-lic
 
+autocmd BufWritePre * :FixWhitespace
 autocmd BufNewFile,BufReadPost *.html, *.dtml, *.lxml set filetype=htmldjango
 autocmd BufNewFile,BufReadPost *.html, *.dtml, *.lxml set syntax=htmldjango
 autocmd BufNewFile,BufReadPost *.json set syntax=javascript
@@ -75,26 +72,15 @@ set spelllang=en
 set spellfile=$HOME/dotfiles/dot/vim/spell.utf-8.add
 autocmd FileType markdown setlocal spell
 autocmd FileType markdown setlocal complete+=kspell
+autocmd Filetype gitcommit setlocal textwidth=72
+autocmd Filetype gitcommit setlocal spell
 
 " for now, the only time i read from stdin is for manpages
 autocmd StdinReadPost * set ft=man
 
-autocmd BufWritePre * :FixWhitespace
-
 " quit all (great for in goyo)
 command Q qa
 cnoreabbrev Q! Q
-
-" " set cursor highlighting in current window
-" augroup CursorLine
-"   " why you change ctermfg based on ctermbg, osx vim??? D:
-"   if !has('macunix')
-"     au!
-"     au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
-"     au WinLeave * setlocal nocursorline
-"   endif
-" augroup END
-" " hi CursorLine ctermbg=None
 
 " delete while in insert mode
 set backspace=indent,eol,start
@@ -124,10 +110,6 @@ let g:ale_linters = {
 let g:ctrlp_map = '<C-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'rca'
-" let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|.git\|venv\|.npm\|.vagrant\|data23\|emails\web\|**/*.pyc'
-" seems to be a pretty bad idea...
-" let g:ctrlp_max_files=0
-" maybe use ag instead?
 let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden -g ""'
 " -----------------------------------------
 
@@ -178,10 +160,6 @@ let NERDTreeIgnore=['\.pyc$', '\~$', '^node_modules$', '^venv$', '^\.cache$'] "i
 " toggle nerd tree
 map <C-\> :NERDTreeToggle<ESC>
 map <Bar> :NERDTreeFind<ESC>
-
-" auto open if no file specified
-" autocmd StdinReadPre * let s:std_in=1
-" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " auto open if dir
 autocmd StdinReadPre * let s:std_in=1

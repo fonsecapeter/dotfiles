@@ -1,6 +1,6 @@
 [user]
   name = Peter Fonseca
-	email = peter.nfonseca@gmail.com
+  email = peter.nfonseca@gmail.com
 [commit]
   template = ~/dotfiles/dot/git/gitmessage
 [core]

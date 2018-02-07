@@ -4,7 +4,6 @@ sudo add-apt-repository ppa:papirus/arc-kde
 sudo add-apt-repository ppa:papirus/papirus
 sudo add-apt-repository ppa:snwh/pulp
 sudo add-apt-repository universe
-sudo add-apt-repository ppa:twodopeshaggy/ccat
 # neofetch
 if ! type neofetch >/dev/null 2>&1; then
     echo "deb http://dl.bintray.com/dawidd6/neofetch jessie main" | sudo tee -a /etc/apt/sources.list

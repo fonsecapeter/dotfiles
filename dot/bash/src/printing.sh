@@ -17,3 +17,11 @@ function message_rule  {
 
 # print right-aligned
 alias message_right="printf '%*s' $(tput cols)"
+
+# makes ascii art look cool
+function centercat {
+  clear
+  echo && echo && echo && echo && echo
+  cat "${@}" |  awk '{ z = '$(tput cols)' - length; y = int(z / 2); x = z - y; printf "%*s%s%*s\n", x, "", $0, y, ""; }'
+  echo && echo && echo && echo && echo
+}

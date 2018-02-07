@@ -1,16 +1,15 @@
-alias refresh='source ~/.bash_profile'
+alias resource='source ~/.bash_profile'
 function fresh {
-  local -r update_node="sudo n latest && npm update -g \
-    && printf '${bright_orange}node${reset}: ' \
-    && node -v \
-    && printf '${bright_orange}npm${reset}: ' \
-    && npm -v"
   if [[ "$OSTYPE" == "darwin"* ]]; then
     brew update && brew upgrade && brew cleanup
   else
     sudo apt update && sudo apt full-upgrade && sudo apt autoremove
   fi
-  eval "${update_node}"
+  sudo n latest && npm update -g
+  printf "${bright_orange}node${reset}: "
+  node -v
+  printf "${bright_orange}npm${reset}: "
+  npm -v
 }
 
 
@@ -24,13 +23,14 @@ alias chat="hangups --col-msg-self-fg 'light magenta' --col-msg-sender-fg 'dark 
 
 # disk space usage
 # alias disk_unsorted="sudo du -x -d1 -h $1"
-function disk_unsorted {
+function disks_unsorted {
   sudo du -x -d1 -h $@
 }
-function disk_sorted {
-  disk_unsorted | sort -hr
+function disks_sorted {
+  disks_unsorted | sort -hr
 }
-alias disk=disk_sorted
+alias disks=disks_sorted
+alias disk='df -h /'
 # alias disk="disk_unsorted | sort -hr"
 
 # finding whos listening on my ports
@@ -47,13 +47,13 @@ alias ports=localhosts
 
 # permissions
 function chmine {
-    sudo chown -R $USER "${@}"
-    sudo chgrp -R $(id -g -n $USER) "${@}"
+  sudo chown -R $USER "${@}"
+  sudo chgrp -R $(id -g -n $USER) "${@}"
 
 }
 function chmine-rw {
-    chmine "${@}"
-    sudo chmod 664 "${@}"
+  chmine "${@}"
+  sudo chmod 664 "${@}"
 }
 
 # ctags
@@ -62,25 +62,16 @@ alias retag='ctags -R .'
 # obviously
 alias matrix='cmatrix -b'
 
-# makes my ansii art look cool
-# function centercat() { clear && echo && echo && echo && echo && echo && cat "${@}" |  awk '{ z = '$(tput cols)' - length; y = int(z / 2); x = z - y; printf "%*s%s%*s\n", x, "", $0, y, ""; }' && echo && echo && echo && echo && echo ;}
-function centercat {
-  clear
-  echo && echo && echo && echo && echo
-  cat "${@}" |  awk '{ z = '$(tput cols)' - length; y = int(z / 2); x = z - y; printf "%*s%s%*s\n", x, "", $0, y, ""; }'
-  echo && echo && echo && echo && echo
-}
-
 # TODO: work this into init_*.sh w/ cronjob to clean weekly
 # and figure out linux vs osx
 function trash { mv "${@}" ~/.Trash; }
 
 # time
 function stamp {
-    orange
-    date +"%r"
-    reset
-    $@
+  printf "${orange}"
+  date +"%r"
+  printf "${reset}"
+  $@
 }
 alias stampwatch='export PS1="\D{%I:%M %p}\n${PS1}"'
 alias stampunwatch='export PS1=${PS1#"\D{%I:%M %p}\n"}'

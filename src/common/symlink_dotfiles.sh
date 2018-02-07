@@ -58,7 +58,6 @@ symlink_file ~/dotfiles/dot/atom/styles.less ~/.atom/styles.less
 mkdir -p ~/.oh-my-zsh/custom/themes
 symlink_file ~/dotfiles/dot/zsh/zshrc ~/.zshrc
 symlink_file ~/dotfiles/dot/zsh/shellectric.zsh-theme ~/.oh-my-zsh/custom/themes/shellectric.zsh-theme
-symlink_file ~/dotfiles/dot/zsh/super-simple.zsh-theme ~/.oh-my-zsh/custom/themes/super-simple.zsh-theme
 # -----------------------------------------
 
 

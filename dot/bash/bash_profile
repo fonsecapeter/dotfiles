@@ -1,11 +1,9 @@
 source ~/dotfiles/dot/bash/src/manifest.sh
-alias search=ag
 
 # use vim as manpager
 # -----------------------------------------
-# export MANPAGER="vim -" is overkill, don't want to use vim for all paging...
 my_man() {
-    man $1 | col -b | view -
+  man $1 | col -b | view -
 }
 alias man=my_man
 # -----------------------------------------
@@ -21,7 +19,5 @@ alias jarbs='~/Projects/jarbs/scripts/start.sh'
 
 # added for ttam-buddy https://github.com/fonsecapeter/ttam_buddy/
 alias ttam-buddy='~/Projects/ttam_buddy/ttam_buddy.sh'
-
-export API_HOST=api.23andme.local
 
 export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
