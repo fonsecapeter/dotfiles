@@ -2,6 +2,9 @@ alias grep='grep --color=always'
 alias egrep='egrep --color=always'
 alias tree="tree -C -I 'node_modules|*.pyc|venv' --dirsfirst"
 alias treee='tree -L 3'
+# ctrl-t to insert file to cmd
+# ctrl-r to search through history
+export FZF_DEFAULT_OPTS='--color=16'
 
 alias ln='ln -v'
 alias ls='"ls" --color=always --group-directories-first'

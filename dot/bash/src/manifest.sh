@@ -2,6 +2,7 @@ source ~/dotfiles/dot/bash/src/colors.sh
 source ~/dotfiles/dot/bash/src/prompt.sh
 source ~/dotfiles/dot/bash/src/base_shell_config.sh
 source ~/dotfiles/dot/bash/src/gnu_coreutils.sh
+source ~/dotfiles/dot/bash/src/docker.sh
 source ~/dotfiles/dot/bash/src/git.sh
 source ~/dotfiles/dot/bash/src/python.sh
 source ~/dotfiles/dot/bash/src/ruby.sh

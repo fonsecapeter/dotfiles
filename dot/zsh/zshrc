@@ -6,6 +6,7 @@ plugins=(
   brew
   django
   docker
+  fzf-zsh
   gem
   git
   httpie

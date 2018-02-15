@@ -2,12 +2,12 @@
 alias gs="git shorty"
 colorized_git_last() {
   git last \
-      | sed "s/^commit[[:space:]].*/$orange&$reset/" \
-      | sed "5s/^[[:space:]].*/$green&$reset/" \
-      | sed "s/^M[[:space:]].*/$orange&$reset/" \
-      | sed "s/^A[[:space:]].*/$green&$reset/" \
-      | sed "s/^D[[:space:]].*/$red&$reset/" \
-      | sed "s/^R[0-9].*/$purple&$reset/"
+    | sed "s/^commit[[:space:]].*/$orange&$reset/" \
+    | sed "5s/^[[:space:]].*/$green&$reset/" \
+    | sed "s/^M[[:space:]].*/$orange&$reset/" \
+    | sed "s/^A[[:space:]].*/$green&$reset/" \
+    | sed "s/^D[[:space:]].*/$red&$reset/" \
+    | sed "s/^R[0-9].*/$purple&$reset/"
 }
 alias gl=colorized_git_last
 
