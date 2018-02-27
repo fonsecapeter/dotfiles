@@ -13,6 +13,7 @@
       "linter-eslint"
       "language-gfm"
       "ide-crystal"
+      "language-python"
     ]
     ignoredNames: [
       ".git"
@@ -83,6 +84,12 @@
     projectConfigFile: [
       "setup.cfg"
     ]
+  "linter-mypy":
+    disallowAnyExpr: false
+    disallowAnyUnimported: false
+    disallowSubclassingAny: false
+    followImports: "skip"
+    warnIncompleteStub: false
   "linter-pep8":
     ignoreErrorCodes: [
       "E501"
@@ -98,6 +105,8 @@
     plugins:
       "highlight-selected": true
       "highlight-selectedDecorationsZIndex": 0
+      "minimap-hide": true
+      "minimap-hideDecorationsZIndex": 0
   "nord-atom-ui":
     tabSizing: false
   pigments:
@@ -134,7 +143,8 @@
     hideVcsIgnoredFiles: true
   welcome:
     showOnStartup: false
-  whitespace: {}
+  whitespace:
+    ignoreWhitespaceOnCurrentLine: false
 ".basic.html.text":
   editor:
     tabLength: 4

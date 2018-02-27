@@ -58,3 +58,7 @@ preexec() {
 export PKG_CONFIG_PATH=/usr/local/opt/openssl/lib/pkgconfig
 
 export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
+
+if [ -f ~/.shrc ]; then
+  source ~/.shrc
+fi

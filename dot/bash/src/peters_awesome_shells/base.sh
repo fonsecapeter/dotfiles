@@ -82,3 +82,10 @@ alias remake='make clean && make'
 
 # nmap common
 alias netmap="nmap --top-ports 1000 -T4 -sC ${@}"
+
+function randmoji {
+  local -r emojis=(🚀 🌟 🎉)
+  local -r num_emojis=${#emojis[*]}
+  local -r idx=$(( (RANDOM % num_emojis) + 1 ))
+  echo "${emojis[$idx]}"
+}
