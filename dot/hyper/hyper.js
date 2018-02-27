@@ -41,7 +41,7 @@ module.exports = {
     backgroundColor: otherColors.backgroundColor,
     borderColor: otherColors.backgroundColor,
 
-    padding: '5px',
+    padding: '12px',
     colors: colors,
 
     css: `
