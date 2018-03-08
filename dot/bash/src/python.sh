@@ -1,7 +1,9 @@
 # ipython
 # alias ipython='ipython3'
 # export MYPYPATH=~/Projects/mypy-django
-alias py='ipython3'
+alias py=ipython3
+alias py3=py
+alias py2=ipython
 
 alias activate='. venv/bin/activate'
 

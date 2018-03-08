@@ -38,3 +38,5 @@ heroku
 aws
 config
 ip
+auth
+whitelist
