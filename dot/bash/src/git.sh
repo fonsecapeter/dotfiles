@@ -1,4 +1,6 @@
 # source ~/.git-completion.bash
+alias gut=git
+alias got=git
 alias gs="git shorty"
 colorized_git_last() {
   git last \
