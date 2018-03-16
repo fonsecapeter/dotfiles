@@ -1,4 +1,4 @@
-export PS1='\[${bright_white}\]$\[${reset}\] '
+export PS1='\[${bright_white}\]%\[${reset}\] '
 
 # name tab by active process
 PROMPT_COMMAND='printf "\033]0;%s\a" "$(basename $0)"'

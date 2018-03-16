@@ -40,3 +40,4 @@ config
 ip
 auth
 whitelist
+shellectric
