@@ -10,6 +10,7 @@ function fresh {
   node -v
   printf "${bright_orange}npm${reset}: "
   npm -v
+  asdf update
 }
 
 
