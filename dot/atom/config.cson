@@ -43,6 +43,8 @@
     lineHeight: 1.2
     softWrap: true
     tabType: "soft"
+  elmjutsu:
+    cacheDirectory: "/var/folders/zj/1s54zzl153lfvbbwypzw7ntm0000gn/T/elmjutsu30237rCpYaObRVwNS"
   "exception-reporting":
     userId: "e3466ace-9f17-9540-85cd-ae3328f7078b"
   "file-icons": {}
@@ -74,6 +76,8 @@
     matchEditorFont: true
     minimalMode: true
     tabSizing: "Minimum"
+  "language-elm":
+    autocompleteEnabled: false
   "letter-spacing":
     "letter-spacing": 0.4
   "line-count-status":
@@ -152,6 +156,9 @@
   editor:
     tabLength: 4
 ".django.html.text":
+  editor:
+    tabLength: 4
+".elm.source":
   editor:
     tabLength: 4
 ".python.regexp.source":
