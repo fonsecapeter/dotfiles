@@ -41,6 +41,7 @@ call vundle#end()
 " base config
 " -----------------------------------------
 " <Leader> should be \
+set term=xterm-16color
 syntax on
 set number
 set relativenumber
@@ -63,6 +64,9 @@ autocmd BufNewFile,BufReadPost *.ronn set filetype=markdown
 autocmd BufNewFile,BufReadPost,FilterReadPost,FileReadPost *.{txt,md,y*ml,cfg,ini} :Goyo 120
 autocmd BufNewFile,BufReadPost bash_profile set syntax=sh
 autocmd BufNewFile,BufReadPost vimrc set syntax=vim
+
+" fix weird string at top of vim in Hyper
+set t_RV=
 
 " spell-checking
 " use <C-P> (with shift) in insert for spell completion

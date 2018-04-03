@@ -3,20 +3,22 @@ export ZSH=~/.oh-my-zsh
 ZSH_THEME="shellectric"
 DISABLE_AUTO_TITLE="true"
 plugins=(
+  asdf
   brew
   django
   docker
+  elm
   fzf-zsh
   gem
   git
-  httpie
   heroku
+  httpie
   npm
   pip
   python
   vagrant
-  web-search
   wd
+  web-search
   zsh-autosuggestions
   zsh-syntax-highlighting
 )

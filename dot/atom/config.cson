@@ -122,6 +122,15 @@
       "**/*.scss"
       "**/*.less"
     ]
+  "prettier-atom":
+    formatOnSaveOptions:
+      enabled: true
+      excludedGlobs: [
+        "*.txt"
+      ]
+    useEslint: true
+  "python-autopep8":
+    formatOnSave: true
   "spell-check":
     addKnownWords: true
     grammars: [

@@ -10,3 +10,7 @@ data23
 emails/web
 tags
 "**/*.pyc"
+"**/public/**/*.js"
+"**/public/**/*.css"
+"**/*.map"
+"**/*.bundle.*"
