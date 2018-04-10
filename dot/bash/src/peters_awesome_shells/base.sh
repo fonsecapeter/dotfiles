@@ -1,40 +1,63 @@
 alias resource='source ~/.bash_profile'
-function fresh {
+function print_step {
+  printf "\n${white}-->${reset} "
+  printf "Updating ${purple}%s" "$1"
+  printf "${bright_black}...${reset}\n"
+}
+
+function fresh_sys {
+  print_step 'System'
   if [[ "$OSTYPE" == "darwin"* ]]; then
     brew update && brew upgrade && brew cleanup
   else
     sudo apt update && sudo apt full-upgrade && sudo apt autoremove
   fi
+}
+
+function fresh_atom {
+  print_step 'Atom'
+  apm update --no-confirm
+  apm list -bi > ~/dotfiles/dot/atom/package.list
+}
+
+function fresh_node {
+  print_step 'Node'
   sudo n latest && npm update -g
   printf "${bright_orange}node${reset}: "
   node -v
   printf "${bright_orange}npm${reset}: "
   npm -v
+}
+
+function fresh_vim {
+  print_step 'Vim'
+  sudo vim \
+    -c 'PluginInstall' \
+    -c 'PluginUpdate' \
+    -c 'qa!'
+}
+
+function fresh {
+  fresh_sys
+  fresh_atom
+  fresh_vim
+  fresh_node
+  print_step 'Asdf'
   asdf update
 }
 
-
-# convert all filenames in pwd to snake_case
-alias snakify='for f in *\ *; do mv "$f" "${f// /_}"; done'
-
-# gchat
-# dark gray, light red, light green, light blue, light magenta, light cyan, yellow, white
-# black,     dark red,  dark green,  dark blue,  dark magenta,  dark cyan,  brown,  light gray
-alias chat="hangups --col-msg-self-fg 'light magenta' --col-msg-sender-fg 'dark gray' --col-msg-text-fg 'white' --col-msg-date-fg 'yellow' --col-active-tab-fg 'dark gray'"
-
 # disk space usage
 # alias disk_unsorted="sudo du -x -d1 -h $1"
-function disks_unsorted {
+function disk_unsorted {
   sudo du -x -d1 -h $@
 }
-function disks_sorted {
-  disks_unsorted | sort -hr
+function disk_sorted {
+  disk_unsorted | sort -hr
 }
-alias disks=disks_sorted
+alias disks=disk_sorted
 alias disk='df -h /'
-# alias disk="disk_unsorted | sort -hr"
 
-# finding whos listening on my ports
+# port stuff
 alias localhost_ports='netstat -a | grep LISTEN | grep localhost'
 alias listening='netstat -a | grep LISTEN'
 function localhosts {
@@ -63,10 +86,6 @@ alias retag='ctags -R .'
 # obviously
 alias matrix='cmatrix -b'
 
-# TODO: work this into init_*.sh w/ cronjob to clean weekly
-# and figure out linux vs osx
-function trash { mv "${@}" ~/.Trash; }
-
 # time
 function stamp {
   printf "${orange}"
@@ -78,7 +97,6 @@ alias stampwatch='export PS1="\D{%I:%M %p}\n${PS1}"'
 alias stampunwatch='export PS1=${PS1#"\D{%I:%M %p}\n"}'
 
 # super dumn typo
-alias maketart="echo '${blue}o${cyan}%${red}@${purple}8${reset}' && echo '\\__/'"
 alias remake='make clean && make'
 
 # nmap common

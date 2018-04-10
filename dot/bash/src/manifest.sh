@@ -1,5 +1,6 @@
 source ~/dotfiles/dot/bash/src/colors.sh
 source ~/dotfiles/dot/bash/src/prompt.sh
+source ~/dotfiles/dot/bash/src/atom.sh
 source ~/dotfiles/dot/bash/src/base_shell_config.sh
 source ~/dotfiles/dot/bash/src/gnu_coreutils.sh
 source ~/dotfiles/dot/bash/src/docker.sh
@@ -9,5 +10,4 @@ source ~/dotfiles/dot/bash/src/ruby.sh
 source ~/dotfiles/dot/bash/src/asdf.sh
 source ~/dotfiles/dot/bash/src/search.sh
 source ~/dotfiles/dot/bash/src/work_stuff.sh
-source ~/dotfiles/dot/bash/src/atom.sh
 source ~/dotfiles/dot/bash/src/peters_awesome_shells/manifest.sh

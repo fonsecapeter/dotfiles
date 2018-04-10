@@ -7,7 +7,7 @@ block-travel@1.0.5
 busy-signal@1.4.3
 color-picker@2.2.5
 elm-format@3.0.0
-elmjutsu@7.3.0
+elmjutsu@7.3.5
 emmet@2.4.3
 file-icons@2.1.18
 file-types@0.5.5
@@ -31,7 +31,7 @@ language-viml@1.1.6
 language-vue@0.23.1
 line-count-status@0.0.3
 linter@2.2.0
-linter-elm-make@0.28.2
+linter-elm-make@0.28.3
 linter-eslint@8.4.1
 linter-flake8@2.3.0
 linter-mypy@2.6.1
@@ -54,5 +54,5 @@ shellectric-syntax@0.2.4
 sort-lines@0.18.0
 ssh-config@0.13.0
 tabs-to-spaces@1.0.3
-teletype@0.11.0
+teletype@0.12.1
 
