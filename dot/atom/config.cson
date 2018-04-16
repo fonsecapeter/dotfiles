@@ -153,8 +153,7 @@
   "splash-ui":
     useSplash: true
     useSyntax: true
-  "status-bar":
-    selectionCountFormat: " "
+  "status-bar": {}
   "tree-view":
     hideVcsIgnoredFiles: true
   welcome:
