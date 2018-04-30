@@ -14,7 +14,7 @@ colorized_git_last() {
 alias gl=colorized_git_last
 
 rebase_onto() {
-  git rebase -i --onto "$1" "$2~1"
+  git rebase -i --preserve-merges --onto "$1" "$2~1"
 }
 alias gr=rebase_onto
 
