@@ -14,9 +14,13 @@ colorized_git_last() {
 alias gl=colorized_git_last
 
 rebase_onto() {
-  git rebase -i --preserve-merges --onto "$1" "$2~1"
+  git rebase -i --preserve-merges --onto "${1}" "${2}~1"
 }
-alias gr=rebase_onto
+pull_and_rebase_onto() {
+  pull_on "${1}"
+  rebase_onto "${1}" "${2}"
+}
+alias gr='pull_and_rebase_onto'
 
 pull_rebase() {
   git pull $@ --rebase
@@ -31,4 +35,11 @@ git-squash() {
     return 1
   fi
   git rebase -i "HEAD~$1"
+}
+
+pull_on() {
+  current_branch=$(gs | sed 's/## //' | sed 's/[.][.][.].*//')
+  git checkout "${1}"
+  git pull
+  git checkout "${current_branch}"
 }

@@ -13,4 +13,5 @@ tags
 "**/public/**/*.js"
 "**/public/**/*.css"
 "**/*.map"
+"**/*.min.*"
 "**/*.bundle.*"

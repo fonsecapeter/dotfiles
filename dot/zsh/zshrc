@@ -47,7 +47,7 @@ stty -ixon
 # brew uses suffixed python stuff
 # alias pip=pip2
 
-# alias ttam-buddy='~/Projects/ttam_buddy/ttam_buddy.sh'
+alias ttam-buddy='~/Projects/ttam_buddy/ttam_buddy.sh'
 
 # name tab by active process
 function precmd {
@@ -64,3 +64,6 @@ export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PR
 if [ -f ~/.shrc ]; then
   source ~/.shrc
 fi
+
+# added by travis gem
+[ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh

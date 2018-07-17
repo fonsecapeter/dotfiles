@@ -87,12 +87,7 @@ module.exports = {
         border: none;
       }
     `,
-
-    termCSS: `
-      x-screen {
-        -webkit-font-smoothing: subpixel-antialiased !important;
-      }
-    `,
+    termCSS: "",
 
     env: {},
     bell: false,

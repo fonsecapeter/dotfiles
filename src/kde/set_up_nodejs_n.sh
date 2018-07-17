@@ -4,5 +4,4 @@ if [ ! -x "$(command -v n)" ]; then
   echo 'Plz symlink your new node'
   echo '(n will manage version linking for you after)'
   echo 'sudo ln -sf /usr/local/n/versions/node/<N_VERSION>/bin/node /usr/bin/nodejs'
-
 fi
