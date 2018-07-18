@@ -1,0 +1,40 @@
+# terminal
+cmatrix
+colordiff
+cowsay
+ctags
+curl
+fortune
+silversearcher-ag
+tree
+xclip
+zsh
+
+# fonts
+fontforge
+
+# javascript
+npm
+
+# python
+virtualenv
+
+# ruby
+rbenv
+
+# crystal
+crystal
+libgmp-dev
+libreadline-dev
+libssl-dev
+libxml2-dev
+libyaml-dev
+
+# vim
+neofetch
+vim-gui-common
+vim-runtime
+
+# ui
+arc-theme
+paper-icon-theme

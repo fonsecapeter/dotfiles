@@ -11,6 +11,7 @@ function fresh_sys {
     brew update && brew upgrade && brew cleanup
   else
     sudo apt update && sudo apt full-upgrade && sudo apt autoremove
+    sudo snap refresh
   fi
 }
 

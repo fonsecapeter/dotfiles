@@ -1,4 +1,4 @@
-export TERM=xterm-16color
+# export TERM=xterm-16color
 export LSCOLORS="cxBxhxDxgxhxhxhxhxfxfx"
 
 PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"

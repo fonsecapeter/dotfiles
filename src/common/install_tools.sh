@@ -12,7 +12,7 @@ clone_from_git \
 # -----------------------------------------
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-readonly ZSH_CUSTOM = ~/.oh-my-zsh/custom/plugins
+readonly ZSH_CUSTOM=~/.oh-my-zsh/custom/plugins
 
 # zsh autosuggestions
 clone_from_git \
@@ -35,7 +35,6 @@ apm install --packages-file ~/dotfiles/dot/atom/package.list
 
 # asdf
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.4.3
-
 
 # miso
 if [ ! -x "$(command -v miso)" ]; then
