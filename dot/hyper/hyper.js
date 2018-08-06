@@ -30,7 +30,7 @@ const UIConstants = {
 
 module.exports = {
   config: {
-    updateChannel: "stable",
+    updateChannel: "canary",
     shell: "/usr/local/bin/zsh",
     shellArgs: ["--login"],
     fontSize: 11,
