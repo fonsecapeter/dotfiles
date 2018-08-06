@@ -62,7 +62,7 @@ symlink_file ~/dotfiles/dot/zsh/shellectric.zsh-theme ~/.oh-my-zsh/custom/themes
 
 # httpie
 # -----------------------------------------
-symlink_dir ~/dotfiles/httpie ~/.httpie
+symlink_dir ~/dotfiles/dot/httpie ~/.httpie
 # -----------------------------------------
 
 
