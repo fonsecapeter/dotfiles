@@ -7,11 +7,12 @@ autoclose-html@0.23.0
 block-travel@1.0.5
 busy-signal@1.4.3
 color-picker@2.3.0
+crystal-slang@1.0.0
 elm-format@3.0.0
-elmjutsu@8.2.0
+elmjutsu@8.2.1
 emmet@2.4.3
 file-icons@2.1.22
-file-types@0.5.5
+file-types@1.0.1
 git-blame@1.7.0
 highlight-selected@0.14.0
 ide-crystal@0.3.3
@@ -21,7 +22,7 @@ intentions@1.1.5
 isotope-ui@2.8.5
 language-crystal-actual@0.37.2
 language-docker@1.1.8
-language-dotenv@1.1.1
+language-dotenv@1.2.0
 language-elm@1.5.0
 language-fontforge@1.2.0
 language-ini@1.20.0

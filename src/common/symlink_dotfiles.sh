@@ -60,5 +60,10 @@ symlink_file ~/dotfiles/dot/zsh/zshrc ~/.zshrc
 symlink_file ~/dotfiles/dot/zsh/shellectric.zsh-theme ~/.oh-my-zsh/custom/themes/shellectric.zsh-theme
 # -----------------------------------------
 
+# httpie
+# -----------------------------------------
+symlink_dir ~/dotfiles/httpie ~/.httpie
+# -----------------------------------------
+
 
 symlink_file ~/dotfiles/dot/hyper/hyper.js ~/.hyper.js
