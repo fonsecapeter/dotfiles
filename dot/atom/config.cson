@@ -152,6 +152,9 @@
       excludedGlobs: [
         "*.txt"
       ]
+    prettierOptions:
+      singleQuote: true
+      trailingComma: "all"
     useEslint: true
     useStylelint: true
   "python-autopep8":
