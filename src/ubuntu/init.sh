@@ -9,7 +9,7 @@ print_init_step 'Installing %s' 'tools'
 ~/dotfiles/src/ubuntu/install_apts.sh
 
 print_init_step 'Setting up %s' 'vim'
-~/dotfiles/src/ubuntu/customize_vim.sh
+~/dotfiles/src/common/customize_vim.sh
 
 print_init_step 'Setting up %s' 'rbenv'
 ~/dotfiles/src/kde/set_up_rbenv.sh

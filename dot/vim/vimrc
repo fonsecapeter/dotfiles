@@ -40,7 +40,7 @@ call vundle#end()
 " base config
 " -----------------------------------------
 " <Leader> should be \
-set term=xterm-16color
+" set term=xterm-16color
 syntax on
 set number
 set relativenumber

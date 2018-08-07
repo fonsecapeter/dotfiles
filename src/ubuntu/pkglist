@@ -6,6 +6,7 @@ ctags
 curl
 fortune
 httpie
+neofetch
 silversearcher-ag
 tree
 xclip
@@ -32,7 +33,7 @@ libxml2-dev
 libyaml-dev
 
 # vim
-neofetch
+vim
 vim-gui-common
 vim-runtime
 
