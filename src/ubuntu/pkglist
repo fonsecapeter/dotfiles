@@ -10,7 +10,10 @@ neofetch
 silversearcher-ag
 tree
 xclip
+
+# zsh
 zsh
+zsh-syntax-highlighting
 
 # fonts
 fontforge
