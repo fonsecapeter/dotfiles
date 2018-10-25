@@ -13,12 +13,34 @@ colorized_git_last() {
 }
 alias gl=colorized_git_last
 
+pull_on() {
+  # Update a branch you aren't currently on
+  # Args:
+  #   - 1: The branch to update
+  local -r current_branch=$(gs | sed 's/## //' | sed 's/[.][.][.].*//')
+  git checkout "${1}"
+  git pull
+  git checkout "${current_branch}"
+}
+
 rebase_onto() {
+  # Just a more intuitive way to use git rebase onto
+  # Args:
+  #   - 1: The new base
+  #   - 2: Your first commit hash
   git rebase -i --preserve-merges --onto "${1}" "${2}~1"
 }
 pull_and_rebase_onto() {
+  local -r current_branch=$(gs | sed 's/## //' | sed 's/[.][.][.].*//')
+  local -r first_commit=$( \
+    git log \
+      --oneline \
+      "${1}..${current_branch}" \
+        | tail -1 \
+        | sed 's/ .*//' \
+  )
   pull_on "${1}"
-  rebase_onto "${1}" "${2}"
+  rebase_onto "${1}" "${first_commit}"
 }
 alias gr='pull_and_rebase_onto'
 
@@ -35,11 +57,4 @@ git-squash() {
     return 1
   fi
   git rebase -i "HEAD~$1"
-}
-
-pull_on() {
-  current_branch=$(gs | sed 's/## //' | sed 's/[.][.][.].*//')
-  git checkout "${1}"
-  git pull
-  git checkout "${current_branch}"
 }

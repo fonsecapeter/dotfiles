@@ -24,7 +24,7 @@ function fresh_atom {
 function fresh_node {
   print_step 'Node'
   n latest
-  npm update -g
+  npm i -g npm
   printf "${bright_orange}node${reset}: "
   node -v
   printf "${bright_orange}npm${reset}: "

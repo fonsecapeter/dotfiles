@@ -1,4 +1,12 @@
 "*":
+  "atom-beautify":
+    bash:
+      beautify_on_save: true
+    crystal:
+      beautify_on_save: true
+    html: {}
+    js:
+      default_beautifier: "Prettier"
   "atom-clock":
     dateFormat: "h:mm"
   "atom-ide-ui":
@@ -22,14 +30,14 @@
       "atom-ide-terminal": "default"
       hyperclick: "default"
   core:
-    audioBeep: false
     closeEmptyWindows: false
     disabledPackages: [
-      "emmet"
       "linter-eslint"
       "language-gfm"
       "ide-crystal"
       "language-python"
+      "python-autopep8"
+      "autoclose-html"
     ]
     ignoredNames: [
       ".git"
@@ -51,9 +59,13 @@
     titleBar: "custom"
   "custom-title":
     template: "atom"
+  "django-templates":
+    defaultToDjangoTemplatesForFilePathsContaining: [
+      "templates"
+    ]
   editor:
     fontFamily: "Brass Mono"
-    fontSize: 11
+    fontSize: 12
     invisibles: {}
     lineHeight: 1.2
     softWrap: true
@@ -65,6 +77,7 @@
   "file-icons": {}
   "file-types":
     cfg: "source.shell"
+    dtml: "text.html.django"
     env: "source.shell"
     motd: "source.shell"
     txt: "text.md"
@@ -87,7 +100,6 @@
   "isotope-ui":
     customBackgroundColor: true
     customBackgroundColorPicker: "#393e45"
-    fontFamily: "Ubuntu"
     lowContrastTooltip: true
     matchEditorFont: true
     minimalMode: true
@@ -159,6 +171,7 @@
     useStylelint: true
   "python-autopep8":
     formatOnSave: true
+  "python-yapf": {}
   "spell-check":
     addKnownWords: true
     grammars: [
@@ -194,6 +207,9 @@
 ".django.html.text":
   editor:
     tabLength: 4
+".django.python.source":
+  editor:
+    preferredLineLength: 120
 ".elm.source":
   editor:
     tabLength: 4

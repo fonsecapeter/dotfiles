@@ -35,3 +35,6 @@
   'ctrl--': 'ui:decrease-font-size'
   'alt-.': 'find-and-replace:find-next-selected'
   'alt-,': 'find-and-replace:find-previous-selected'
+
+'atom-text-editor[data-grammar="text html django"]:not([mini])':
+  'tab': 'emmet:expand-abbreviation-with-tab'
