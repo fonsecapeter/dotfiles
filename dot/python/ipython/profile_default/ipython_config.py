@@ -1,4 +1,17 @@
 # Configuration file for ipython.
+import sys
+from colorama import (
+    init as init_colorama,
+    Fore as ColorFore,
+    Style as ColorStyle
+)
+from pygments.style import Style
+from pygments.token import (
+    Keyword, Name, Comment, String, Error,
+    Number, Operator, Text, Literal, Token
+)
+
+init_colorama()
 
 #------------------------------------------------------------------------------
 # InteractiveShellApp(Configurable) configuration
@@ -123,7 +136,7 @@
 #------------------------------------------------------------------------------
 
 ## Whether to display a banner upon starting IPython.
-c.TerminalIPythonApp.display_banner = False
+c.TerminalIPythonApp.display_banner = True
 
 ## If a command or file is given via the command-line, e.g. 'ipython foo.py',
 #  start an interactive shell after executing the file or command.
@@ -159,13 +172,21 @@ c.TerminalIPythonApp.display_banner = False
 #c.InteractiveShell.autocall = 0
 
 ## Autoindent IPython code entered interactively.
-#c.InteractiveShell.autoindent = True
+# c.InteractiveShell.autoindent = True
 
 ## Enable magic commands to be called without the leading %.
 #c.InteractiveShell.automagic = True
 
 ## The part of the banner to be printed before the profile
 #c.InteractiveShell.banner1 = "Python 3.6.1 (v3.6.1:69c0db5050, Mar 21 2017, 01:21:04) \nType 'copyright', 'credits' or 'license' for more information\nIPython 6.1.0 -- An enhanced Interactive Python. Type '?' for help.\n"
+py_version = '.'.join(
+    map(str, sys.version_info[:3])
+)
+c.InteractiveShell.banner1 = "%s%s%s" % (
+    ColorFore.BLUE,
+    py_version,
+    ColorStyle.RESET_ALL,
+)
 
 ## The part of the banner to be printed after the profile
 #c.InteractiveShell.banner2 = ''
@@ -307,11 +328,6 @@ c.TerminalIPythonApp.display_banner = False
 #  c.TerminalInteractiveShell.highlighting_style = pygments.styles.get_style_by_name('fruity')
 # http://pygments.org/docs/styles/#creating-own-styles
 # http://pygments.org/docs/tokens/#name-tokens
-from pygments.style import Style
-from pygments.token import (
-    Keyword, Name, Comment, String, Error,
-    Number, Operator, Text, Literal, Token
-)
 
 
 class Shellectric(Style):
@@ -367,7 +383,6 @@ class MyPrompt(Prompts):
     def out_prompt_tokens(self, cli=None):
         return [(Token.Prompt, ' < ')]
 
-    # def continuation_prompt_tokens(self, cli=None):
     def continuation_prompt_tokens(self, *args, **kwargs):
         return [(Token.Prompt, ' * ')]
 

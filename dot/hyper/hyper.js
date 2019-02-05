@@ -158,8 +158,7 @@ module.exports = {
     "hyper-nobold",
     "hyper-tab-icons",
     "hypercwd",
-    "hyper-search",
-    "hyper-font-smoothing"
+    "hyper-search"
   ],
   localPlugins: [],
   keymaps: {}

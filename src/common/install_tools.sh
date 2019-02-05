@@ -1,7 +1,7 @@
 source ~/dotfiles/src/common/clone_from_git.sh
 mkdir ~/Projects
 
-sudo pip3 install ipython[all]
+sudo pip3 install ipython[all] colorama pygments
 
 # shellectric colors
 clone_from_git \

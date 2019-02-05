@@ -27,6 +27,7 @@
 	"tab_size": 4,
 	"theme": "Boxy Tomorrow.sublime-theme",
 	"theme_accent_pink": true,
+	"theme_font_md": true,
 	"theme_icons_atomized": true,
 	"theme_scrollbar_rounded": true,
 	"theme_sidebar_font_xs": true,

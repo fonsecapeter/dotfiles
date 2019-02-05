@@ -131,3 +131,13 @@ atom-workspace {
 .dark-pink:before {
   color: @light-red;
 }
+
+// JSON Keys TODO: Add to shellectric theme
+.syntax--meta.syntax--structure.syntax--dictionary.syntax--key.syntax--json {
+  & > .syntax--string.syntax--quoted.syntax--json {
+    color: @orange;
+    & > .syntax--punctuation {
+      color: @orange;
+    }
+  }
+}
