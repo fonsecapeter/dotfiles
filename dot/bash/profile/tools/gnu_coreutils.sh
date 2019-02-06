@@ -34,3 +34,5 @@ alias diff="colordiff -u"
 alias fastping="ping -c 10 -i .2"
 alias ping="ping -c 5"
 alias vi=vim
+
+alias rc='source ~/.bash_profile'

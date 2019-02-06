@@ -4,5 +4,8 @@ export LSCOLORS="cxBxhxDxgxhxhxhxhxfxfx"
 PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 EDITOR=vim
-# test -e ~/.dircolors && \
 eval `dircolors -b ~/.dircolors`
+
+# stop <C-s> from halting terminal output
+# bind -r '\C-s'
+stty -ixon

@@ -27,27 +27,8 @@ source ~/dotfiles/dot/zsh/autocomplete.zsh
 source ~/dotfiles/dot/zsh/syntax_highlighting.zsh
 source $ZSH/oh-my-zsh.sh
 source ~/dotfiles/dot/zsh/yoink_from_bash.zsh
-alias resource='source ~/.zshrc'
+alias rc='source ~/.zshrc'
 alias fresh="upgrade_oh_my_zsh && fresh"
-
-# use vim as manpager
-# -----------------------------------------
-my_man() {
-  man $1 | col -b | view -
-}
-alias man=my_man
-# -----------------------------------------
-
-# stop <C-s> from halting terminal output
-# -----------------------------------------
-# bind -r '\C-s'
-stty -ixon
-# -----------------------------------------
-
-# brew uses suffixed python stuff
-# alias pip=pip2
-
-alias ttam-buddy='~/Projects/ttam_buddy/ttam_buddy.sh'
 
 # name tab by active process
 function precmd {
@@ -58,12 +39,6 @@ preexec() {
 }
 
 export PKG_CONFIG_PATH=/usr/local/opt/openssl/lib/pkgconfig
-
-export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
-
-if [ -f ~/.shrc ]; then
-  source ~/.shrc
-fi
 
 # added by travis gem
 [ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh

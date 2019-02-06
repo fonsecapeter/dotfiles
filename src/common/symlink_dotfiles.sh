@@ -8,7 +8,6 @@ symlink_file ~/dotfiles/dot/colordiffrc ~/.colordiffrc
 symlink_file ~/dotfiles/dot/bash/dircolors ~/.dircolors
 symlink_file ~/dotfiles/dot/bash/bash_profile ~/.bash_profile
 symlink_file ~/dotfiles/dot/peter-notes.yml ~/.peter-notes.yml
-symlink_file ~/dotfiles/dot/neofetch_config ~/.config/neofetch/config
 # -----------------------------------------
 
 # colors

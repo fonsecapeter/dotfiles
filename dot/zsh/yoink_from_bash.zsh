@@ -1,12 +1,7 @@
-source ~/dotfiles/dot/bash/src/colors.sh
-source ~/dotfiles/dot/bash/src/peters_awesome_shells/manifest.sh
-source ~/dotfiles/dot/bash/src/base_shell_config.sh
-source ~/dotfiles/dot/bash/src/gnu_coreutils.sh
-source ~/dotfiles/dot/bash/src/docker.sh
-source ~/dotfiles/dot/bash/src/git.sh
-source ~/dotfiles/dot/bash/src/python.sh
-source ~/dotfiles/dot/bash/src/ruby.sh
-source ~/dotfiles/dot/bash/src/asdf.sh
-source ~/dotfiles/dot/bash/src/search.sh
-source ~/dotfiles/dot/bash/src/atom.sh
-source ~/dotfiles/dot/bash/src/work_stuff.sh
+source ~/dotfiles/dot/bash/profile/base_shell_config.sh
+source ~/dotfiles/dot/bash/profile/colors.sh
+source ~/dotfiles/dot/bash/profile/work_stuff.sh
+
+source ~/dotfiles/dot/bash/profile/editors/manifest.sh
+source ~/dotfiles/dot/bash/profile/languages/manifest.sh
+source ~/dotfiles/dot/bash/profile/tools/manifest.sh

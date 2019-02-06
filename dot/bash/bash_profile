@@ -1,23 +1,2 @@
-source ~/dotfiles/dot/bash/src/manifest.sh
-
-# use vim as manpager
-# -----------------------------------------
-my_man() {
-  man $1 | col -b | view -
-}
-alias man=my_man
-# -----------------------------------------
-
-# stop <C-s> from halting terminal output
-# -----------------------------------------
-bind -r '\C-s'
-stty -ixon
-# -----------------------------------------
-
-# added for jarbs
-alias jarbs='~/Projects/jarbs/scripts/start.sh'
-
-# added for ttam-buddy https://github.com/fonsecapeter/ttam_buddy/
-alias ttam-buddy='~/Projects/ttam_buddy/ttam_buddy.sh'
-
-export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
+# osx
+source ~/dotfiles/dot/bash/profile/manifest.sh

@@ -44,6 +44,7 @@ _zsh_highlight_highlighter_regexp_paint(){
     _zsh_highlight_regexp_highlighter_loop "$BUFFER" "$pattern"
   done
 }
+
 _zsh_highlight_regexp_highlighter_loop(){
   local buf="$1" pat="$2"
   integer OFFSET=0
