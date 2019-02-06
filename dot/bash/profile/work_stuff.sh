@@ -16,7 +16,6 @@ alias keyboard-cat='printf https://i.scdn.co/image/98535eae915c09ce219703f817010
 alias george='printf https://pbs.twimg.com/profile_images/681064571/costanza_400x400.jpg'
 
 export API_HOST='api.23andme.local'
-export PETER_ID=''
 
 # added for ttam-buddy https://github.com/fonsecapeter/ttam_buddy/
 alias ttam-buddy='~/Projects/ttam_buddy/ttam_buddy.sh'
