@@ -48,5 +48,5 @@ function fresh {
   fresh_atom
   fresh_vim
   fresh_node
-  freash_asdf
+  fresh_asdf
 }
