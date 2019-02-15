@@ -3,6 +3,6 @@ if [ ! -x "$(command -v brew)" ]; then
 fi
 brew update && brew upgrade
 brew install vim --with-override-system-vi
-brew install neofetch tree coreutils cmatrix python3 ctags colordiff rbenv ag zsh httpie crystal
+cat ~/dotfiles/src/osx/brews.txt | xargs brew install
 
 ~/dotfiles/src/common/install_tools.sh

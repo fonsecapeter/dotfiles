@@ -202,7 +202,6 @@
     showOnStartup: false
   whitespace:
     ignoreWhitespaceOnCurrentLine: false
-    removeTrailingWhitespace: false
 ".basic.html.text":
   editor:
     tabLength: 4
