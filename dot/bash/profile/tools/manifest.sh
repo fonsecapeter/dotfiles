@@ -9,4 +9,4 @@ source ~/dotfiles/dot/bash/profile/tools/printing.sh
 source ~/dotfiles/dot/bash/profile/tools/tar.sh
 source ~/dotfiles/dot/bash/profile/tools/time.sh
 
-source /Users/pfonseca/dotfiles/dot/bash/profile/tools/custom/manifest.sh
+source ~/dotfiles/dot/bash/profile/tools/custom/manifest.sh
