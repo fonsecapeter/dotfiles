@@ -1,16 +1,24 @@
+# pyenv
+if which pyenv > /dev/null; then
+  eval "$(pyenv init -)"
+fi
+if which pyenv-virtualenv-init > /dev/null; then
+  eval "$(pyenv virtualenv-init -)"
+fi
+
 # poetry
+export PATH="$HOME/.poetry/bin:$PATH"
 if [[ "${SHELL}" =~ 'bash' ]]; then
   poetry completions bash > /etc/bash_completion.d/poetry.bash-completion
 fi
 
 # ipython
-# alias ipython='ipython3'
-# export MYPYPATH=~/Projects/mypy-django
-alias py=ipython3
-alias py3=py
-alias py2=ipython2
+alias py=ipython
 
+# virtualenv
 alias activate='. venv/bin/activate'
+
+# django
 alias django-secret="python manage.py shell -c 'from django.core.management import utils; print(utils.get_random_secret_key())'"
 
 pypathify() {

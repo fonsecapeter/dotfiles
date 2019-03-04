@@ -43,10 +43,16 @@ function fresh_node {
   npm -v
 }
 
+function fresh_python {
+  print_fresh_step 'Python poetry'
+  poetry self:update
+}
+
 function fresh {
   fresh_sys
   fresh_atom
   fresh_vim
   fresh_node
+  fresh_python
   fresh_asdf
 }

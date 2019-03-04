@@ -2,12 +2,7 @@ source ~/dotfiles/src/common/clone_from_git.sh
 mkdir ~/Projects
 
 # python
-sudo pip3 install ipython[all] colorama pygments
-# May require:
-# /Applications/Python\ 3.8/Update\ Shell\ Profile.command
-# /Applications/Python\ 3.8/Install\ Certificates.command
-curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | python3
-
+curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | python
 
 # shellectric colors
 clone_from_git \

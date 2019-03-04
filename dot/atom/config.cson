@@ -69,6 +69,7 @@
     fontSize: 12
     invisibles: {}
     lineHeight: 1.2
+    preferredLineLength: 79
     softWrap: true
     tabType: "soft"
   elmjutsu:
@@ -97,7 +98,7 @@
       rope_completion:
         enabled: true
       yapf: {}
-    python: "/Library/Frameworks/Python.framework/Versions/3.6/bin/python3"
+    python: "/usr/local/bin/python3"
   "isotope-ui":
     customBackgroundColor: true
     customBackgroundColorPicker: "#393e45"
@@ -138,7 +139,7 @@
       "E501"
       "E241"
     ]
-    maxLineLength: 120
+    maxLineLength: 79
   "linter-sass-lint":
     configFile: ".scss-lint.yml"
   "linter-ui-default": {}
@@ -219,7 +220,4 @@
     preferredLineLength: 120
 ".python.regexp.source":
   editor:
-    preferredLineLength: 12
-".python.source":
-  editor:
-    preferredLineLength: 120
+    autoIndentOnPaste: true
