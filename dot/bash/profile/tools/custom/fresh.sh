@@ -36,7 +36,7 @@ function fresh_asdf {
 function fresh_node {
   print_fresh_step 'Node'
   n latest
-  npm i -g npm
+  npm install -g npm@latest
   printf "${bright_orange}node${reset}: "
   node -v
   printf "${bright_orange}npm${reset}: "
