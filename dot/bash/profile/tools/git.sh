@@ -28,7 +28,7 @@ rebase_onto() {
   # Args:
   #   - 1: The new base
   #   - 2: Your first commit hash
-  git rebase -i --preserve-merges --onto "${1}" "${2}~1"
+  git rebase -i --rebase-merges --onto "${1}" "${2}~1"
 }
 pull_and_rebase_onto() {
   local -r current_branch=$(gs | sed 's/## //' | sed 's/[.][.][.].*//')
@@ -56,5 +56,5 @@ git-squash() {
     echo 'How many commits to squash???'
     return 1
   fi
-  git rebase -i "HEAD~$1"
+  git rebase --rebase-merges -i "HEAD~$1"
 }

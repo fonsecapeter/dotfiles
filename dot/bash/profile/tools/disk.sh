@@ -6,4 +6,4 @@ function disk_sorted {
   disk_unsorted | sort -hr
 }
 alias disk=disk_sorted
-alias disk_sys='df -h /'
+alias usage='df -h /'

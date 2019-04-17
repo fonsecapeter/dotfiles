@@ -7,7 +7,6 @@ plugins=(
   brew
   django
   docker
-  elm
   fzf-zsh
   gem
   git
@@ -51,4 +50,6 @@ fi
 if [ ! -d "${ZSH}/plugins/poetry" ]; then
   mkdir "${ZSH}/plugins/poetry"
 fi
-poetry completions zsh > $ZSH/plugins/poetry/_poetry
+if [ -x "$(command -v poetry)" ]; then
+  poetry completions zsh > $ZSH/plugins/poetry/_poetry
+fi
