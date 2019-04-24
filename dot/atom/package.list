@@ -46,7 +46,7 @@ linter-flake8@2.4.0
 linter-mypy@2.6.4
 linter-rubocop@2.2.4
 linter-sass-lint@1.9.0
-linter-tslint@1.10.18
+linter-tslint@1.10.19
 linter-ui-default@1.7.1
 minimap@4.29.9
 minimap-hide@0.3.0
