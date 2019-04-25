@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -eu -o pipefail
-source ~/dotfiles/dot/bash/src/colors.sh
-source ~/dotfiles/dot/bash/src/printing.sh
+source ~/dotfiles/dot/bash/profile/colors.sh
+source ~/dotfiles/dot/bash/profile/printing.sh
 
 echo
 echo $bold
