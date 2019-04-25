@@ -37,6 +37,7 @@ preexec() {
 }
 
 export PKG_CONFIG_PATH=/usr/local/opt/openssl/lib/pkgconfig
+export PATH="${PATH}:${HOME}/.oh-my-zsh/custom/plugins/fzf/bin/fzf"
 
 # added by travis gem
 [ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh

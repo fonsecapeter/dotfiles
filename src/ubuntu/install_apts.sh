@@ -1,5 +1,5 @@
-# sudo add-apt-repository ppa:fossfreedom/arc-gtk-theme-daily
-# sudo add-apt-repository ppa:snwh/ppa
+sudo add-apt-repository ppa:fossfreedom/arc-gtk-theme-daily
+sudo add-apt-repository ppa:snwh/ppa
 
 sudo apt update && sudo apt full-upgrade
 cat ~/dotfiles/src/ubuntu/pkg_list.txt \
