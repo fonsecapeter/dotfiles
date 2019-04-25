@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -eu -o pipefail
 source ~/dotfiles/dot/bash/profile/colors.sh
-source ~/dotfiles/dot/bash/profile/printing.sh
+source ~/dotfiles/dot/bash/profile/tools/printing.sh
 
 print_init_title 'Fresh Install Automated'
 
