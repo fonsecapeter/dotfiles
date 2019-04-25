@@ -32,7 +32,7 @@ symlink_file ~/dotfiles/dot/ruby/pryrc ~/.pryrc
 # vim
 # -----------------------------------------
 symlink_file ~/dotfiles/dot/vim/vimrc ~/.vimrc
-symlink_file ~/dotfiles/dot/vim/shellectric_airline_theme.vim ~/.vim/bundle/vim-airline/autoload/airline/themes/shellectric.vim
+sudo_symlink_file ~/dotfiles/dot/vim/shellectric_airline_theme.vim ~/.vim/bundle/vim-airline/autoload/airline/themes/shellectric.vim
 # -----------------------------------------
 
 # atom
