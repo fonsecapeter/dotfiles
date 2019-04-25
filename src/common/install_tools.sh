@@ -13,22 +13,22 @@ clone_from_git \
 # -----------------------------------------
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-readonly ZSH_CUSTOM=~/.oh-my-zsh/custom/plugins
+readonly ZSH_CUSTOM_PLUGINS=~/.oh-my-zsh/custom/plugins
 
 # zsh autosuggestions
 clone_from_git \
   zsh-users/zsh-autosuggestions \
-  $ZSH_CUSTOM/zsh-autosuggestions
+  $ZSH_CUSTOM_PLUGINS/zsh-autosuggestions
 
 # zsh syntax highlighting
 clone_from_git \
   zsh-users/zsh-syntax-highlighting \
-  $ZSH_CUSTOM/zsh-syntax-highlighting
+  $ZSH_CUSTOM_PLUGINS/zsh-syntax-highlighting
 
 # zsh fzf
-clone_from_git junegunn/fzf $ZSH_CUSTOM/fzf
-$ZSH_CUSTOM/fzf/install --bin
-clone_from_git Treri/fzf-zsh $ZSH_CUSTOM/fzf-zsh
+clone_from_git junegunn/fzf $ZSH_CUSTOM_PLUGINS/fzf
+$ZSH_CUSTOM_PLUGINS/fzf/install --bin
+clone_from_git Treri/fzf-zsh $ZSH_CUSTOM_PLUGINS/fzf-zsh
 # -----------------------------------------
 
 # atom

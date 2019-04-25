@@ -12,13 +12,6 @@ symlink_file ~/dotfiles/dot/peter-notes.yml ~/.peter-notes.yml
 
 # colors
 # -----------------------------------------
-if [ ! -d ~/.local/share/konsole ]; then
-    mkdir ~/.local/share/konsole
-fi
-symlink_file ~/Projects/shellectric-color-scheme/Shellectric.colorscheme ~/.local/share/konsole/Shellectric.colorscheme
-symlink_file ~/dotfiles/dot/konsole/Peter.profile ~/.local/share/konsole/Peter.profile
-symlink_file ~/dotfiles/dot/konsole/Peter_hidpi.profile ~/.local/share/konsole/Peter_hidpi.profile
-# -----------------------------------------
 
 # git
 # -----------------------------------------

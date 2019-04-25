@@ -3,7 +3,6 @@ export ZSH=~/.oh-my-zsh
 ZSH_THEME="shellectric"
 DISABLE_AUTO_TITLE="true"
 plugins=(
-  brew
   django
   docker
   fzf-zsh

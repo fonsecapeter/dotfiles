@@ -90,10 +90,12 @@ module.exports = {
     `,
     termCSS: "",
 
-    env: {},
+    env: {
+      "SHELL": "/usr/bin/zsh",
+    },
     bell: false,
     copyOnSelect: false,
-    showHamburgerMenu: "",
+    showHamburgerMenu: false,
     showWindowControls: "",
 
     // Plugins
