@@ -11,15 +11,6 @@ print_init_step 'Installing %s' 'tools'
 print_init_step 'Setting up %s' 'vim'
 ~/dotfiles/src/common/customize_vim.sh
 
-print_init_step 'Setting up %s' 'rbenv'
-~/dotfiles/src/kde/set_up_rbenv.sh
-
-print_init_step 'Setting up %s with n' 'node'
-~/dotfiles/src/kde/set_up_nodejs_n.sh
-
-print_init_step 'Installing %s' 'crystal'
-~/dotfiles/src/ubuntu/install_crystal.sh
-
 print_init_step 'Installing %s' 'gui apps'
 ~/dotfiles/src/ubuntu/install_snaps.sh
 

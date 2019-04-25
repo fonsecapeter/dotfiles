@@ -1,11 +1,7 @@
 # terminal
-cmatrix
 colordiff
-cowsay
 ctags
 curl
-fortune
-httpie
 silversearcher-ag
 tree
 xclip
@@ -17,30 +13,12 @@ zsh-syntax-highlighting
 # fonts
 fontforge
 
-# javascript
-npm
-
-# python
-virtualenv
-
-# ruby
-rbenv
-
-# crystal
-crystal
-libgmp-dev
-libreadline-dev
-libssl-dev
-libxml2-dev
-libyaml-dev
-
 # vim
-vim
 vim-gui-common
 vim-runtime
 
 # ui
 gnome-tweak-tool
 gnome-shell-extensions
-arc-theme
-paper-icon-theme
+# arc-theme
+# paper-icon-theme

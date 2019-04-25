@@ -33,16 +33,3 @@ clone_from_git Treri/fzf-zsh $ZSH_CUSTOM/fzf-zsh
 
 # atom
 # apm install --packages-file ~/dotfiles/dot/atom/package.list
-
-# asdf
-git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.4.3
-
-# miso
-if [ ! -x "$(command -v miso)" ]; then
-  clone_from_git fonsecapeter/miso-buddy ~/Projects/miso-buddy
-  cur_dir=$PWD
-  cd ~/Projects/miso-buddy
-  make
-  sudo ln -s "$(realpath ./bin/miso)" "/usr/local/bin/miso"
-  cd "${PWD}"
-fi

@@ -1,4 +1,3 @@
-source ~/dotfiles/dot/bash/profile/tools/asdf.sh
 source ~/dotfiles/dot/bash/profile/tools/disk.sh
 source ~/dotfiles/dot/bash/profile/tools/docker.sh
 source ~/dotfiles/dot/bash/profile/tools/git.sh

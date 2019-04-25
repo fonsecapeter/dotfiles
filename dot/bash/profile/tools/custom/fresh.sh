@@ -28,11 +28,6 @@ function fresh_vim {
     -c 'qa!'
 }
 
-function fresh_asdf {
-  print_fresh_step 'Asdf'
-  asdf update
-}
-
 function fresh_node {
   print_fresh_step 'Node'
   n latest
@@ -54,5 +49,4 @@ function fresh {
   fresh_vim
   fresh_node
   fresh_python
-  fresh_asdf
 }
