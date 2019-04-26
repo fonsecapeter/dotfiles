@@ -20,5 +20,5 @@ vim-runtime
 # ui
 gnome-tweak-tool
 gnome-shell-extensions
-arc-theme
-paper-icon-theme
+# arc-theme
+# paper-icon-theme
