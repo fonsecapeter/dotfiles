@@ -95,6 +95,7 @@ module.exports = {
     },
     bell: false,
     copyOnSelect: false,
+    scrollBack: 2000,
     showHamburgerMenu: false,
     showWindowControls: "",
 
@@ -155,12 +156,11 @@ module.exports = {
 
   plugins: [
     "hyper-statusline",
-    "hyperterm-cursor",
     "hyperterm-alternatescroll",
     "hyper-nobold",
     "hyper-tab-icons",
     "hypercwd",
-    "hyper-search"
+    "hyper-search",
   ],
   localPlugins: [],
   keymaps: {}
