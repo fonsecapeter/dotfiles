@@ -91,7 +91,7 @@ module.exports = {
     termCSS: "",
 
     env: {
-      "SHELL": "/usr/bin/zsh",
+      "SHELL": "/bin/zsh",
     },
     bell: false,
     copyOnSelect: false,
