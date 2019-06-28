@@ -39,6 +39,7 @@
       "language-python"
       "python-autopep8"
       "autoclose-html"
+      "atom-typescript"
     ]
     ignoredNames: [
       ".git"
@@ -83,6 +84,8 @@
     env: "source.shell"
     motd: "source.shell"
     txt: "text.md"
+  "git-blame":
+    columnWidth: 219
   "git-diff": {}
   "ide-crystal":
     compilerColorOutput: true
@@ -175,6 +178,17 @@
   "python-autopep8":
     formatOnSave: true
   "python-yapf": {}
+  "rainbow-csv":
+    rainbow1: "#f9997e"
+    rainbow10: "#e47e72"
+    rainbow2: "#bf94c3"
+    rainbow3: "#89a8d0"
+    rainbow4: "#7fb69f"
+    rainbow5: "#f6c693"
+    rainbow6: "#c5a2c0"
+    rainbow7: "#97c3d3"
+    rainbow8: "#90cba6"
+    rainbow9: "#f6819e"
   "spell-check":
     addKnownWords: true
     grammars: [
@@ -206,6 +220,9 @@
 ".basic.html.text":
   editor:
     tabLength: 4
+".css.scss.source":
+  editor:
+    tabLength: 4
 ".django.html.text":
   editor:
     tabLength: 4
@@ -218,6 +235,9 @@
 ".jinja.python.source":
   editor:
     preferredLineLength: 120
+".js.source":
+  editor:
+    tabLength: 4
 ".python.regexp.source":
   editor:
     autoIndentOnPaste: true

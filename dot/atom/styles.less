@@ -9,13 +9,18 @@
  * http://lesscss.org
  */
 
-// Hide tree-view by default (see init.coffee)
-atom-workspace.loading .left {
-	display: none;
-}
-
 atom-workspace {
   font-weight: 700;
+}
+
+// Hide tree-view by default (see init.coffee)
+atom-workspace.loading .left {
+  display: none;
+}
+
+// Hide scrollbar
+atom-text-editor[with-minimap] .vertical-scrollbar {
+  display: none;
 }
 
 // re-color file-icons

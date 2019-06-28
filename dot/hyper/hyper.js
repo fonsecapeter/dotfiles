@@ -49,6 +49,7 @@ module.exports = {
     padding: "12px",
     colors: colors,
 
+    css: '',
     css: `
       footer.footer_footer {
         font-family: ${UIConstants.font};
