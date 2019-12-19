@@ -84,6 +84,8 @@
     env: "source.shell"
     motd: "source.shell"
     txt: "text.md"
+  "find-and-replace":
+    useRipgrep: true
   "git-blame":
     columnWidth: 219
   "git-diff": {}
@@ -135,6 +137,7 @@
     disallowAnyExpr: false
     disallowAnyUnimported: false
     disallowSubclassingAny: false
+    executablePath: "python"
     followImports: "skip"
     warnIncompleteStub: false
   "linter-pep8":
@@ -145,7 +148,8 @@
     maxLineLength: 79
   "linter-sass-lint":
     configFile: ".scss-lint.yml"
-  "linter-ui-default": {}
+  "linter-ui-default":
+    showPanel: true
   "markdown-preview": {}
   minimap:
     minimapScrollIndicator: false
@@ -177,6 +181,9 @@
     useStylelint: true
   "python-autopep8":
     formatOnSave: true
+  "python-black":
+    fmtOnSave: false
+    lineLength: 80
   "python-yapf": {}
   "rainbow-csv":
     rainbow1: "#f9997e"
