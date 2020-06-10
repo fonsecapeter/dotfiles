@@ -32,6 +32,7 @@ function fresh_node {
   print_fresh_step 'Node'
   n latest
   npm install -g npm@latest
+  n prune
   printf "${bright_orange}node${reset}: "
   node -v
   printf "${bright_orange}npm${reset}: "
@@ -40,7 +41,7 @@ function fresh_node {
 
 function fresh_python {
   print_fresh_step 'Python poetry'
-  poetry self:update
+  poetry self update
 }
 
 function fresh {

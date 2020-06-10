@@ -33,7 +33,7 @@ module.exports = {
     updateChannel: "canary",
     shell: "zsh",
     shellArgs: ["--login"],
-    fontSize: 11,
+    fontSize: 14,
     fontFamily: UIConstants.font,
     fontWeight: "400",
     fontWeightBold: "700",

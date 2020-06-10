@@ -40,6 +40,7 @@
       "python-autopep8"
       "autoclose-html"
       "atom-typescript"
+      "linter-flake8"
     ]
     ignoredNames: [
       ".git"
@@ -53,6 +54,7 @@
       "venv"
     ]
     projectHome: "~/Projects/atom"
+    reopenProjectMenuCount: 12
     telemetryConsent: "limited"
     themes: [
       "isotope-ui"
@@ -67,7 +69,6 @@
     ]
   editor:
     fontFamily: "Brass Mono"
-    fontSize: 12
     invisibles: {}
     lineHeight: 1.2
     preferredLineLength: 79
@@ -93,13 +94,15 @@
     compilerColorOutput: true
   "ide-python":
     pylsPlugins:
-      mccabe:
-        enabled: false
-      pycodestyle:
-        enabled: false
-      pydocstyle: {}
-      pyflakes:
-        enabled: false
+      flake8:
+        enabled: true
+      mccabe: {}
+      pycodestyle: {}
+      pydocstyle:
+        enabled: true
+      pyflakes: {}
+      pylint:
+        enabled: true
       rope_completion:
         enabled: true
       yapf: {}
@@ -148,8 +151,7 @@
     maxLineLength: 79
   "linter-sass-lint":
     configFile: ".scss-lint.yml"
-  "linter-ui-default":
-    showPanel: true
+  "linter-ui-default": {}
   "markdown-preview": {}
   minimap:
     minimapScrollIndicator: false
