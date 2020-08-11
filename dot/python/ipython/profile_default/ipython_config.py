@@ -96,3 +96,4 @@ class MyPrompt(Prompts):
 
 
 c.TerminalInteractiveShell.prompts_class = MyPrompt
+
