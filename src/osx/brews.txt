@@ -1,5 +1,4 @@
 ag
-cmatrix
 colordiff
 coreutils
 cowsay

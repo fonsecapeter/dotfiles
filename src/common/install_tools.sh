@@ -32,4 +32,8 @@ clone_from_git Treri/fzf-zsh $ZSH_CUSTOM_PLUGINS/fzf-zsh
 # -----------------------------------------
 
 # atom
-# apm install --packages-file ~/dotfiles/dot/atom/package.list
+echo "Would you like to install atom dependencies (y/n)? "
+read answer
+if [ "$answer" != "${answer#[Yy]}" ]; then
+  apm install --packages-file ~/dotfiles/dot/atom/package.list
+fi
