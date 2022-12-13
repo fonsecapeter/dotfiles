@@ -67,25 +67,25 @@ EIGHTBIT 1
 # NOTES:
 # - See http://www.oreilly.com/catalog/wdnut/excerpt/color_names.html
 # - Color combinations
-#   ANSI Color code       Shellectric
-#   ~~~~~~~~~~~~~~~       ~~~~~~~~~
-#   00    none            camel
-#   30    black           black
-#   01;30 bright black    dark gray
-#   31    red             red
-#   01;31 bright red      pink-red
-#   32    green           forrest green
-#   01;32 bright green    green
-#   33    yellow          orange
-#   01;33 bright yellow   burnt pumpkin
-#   34    blue            blue
-#   01;34 bright blue     sky blue
-#   35    magenta         purple
-#   01;35 bright magenta  lavender
-#   36    cyan            cyan
-#   01;36 bright cyan     light cyan
-#   37    white           mid gray
-#   01;37 bright white    light gray
+#   ANSI Color code       Shellectric    Krafftachrome
+#   ~~~~~~~~~~~~~~~       ~~~~~~~~~~~    ~~~~~~~~~~~~~
+#   00    none            camel          flame resistant silver
+#   30    black           black          hot obsidian purple
+#   01;30 bright black    dark gray      dark stone gray
+#   31    red             red            lava red
+#   01;31 bright red      pink-red       laba bright red
+#   32    green           forrest green  treeline green
+#   01;32 bright green    green          shirt green
+#   33    yellow          orange         lava orange
+#   01;33 bright yellow   burnt pumpkin  lava yellow
+#   34    blue            blue           maurice's jacket blue
+#   01;34 bright blue     sky blue       katia's jacket blue
+#   35    magenta         purple         lava purple
+#   01;35 bright magenta  lavender       lava pink
+#   36    cyan            cyan           acid lake deep
+#   01;36 bright cyan     light cyan     acid lake shallow
+#   37    white           mid gray       mid ash gray
+#   01;37 bright white    light gray     light ash gray
 
 
 ### By file type
@@ -93,11 +93,11 @@ EIGHTBIT 1
 # global default
 NORMAL 00
 # normal file
-FILE 00
+FILE 37
 # directory
-DIR 32
+DIR 31
 # symbolic link
-LINK 31
+LINK 01;31
 
 # pipe, socket, block device, character device
 FIFO 33
@@ -117,13 +117,13 @@ ORPHAN  05;37;41
 MISSING 05;37;41
 
 # files with execute permission
-EXEC 01;34  # Unix
-.cmd 01;34  # Win
-.exe 01;34  # Win
-.com 01;34  # Win
-.bat 01;34  # Win
-.reg 01;34  # Win
-.app 01;34  # OSX
+EXEC 01;35  # Unix
+.cmd 01;35  # Win
+.exe 01;35  # Win
+.com 01;35  # Win
+.bat 01;35  # Win
+.reg 01;35  # Win
+.app 01;35  # OSX
 
 #############################################################################
 ### By extension

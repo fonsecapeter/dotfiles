@@ -1,14 +1,14 @@
 function now() {
-  echo $(date '+%A, %x %I:%M %p')
+  echo $(date '+%A, %Y-%m-%d %I:%M %p')
 }
 
 function today() {
-  echo $(date '+%A, %x')
+  echo $(date '+%A, %Y-%m-%d')
 }
 
 function stamp {
   printf "${orange}"
-  date +"%r"
+  now
   printf "${reset}"
   $@
 }

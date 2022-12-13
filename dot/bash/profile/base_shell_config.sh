@@ -1,5 +1,5 @@
 # export TERM=xterm-16color
-export LSCOLORS="cxBxhxDxgxhxhxhxhxfxfx"
+export LSCOLORS="bxBxhxfxdxhxhxhxhxfxfx"
 PATH="${HOME}/.poetry/bin:/usr/local/opt/coreutils/libexec/gnubin:${PATH}"
 MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 EDITOR=vim

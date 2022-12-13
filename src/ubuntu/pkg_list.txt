@@ -18,7 +18,7 @@ vim-gui-common
 vim-runtime
 
 # ui
-gnome-tweak-tool
-gnome-shell-extensions
+# gnome-tweak-tool
+# gnome-shell-extensions
 # arc-theme
 # paper-icon-theme

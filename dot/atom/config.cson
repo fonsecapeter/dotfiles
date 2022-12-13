@@ -30,6 +30,7 @@
       "atom-ide-signature-help": "default"
       "atom-ide-terminal": "default"
       hyperclick: "default"
+  "atom-limelight": {}
   core:
     closeEmptyWindows: false
     disabledPackages: [
@@ -41,6 +42,7 @@
       "autoclose-html"
       "atom-typescript"
       "linter-flake8"
+      "python-indent"
     ]
     ignoredNames: [
       ".git"
@@ -69,10 +71,12 @@
     ]
   editor:
     fontFamily: "Brass Mono"
+    fontSize: 19
     invisibles: {}
     lineHeight: 1.2
     preferredLineLength: 79
     softWrap: true
+    softWrapHangingIndent: 2
     tabType: "soft"
   elmjutsu:
     cacheDirectory: "/var/folders/lb/hjrrc3057bd63s55q5k1ssxw0002p1/T/elmjutsu37716c9DCI6Hbrczg"
@@ -88,12 +92,14 @@
   "find-and-replace":
     useRipgrep: true
   "git-blame":
-    columnWidth: 260
+    columnWidth: 480
   "git-diff": {}
   "ide-crystal":
     compilerColorOutput: true
   "ide-python":
     pylsPlugins:
+      autopep8:
+        enabled: false
       flake8:
         enabled: true
       mccabe: {}

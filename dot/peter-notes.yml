@@ -1,5 +1,5 @@
 ---
-editor: atom
-notes_dir: ~/GoogleDrive/Notes
+editor: code
+notes_dir: "~/GoogleDrive/Notes/"
 extension: md
 searcher: ag "%{regex}" "%{notes_dir}"

@@ -3,7 +3,6 @@ export ZSH=~/.oh-my-zsh
 ZSH_THEME="shellectric"
 DISABLE_AUTO_TITLE="true"
 plugins=(
-  django
   docker
   fzf-zsh
   gem
@@ -20,20 +19,21 @@ plugins=(
   zsh-autosuggestions
   zsh-syntax-highlighting
 )
-
 source ~/dotfiles/dot/zsh/autocomplete.zsh
 source ~/dotfiles/dot/zsh/syntax_highlighting.zsh
 source $ZSH/oh-my-zsh.sh
 source ~/dotfiles/dot/zsh/yoink_from_bash.zsh
-alias rc='source ~/.zshrc'
-alias fresh="upgrade_oh_my_zsh && fresh"
+alias rc='exec zsh'
+alias fresh="omz update && fresh"
 
-# name tab by active process
-function precmd {
-  printf "\033]0;%s\a" "$(basename $SHELL)"
+timezsh() {
+  shell=${1-$SHELL}
+  for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
 }
-preexec() {
-  printf "\033]0;%s\a" "${1%% *}"
+
+# name tab by dir
+function precmd {
+  printf "\033]0;%s\a" "$(basename $(pwd))"
 }
 
 export PKG_CONFIG_PATH=/usr/local/opt/openssl/lib/pkgconfig
