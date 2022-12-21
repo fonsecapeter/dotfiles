@@ -35,14 +35,14 @@ symlink_file ~/dotfiles/dot/vim/vimrc ~/.vimrc
 sudo_symlink_file ~/dotfiles/dot/vim/shellectric_airline_theme.vim ~/.vim/bundle/vim-airline/autoload/airline/themes/shellectric.vim
 # -----------------------------------------
 
-# atom
+# atom (commented out bc i use vscode now)
 # -----------------------------------------
-symlink_file ~/dotfiles/dot/atom/config.cson ~/.atom/config.cson
-symlink_file ~/dotfiles/dot/atom/init.coffee ~/.atom/init.coffee
-symlink_file ~/dotfiles/dot/atom/keymap.cson ~/.atom/keymap.cson
-symlink_file ~/dotfiles/dot/atom/package.list ~/.atom/package.list
-symlink_file ~/dotfiles/dot/atom/snippets.cson ~/.atom/snippets.cson
-symlink_file ~/dotfiles/dot/atom/styles.less ~/.atom/styles.less
+# symlink_file ~/dotfiles/dot/atom/config.cson ~/.atom/config.cson
+# symlink_file ~/dotfiles/dot/atom/init.coffee ~/.atom/init.coffee
+# symlink_file ~/dotfiles/dot/atom/keymap.cson ~/.atom/keymap.cson
+# symlink_file ~/dotfiles/dot/atom/package.list ~/.atom/package.list
+# symlink_file ~/dotfiles/dot/atom/snippets.cson ~/.atom/snippets.cson
+# symlink_file ~/dotfiles/dot/atom/styles.less ~/.atom/styles.less
 # -----------------------------------------
 
 # zsh

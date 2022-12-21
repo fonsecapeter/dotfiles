@@ -11,7 +11,7 @@ clone_from_git \
 
 # install oh_my_zsh
 # -----------------------------------------
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+# sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 readonly ZSH_CUSTOM_PLUGINS=~/.oh-my-zsh/custom/plugins
 
@@ -31,9 +31,9 @@ $ZSH_CUSTOM_PLUGINS/fzf/install --bin
 clone_from_git Treri/fzf-zsh $ZSH_CUSTOM_PLUGINS/fzf-zsh
 # -----------------------------------------
 
-# atom
-echo "Would you like to install atom dependencies (y/n)? "
-read answer
-if [ "$answer" != "${answer#[Yy]}" ]; then
-  apm install --packages-file ~/dotfiles/dot/atom/package.list
-fi
+# atom (commented out bc i use vscode now)
+# echo "Would you like to install atom dependencies (y/n)? "
+# read answer
+# if [ "$answer" != "${answer#[Yy]}" ]; then
+#   apm install --packages-file ~/dotfiles/dot/atom/package.list
+# fi

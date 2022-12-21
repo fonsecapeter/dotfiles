@@ -19,12 +19,12 @@ echo "--> ${purple}Setting up vim"
 echo $reset
 echo
 ~/dotfiles/src/common/customize_vim.sh
-echo
-echo $bold
-echo "--> ${purple}Setting up rbenv"
-echo $reset
-echo
-~/dotfiles/src/common/set_up_rbenv.sh
+# echo
+# echo $bold
+# echo "--> ${purple}Setting up rbenv"
+# echo $reset
+# echo
+# ~/dotfiles/src/common/set_up_rbenv.sh
 echo
 echo $bold
 echo "--> ${purple}Symlinking dotfiles"
