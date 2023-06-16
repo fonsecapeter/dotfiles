@@ -1,23 +1,17 @@
 function symlink_file {
-  local -r source=$(realpath "$1")
-  local -r pointer=$(realpath "$2")
-  if [ ! -f "${pointer}" ]; then
-    ln -sv "${source}" "${pointer}" || true
+  if [ ! -f "${2}" ]; then
+    ln -sv "${1}" "${2}" || true
   fi
 }
 
 function sudo_symlink_file {
-  local -r source=$(realpath "$1")
-  local -r pointer=$(realpath "$2")
-  if [ ! -f "${pointer}" ]; then
-    sudo ln -sv "${source}" "${pointer}" || true
+  if [ ! -f "${2}" ]; then
+    sudo ln -sv "${1}" "${2}" || true
   fi
 }
 
 function symlink_dir {
-  local -r source=$(realpath "$1")
-  local -r pointer=$(realpath "$2")
-  if [ ! -d "${pointer}" ]; then
-    ln -sv "${source}" "${pointer}" || true
+  if [ ! -d "${2}" ]; then
+    ln -sv "${1}" "${2}" || true
   fi
 }
