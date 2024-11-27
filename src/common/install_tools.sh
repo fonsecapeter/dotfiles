@@ -1,6 +1,8 @@
 source ~/dotfiles/src/common/clone_from_git.sh
-mkdir ~/Projects
-echo 'Be sure to run "git config user.email peter.nfonseca@gmail.com" and clone from "git@github-personal:fonsecapeter/repo" in each of these' > ~/Projects/README.txt
+if [ ! -d ~/Projects ]; then
+  mkdir ~/Projects
+fi
+echo 'Be sure to run "git config user.email peter.nfonseca@gmail.com" and clone from "git@github.com:fonsecapeter/repo" in each of these' > ~/Projects/README.txt
 
 # python
 curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | python
@@ -12,7 +14,9 @@ clone_from_git \
 
 # install oh_my_zsh
 # -----------------------------------------
-# sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+if [ ! "${ZSH}" ]; then
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+fi
 
 readonly ZSH_CUSTOM_PLUGINS=~/.oh-my-zsh/custom/plugins
 

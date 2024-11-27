@@ -3,7 +3,7 @@
 ## Run on new computer
   - First set up [ssh for GitHub](https://docs.github.com/en/authentication/connecting-to-github-with-ssh)
     - manually copy `dot/ssh/config` to `~/.ssh/config` and update as needed
-  - Clone this repo `git clone git@github-personal:fonsecapeter/dotfiles.git`
+  - Clone this repo `git clone git@github.com:fonsecapeter/dotfiles.git`
   - Run `./bin/init/osx` or `ubuntu`
     - `from_flash_drive/` is meant to be run from a snapshot of this repo that
     lives on a flash drive

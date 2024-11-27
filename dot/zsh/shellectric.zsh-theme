@@ -1,1 +1,1 @@
-PROMPT='%F{white}%% %f'
+PROMPT='%F{white}> %f'

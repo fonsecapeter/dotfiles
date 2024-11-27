@@ -47,7 +47,9 @@ sudo_symlink_file "${HOME}/dotfiles/dot/vim/shellectric_airline_theme.vim" "${HO
 
 # zsh
 # -----------------------------------------
-mkdir -p "${HOME}/.oh-my-zsh/custom/themes"
+if [ ! -d "${HOME}/.oh-my-zsh/custom/themes" ]; then
+    mkdir -p "${HOME}/.oh-my-zsh/custom/themes"
+fi
 symlink_file "${HOME}/dotfiles/dot/zsh/zshrc" "${HOME}/.zshrc"
 symlink_file "${HOME}/dotfiles/dot/zsh/shellectric.zsh-theme" "${HOME}/.oh-my-zsh/custom/themes/shellectric.zsh-theme"
 # -----------------------------------------

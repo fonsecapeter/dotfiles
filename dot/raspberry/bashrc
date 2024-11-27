@@ -1,7 +1,7 @@
 if [ "$color_prompt" = yes ]; then
-    PS1='\[\033[01;32m\]%\[\033[00m\] '
+    PS1='\[\033[01;32m\]>\[\033[00m\] '
 else
-    PS1='% '
+    PS1='> '
 fi
 
 alias vi=vim

@@ -38,3 +38,5 @@ message_rule " ${green}Finished ${reset}${bold}" '='
 rule '-'
 echo $reset
 echo
+
+echo "Import iterm2 keybindings from ~/dotfiles/dot/iterm2/keybindings.itermkeymap"

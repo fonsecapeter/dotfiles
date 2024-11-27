@@ -2,10 +2,7 @@ ag
 colordiff
 coreutils
 cowsay
-crystal
 ctags
-git
-httpie
 jq
 nmap
 pipenv

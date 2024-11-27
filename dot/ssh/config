@@ -1,17 +1,8 @@
 # Personal Github
-Host github-personal
+Host github.com
   HostName github.com
   User fonsecapeter
   IdentityFile ~/.ssh/id_rsa_personal
   IdentitiesOnly yes
   PreferredAuthentications publickey
-  # git remote add origin git@github-personal:fonsecapeter/repo
-
-# Work GitHub
-Host github-work
-  HostName github.com
-  User pfonseca23
-  IdentityFile ~/.ssh/id_rsa
-  IdentitiesOnly yes
-  PreferredAuthentications publickey
-
+  # git remote add origin git@github.com:fonsecapeter/repo
