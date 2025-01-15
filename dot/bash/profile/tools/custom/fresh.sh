@@ -49,5 +49,5 @@ function fresh {
   fresh_atom
   fresh_vim
   fresh_node
-  fresh_python
+  # fresh_python
 }

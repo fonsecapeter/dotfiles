@@ -12,9 +12,7 @@ Plugin 'rking/ag.vim'
 Plugin 'w0rp/ale'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'raimondi/delimitmate'
-Plugin 'junegunn/goyo.vim'
 Plugin 'Yggdroot/indentLine'
-Plugin 'junegunn/limelight.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'kh3phr3n/python-syntax'
@@ -60,7 +58,6 @@ autocmd BufNewFile,BufReadPost *.zsh-theme set syntax=zsh
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 autocmd BufNewFile,BufReadPost *.txt set filetype=markdown
 autocmd BufNewFile,BufReadPost *.ronn set filetype=markdown
-autocmd BufNewFile,BufReadPost,FilterReadPost,FileReadPost *.{txt,md,y*ml,cfg,ini} :Goyo 120
 autocmd BufNewFile,BufReadPost bash_profile set syntax=sh
 autocmd BufNewFile,BufReadPost vimrc set syntax=vim
 
@@ -114,21 +111,6 @@ let g:ctrlp_map = '<C-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'rca'
 let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden -g ""'
-" -----------------------------------------
-
-" goyo.vim + limelight.vim
-" -----------------------------------------
-" immersive periferal hiding (with auto limelight)
-" :Goyo
-let g:limelight_conceal_ctermfg = 8
-let g:goyo_width = 120
-function! s:goyo_enter()
-  silent! Limelight
-  GitGutterEnable
-endfunction
-autocmd! User GoyoEnter nested call <SID>goyo_enter()
-autocmd! User GoyoEnter nested call <SID>goyo_enter()
-autocmd! User GoyoLeave Limelight!
 " -----------------------------------------
 
 " indent and indentLine

@@ -37,7 +37,8 @@ function precmd {
 }
 
 export PKG_CONFIG_PATH=/usr/local/opt/openssl/lib/pkgconfig
-export PATH="${PATH}:${HOME}/.oh-my-zsh/custom/plugins/fzf/bin/fzf"
+# ~/.local/bin for pipx
+export PATH="${PATH}:${HOME}/.oh-my-zsh/custom/plugins/fzf/bin/fzf:${HOME}/.local/bin"
 
 # added by travis gem
 [ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
@@ -53,3 +54,5 @@ if [ -x "$(command -v poetry)" ]; then
   poetry completions zsh > $ZSH/plugins/poetry/_poetry
 fi
 bindkey "^X^_" redo
+
+echo "\n" && centerprint "////1>" && echo "\n\n"

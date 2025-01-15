@@ -54,9 +54,9 @@ symlink_file "${HOME}/dotfiles/dot/zsh/zshrc" "${HOME}/.zshrc"
 symlink_file "${HOME}/dotfiles/dot/zsh/shellectric.zsh-theme" "${HOME}/.oh-my-zsh/custom/themes/shellectric.zsh-theme"
 # -----------------------------------------
 
-# httpie
+# visidata
 # -----------------------------------------
-symlink_dir "${HOME}/dotfiles/dot/httpie" "${HOME}/.httpie"
+symlink_file "${HOME}/dotfiles/dot/visidatarc" "${HOME}/.visidatarc"
 # -----------------------------------------
 
 

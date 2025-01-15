@@ -42,3 +42,11 @@ function centercat {
     |  awk '{ z = '$(tput cols)' - length; y = int(z / 2); x = z - y; printf "%*s%s%*s\n", x, "", $0, y, ""; }'
   echo && echo && echo && echo && echo
 }
+
+
+# print in center
+# $1: message, to be printed
+function centerprint {
+  padding=$((($(tput cols) - ${#1}) / 2))
+  printf "%${padding}s%s\n" "" "${1}"
+}
