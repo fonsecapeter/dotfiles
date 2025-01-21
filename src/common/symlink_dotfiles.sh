@@ -33,6 +33,7 @@ symlink_file "${HOME}/dotfiles/dot/ruby/pryrc" "${HOME}/.pryrc"
 # -----------------------------------------
 symlink_file "${HOME}/dotfiles/dot/vim/vimrc" "${HOME}/.vimrc"
 sudo_symlink_file "${HOME}/dotfiles/dot/vim/shellectric_airline_theme.vim" "${HOME}/.vim/bundle/vim-airline/autoload/airline/themes/shellectric.vim"
+sudo_symlink_file "${HOME}/dotfiles/dot/vim/krafftachrome_airline_theme.vim" "${HOME}/.vim/bundle/vim-airline/autoload/airline/themes/krafftachrome.vim"
 # -----------------------------------------
 
 # atom (commented out bc i use vscode now)

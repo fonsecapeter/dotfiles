@@ -40,10 +40,10 @@ vd.themes['krafftachrome'] = dict(
     color_default='',
     color_default_hdr='bold',
     color_bottom_hdr='bold underline',
-    color_current_row='reverse white',
+    color_current_row='green',
     color_current_cell='reverse red',
     color_current_col='bold',
-    color_current_hdr='bold reverse white',
+    color_current_hdr='bold green',
     color_column_sep='',
     color_key_col='bold',
     color_hidden_col='8',
@@ -74,7 +74,7 @@ vd.themes['krafftachrome'] = dict(
     color_active_status='reverse green',
     color_inactive_status='8',
     color_working='',
-    color_longname='',
+    # color_longname='',
     color_highlight_status='',
     color_sidebar_title='',
     color_heading='',
@@ -92,6 +92,10 @@ vd.themes['krafftachrome'] = dict(
     disp_menu_input='_',
     disp_menu_fmt='////1>',
     plot_colors = 'white',
+
+    default_height = 16,
+    quitguard=True,
 )
+
 
 vd.set_theme("krafftachrome")
