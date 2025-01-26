@@ -213,6 +213,7 @@ hi! link lessVariableValue  Normal
 " NERDTree {{{
 hi! link NERDTreeHelp      Comment
 hi! link NERDTreeExecFile  String
+hi NERDTreeDir ctermfg=3
 
 "}}}
 " Vimwiki {{{
