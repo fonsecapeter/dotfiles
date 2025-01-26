@@ -15,7 +15,7 @@ Plugin 'raimondi/delimitmate'
 Plugin 'Yggdroot/indentLine'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'kh3phr3n/python-syntax'
+Plugin 'vim-python/python-syntax'
 Plugin 'mechatroner/rainbow_csv'
 Plugin 'gcmt/taboo.vim'
 Plugin 'majutsushi/tagbar'
@@ -27,7 +27,7 @@ Plugin 'rhysd/vim-gfm-syntax'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'mxw/vim-jsx'
 Plugin 'shime/vim-livedown'
-Plugin 'terryma/vim-multiple-cursors'
+Plugin 'mg979/vim-visual-multi'
 Plugin 'noahfrederick/vim-noctu'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'avakhov/vim-yaml'
@@ -47,8 +47,10 @@ set laststatus=2
 set encoding=utf-8
 set t_Co=16
 set background=dark
-colorscheme noctu
+colorscheme krafftachrome
 filetype plugin on
+set ttimeout        " time out for key codes
+set ttimeoutlen=0 " wait up to X ms after Esc for special key
 
 autocmd BufWritePre * :FixWhitespace
 autocmd BufNewFile,BufReadPost *.html, *.dtml, *.lxml set filetype=htmldjango
@@ -178,7 +180,7 @@ let g:NERDCommentEmptyLines = 1
 
 " python-syntax
 " -----------------------------------------
-let python_highlight_all=1
+let g:python_highlight_all = 1
 " -----------------------------------------
 
 " rainbow_csv
@@ -280,13 +282,14 @@ let g:markdown_fenced_languages = ['ruby', 'python', 'json', 'sql']
 " let g:livedown_browser = "chrome"
 " -----------------------------------------
 
-" vim-multiple-cursors
+" vim-visual-multi
 " -----------------------------------------
-" bart simpson mode
-let g:multi_cursor_next_key='<C-d>'
-let g:multi_cursor_prev_key='<S-d>'
-let g:multi_cursor_skip_key='<C-x>'
-let g:multi_cursor_quit_key='<Esc>'
+let g:VM_maps = {}
+" let g:VM_maps["Select All"]        = '<leader>a'
+" let g:VM_maps["Visual All"]        = '<leader>a'
+" let g:VM_maps["Align"]             = '<leader>A'
+let g:VM_maps["Add Cursor Down"]   = '<C-S-down>'
+let g:VM_maps["Add Cursor Up"]     = '<C-S-up>'
 " -----------------------------------------
 
 " mappings (aliases)
