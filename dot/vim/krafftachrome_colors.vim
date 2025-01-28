@@ -247,8 +247,8 @@ hi mustachePartial           ctermfg=13
 
 "}}}
 " Shell {{{
-hi shDerefSimple     ctermfg=11
-hi! link shDerefVar  shDerefSimple
+hi! link shDerefSimple  Statement
+hi! link shDerefVar     shDerefSimple
 
 "}}}
 " Syntastic {{{

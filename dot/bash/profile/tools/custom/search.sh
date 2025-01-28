@@ -10,11 +10,11 @@ function search {
   #
   # Options:
   #   --regex  Search by regex
-  local flags=('--skip-vcs-ignores' '--smart-case')
+  local flags=('--skip-vcs-ignores' '--smart-case' '--color-line-number=1;30')
   if [[ "$1" == '--regex' ]]; then
     shift
   else
-    flags[3]='--fixed-strings'
+    flags[4]='--fixed-strings'
   fi
 
   if [[ "$1" == 'cls' ]]; then

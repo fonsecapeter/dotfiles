@@ -22,7 +22,7 @@ function my_cal {
   # highlight today if looking at present
   if [[ "${month}" == "${this_month}" ]] && [[ "${year}" == "${this_year}" ]]; then
     this_year_2d=$(date +%y)
-    hilight_current_day=$(echo "${hilight_days}" | sed "s/${today}[^(?:${this_year_2d})]/${bright_orange}&${reset}/")
+    hilight_current_day=$(echo "${hilight_days}" | sed "s/ ${today}[^(?:${this_year_2d})]/${orange}&${reset}/")
     echo "${hilight_current_day}"
   else
     echo "${hilight_days}"
