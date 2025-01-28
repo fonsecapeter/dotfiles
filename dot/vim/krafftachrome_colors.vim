@@ -66,7 +66,7 @@ hi Folded              ctermfg=6     ctermbg=0     cterm=bold
 hi Conceal             ctermfg=6     ctermbg=NONE
 hi Directory           ctermfg=12
 hi Title               ctermfg=3     cterm=bold
-hi ErrorMsg            ctermfg=15    ctermbg=1
+hi ErrorMsg            ctermfg=1     ctermbg=NONE  cterm=reverse
 hi DiffAdd             ctermfg=0     ctermbg=2
 hi DiffChange          ctermfg=0     ctermbg=3
 hi DiffDelete          ctermfg=0     ctermbg=1
@@ -99,24 +99,22 @@ hi Underlined      ctermfg=4   cterm=underline
 hi Type            ctermfg=5
 hi String          ctermfg=1
 hi Keyword         ctermfg=2
-hi Todo            ctermfg=15  ctermbg=NONE     cterm=bold,underline
+hi Todo            ctermfg=13  ctermbg=NONE     cterm=bold,underline
 hi Function        ctermfg=3
-hi Identifier      ctermfg=7   cterm=NONE
+hi Identifier      ctermfg=2   cterm=NONE
 hi Statement       ctermfg=7
 hi Constant        ctermfg=6
 hi Number          ctermfg=12
-hi Boolean         ctermfg=6
 hi Special         ctermfg=13
 hi Ignore          ctermfg=0
 hi PreProc         ctermfg=3
+hi! link Boolean   Constant
 hi! link Operator  Delimiter
 hi! link Error     ErrorMsg
+hi! link StringDelimiter String
 
 "}}}
 " HTML {{{
-hi htmlTagName              ctermfg=2
-hi htmlTag                  ctermfg=2
-hi htmlArg                  ctermfg=10
 hi htmlH1                   cterm=bold
 hi htmlBold                 cterm=bold
 hi htmlItalic               cterm=underline
@@ -125,6 +123,9 @@ hi htmlBoldItalic           cterm=bold,underline
 hi htmlBoldUnderline        cterm=bold,underline
 hi htmlUnderlineItalic      cterm=underline
 hi htmlBoldUnderlineItalic  cterm=bold,underline
+hi! link htmlTagName        Function
+hi! link htmlTag            Type
+hi! link htmlArg            Identifier
 hi! link htmlLink           Underlined
 hi! link htmlEndTag         htmlTag
 
@@ -167,8 +168,8 @@ hi markdownBold                     cterm=bold
 hi markdownItalic                   cterm=underline
 
 "}}}
-
 " Python {{{
+hi! link pythonBuiltin       Constant
 hi! link pythonBuiltinObj    Type
 hi! link pythonBuiltinObject Type
 hi! link pythonBuiltinType   Type

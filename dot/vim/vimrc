@@ -15,7 +15,7 @@ Plugin 'raimondi/delimitmate'
 Plugin 'Yggdroot/indentLine'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'vim-python/python-syntax'
+Plugin 'kh3phr3n/python-syntax'
 Plugin 'mechatroner/rainbow_csv'
 Plugin 'gcmt/taboo.vim'
 Plugin 'majutsushi/tagbar'
@@ -53,8 +53,7 @@ set ttimeout        " time out for key codes
 set ttimeoutlen=0 " wait up to X ms after Esc for special key
 
 autocmd BufWritePre * :FixWhitespace
-autocmd BufNewFile,BufReadPost *.html, *.dtml, *.lxml set filetype=htmldjango
-autocmd BufNewFile,BufReadPost *.html, *.dtml, *.lxml set syntax=htmldjango
+" autocmd BufNewFile,BufReadPost *.html, *.dtml, *.lxml set syntax=htmldjango
 autocmd BufNewFile,BufReadPost *.json set syntax=javascript
 autocmd BufNewFile,BufReadPost *.zsh-theme set syntax=zsh
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
@@ -342,4 +341,15 @@ inoremap <Leader><Tab> <Tab>
 
 " dont overwrite rigister on paste
 xnoremap p "_dP
+
+" dx syntax highlighting
+function! SynStack ()
+    for i1 in synstack(line("."), col("."))
+        let i2 = synIDtrans(i1)
+        let n1 = synIDattr(i1, "name")
+        let n2 = synIDattr(i2, "name")
+        echo n1 "->" n2
+    endfor
+endfunction
+map ss :call SynStack()<CR>
 " -----------------------------------------
