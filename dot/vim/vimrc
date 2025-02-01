@@ -79,7 +79,7 @@ autocmd Filetype gitcommit setlocal spell
 " for now, the only time i read from stdin is for manpages
 autocmd StdinReadPost * set ft=man
 
-" quit all (great for in goyo)
+" quit all
 command Q qa
 cnoreabbrev Q! Q
 

@@ -57,9 +57,9 @@ hi CursorLineNr        ctermfg=11    ctermbg=0
 hi Visual              ctermfg=0     ctermbg=12
 hi IncSearch           ctermfg=0     ctermbg=13    cterm=NONE
 hi Search              ctermfg=0     ctermbg=10
-hi StatusLine          ctermfg=7     ctermbg=0     cterm=bold
-hi StatusLineNC        ctermfg=8     ctermbg=0     cterm=bold
-hi VertSplit           ctermfg=0     ctermbg=0     cterm=NONE
+hi StatusLine          ctermfg=2     ctermbg=NONE  cterm=reverse
+hi StatusLineNC        ctermfg=2     ctermbg=NONE  cterm=reverse
+hi VertSplit           ctermfg=2     ctermbg=2     cterm=NONE
 hi TabLine             ctermfg=8     ctermbg=0     cterm=NONE
 hi TabLineSel          ctermfg=7     ctermbg=0
 hi Folded              ctermfg=6     ctermbg=0     cterm=bold
@@ -95,7 +95,7 @@ hi! link SpecialKey    NonText
 " Generic syntax {{{
 hi Delimiter       ctermfg=7
 hi Comment         ctermfg=8
-hi Underlined      ctermfg=4   cterm=underline
+hi Underlined      ctermfg=12  cterm=underline
 hi Type            ctermfg=5
 hi String          ctermfg=1
 hi Keyword         ctermfg=2

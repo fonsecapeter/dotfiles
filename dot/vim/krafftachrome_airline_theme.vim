@@ -20,7 +20,7 @@ let s:cterm_katias_jacket_blue = 12
 let s:cterm_light_ash_gray = 15
 
 " Main middle-section
-let s:MAIN = [ s:gui_obsidian, s:gui_acid_lake_deep, s:cterm_acid_lake_deep, '', 'reverse']
+let s:MAIN = [ s:gui_obsidian, s:gui_acid_lake_deep, s:cterm_acid_lake_deep, '', '']
 
 let s:N1 = [ s:gui_obsidian, s:gui_treeline_green, s:cterm_treeline_green, '', 'reverse' ]
 let g:airline#themes#krafftachrome#palette.normal = airline#themes#generate_color_map(s:N1, s:MAIN, s:MAIN)
