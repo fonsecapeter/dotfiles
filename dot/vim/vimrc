@@ -31,6 +31,8 @@ Plugin 'mg979/vim-visual-multi'
 Plugin 'noahfrederick/vim-noctu'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'avakhov/vim-yaml'
+Plugin 'ekalinin/Dockerfile.vim'
+Plugin 'uiiaoo/java-syntax.vim'
 
 call vundle#end()
 " -----------------------------------------
@@ -38,18 +40,18 @@ call vundle#end()
 " base config
 " -----------------------------------------
 " <Leader> should be \
-" set term=xterm-16color
 syntax on
-set number
-set relativenumber
-" show status bar
-set laststatus=2
-set encoding=utf-8
-set t_Co=16
-set background=dark
 colorscheme krafftachrome
 filetype plugin on
-set ttimeout        " time out for key codes
+set background=dark
+set conceallevel=0
+set encoding=utf-8
+set laststatus=2 " show status bar
+set linebreak
+set number
+set relativenumber
+set t_Co=16 " use base terminal 16 colors only
+set ttimeout " time out for key codes
 set ttimeoutlen=0 " wait up to X ms after Esc for special key
 
 autocmd BufWritePre * :FixWhitespace
@@ -142,7 +144,15 @@ autocmd BufNewFile,BufReadPost *.scss setlocal ts=4 sw=4 expandtab
 " nerdtree
 " -----------------------------------------
 " file tree
-let NERDTreeIgnore=['\.pyc$', '\~$', '^node_modules$', '^venv$', '^\.cache$'] "ignore files in NERDTree"
+let NERDTreeIgnore=[
+\  '\.pyc$',
+\  '\~$',
+\  '^node_modules$',
+\  '^venv$',
+\  '^\.cache$',
+\  '^.DS_Store$',
+\  '\.swp$',
+\]
 " toggle nerd tree
 map <C-\> :NERDTreeToggle<ESC>
 map <Bar> :NERDTreeFind<ESC>
