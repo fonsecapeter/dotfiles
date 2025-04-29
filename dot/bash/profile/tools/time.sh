@@ -12,3 +12,10 @@ function stamp {
   printf "${reset}"
   $@
 }
+
+function cowstamp {
+  printf "${orange}"
+  now | cowsay -e ".."
+  printf "${reset}"
+  $@
+}

@@ -5,7 +5,6 @@ function print_fresh_step {
 }
 
 function fresh_sys {
-  print_fresh_step 'System'
   if [[ "$OSTYPE" == "darwin"* ]]; then
     brew update && brew upgrade && brew cleanup
   else
@@ -14,40 +13,16 @@ function fresh_sys {
   fi
 }
 
-function fresh_atom {
-  print_fresh_step 'Atom'
-  apm update --no-confirm
-  apm list -bi > ~/dotfiles/dot/atom/package.list
-}
-
 function fresh_vim {
-  print_fresh_step 'Vim'
-  sudo vim \
+  vim \
     -c 'PluginInstall' \
     -c 'PluginUpdate' \
     -c 'qa!'
 }
 
-function fresh_node {
-  print_fresh_step 'Node'
-  n latest
-  npm install -g npm@latest
-  n prune
-  printf "${bright_orange}node${reset}: "
-  node -v
-  printf "${bright_orange}npm${reset}: "
-  npm -v
-}
-
-function fresh_python {
-  print_fresh_step 'Python poetry'
-  poetry self update
-}
-
 function fresh {
+  print_fresh_step 'System'
   fresh_sys
-  fresh_atom
+  print_fresh_step 'Vim'
   fresh_vim
-  fresh_node
-  # fresh_python
 }

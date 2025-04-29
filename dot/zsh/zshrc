@@ -55,5 +55,3 @@ if [ -x "$(command -v poetry)" ]; then
   poetry completions zsh > $ZSH/plugins/poetry/_poetry
 fi
 bindkey "^X^_" redo
-
-echo "\n" && centerprint "////1>" && echo "\n\n"
